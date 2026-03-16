@@ -66,7 +66,7 @@
   --shadow-nav:   0 1px 0 var(--color-border);
 
   /* Navbar */
-  --navbar-height: 3.5rem;
+  --navbar-height: 5rem;
 }
 
 /* -------------------------
@@ -113,15 +113,21 @@ ul, ol { list-style: none; }
   width: 100%;
   z-index: 1000;
   height: var(--navbar-height);
-  background: transparent;
-  transition: background var(--transition-base), box-shadow var(--transition-base);
+  /* Toujours visible : fond crème léger dès le départ */
+  background: rgba(240, 237, 232, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: background var(--transition-base), box-shadow var(--transition-base),
+              border-color var(--transition-base);
 }
 
 .navbar.scrolled {
   background: var(--color-bg-nav);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-nav);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
 }
 
 .navbar__inner {
@@ -346,7 +352,7 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: calc(var(--navbar-height) + var(--spacing-16)) var(--spacing-6) var(--spacing-16);
+  padding: calc(var(--navbar-height) + var(--spacing-20)) var(--spacing-6) var(--spacing-20);
 }
 
 .hero__content {
