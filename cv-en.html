@@ -3,104 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ilan Jaffeux-Cheniout's CV — AI Engineer, Orange apprentice." />
   <title>CV — Ilan Jaffeux-Cheniout</title>
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <!-- Variables CSS du portfolio (couleurs navbar) -->
-  <link rel="stylesheet" href="css/style.css" />
-
   <style>
-    /* -------------------------------------------------------
-       Page CV — design minimal, inspiré du modèle ATS
-    ------------------------------------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: #f0ede8;
-      padding-top: var(--navbar-height);
-    }
-
-    .cv-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 36px 20px 60px;
+      padding: 40px 20px;
+      font-family: 'DM Sans', sans-serif;
     }
 
-    .cv-topbar {
+    .cv-nav {
       max-width: 680px;
       width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
-    }
-
-    .cv-topbar__back {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      color: #555;
-      text-decoration: none;
-      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: color 0.15s;
-    }
-    .cv-topbar__back:hover { color: #1a1a1a; }
-
-    .cv-topbar__right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      margin-bottom: 20px;
     }
 
-    .cv-lang-toggle {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-    }
-
-    .cv-lang-btn {
+    .cv-nav a {
+      font-size: 12px;
       color: #888;
       text-decoration: none;
-      padding: 2px 4px;
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
     }
-    .cv-lang-btn.active { color: #1a1a1a; font-weight: 600; border-bottom: 2px solid #1a1a1a; }
-    .cv-lang-btn:hover  { color: #1a1a1a; }
-    .cv-lang-sep        { color: #bbb; }
+    .cv-nav a:hover { color: #1a1a1a; }
 
-    .cv-print-btn {
-      font-family: 'DM Sans', sans-serif;
+    .cv-nav__lang {
+      display: flex;
+      gap: 8px;
       font-size: 12px;
-      font-weight: 500;
-      color: #fff;
-      background: #1a1a1a;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s;
-      min-height: 32px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
     }
-    .cv-print-btn:hover { background: #333; }
+    .cv-nav__lang a       { color: #bbb; text-decoration: none; }
+    .cv-nav__lang a:hover  { color: #1a1a1a; }
+    .cv-nav__lang .active  { color: #1a1a1a; border-bottom: 1.5px solid #1a1a1a; }
+    .cv-nav__lang .sep     { color: #ccc; }
 
-    /* -------------------------------------------------------
-       CV Page — feuille blanche
-    ------------------------------------------------------- */
+    .cv-nav__print {
+      font-size: 12px;
+      color: #888;
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 4px 12px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .cv-nav__print:hover { border-color: #888; color: #1a1a1a; }
+
+    .label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .label::before, .label::after {
+      content: '';
+      height: 1px;
+      width: 40px;
+      background: #bbb;
+    }
+
+    .badge {
+      background: #2d6a4f;
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
     .cv-page {
       background: white;
       width: 680px;
       padding: 52px 56px;
-      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
-      font-family: 'DM Sans', sans-serif;
-      color: #1a1a1a;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.1);
     }
 
     .cv-header {
@@ -129,7 +126,7 @@
 
     .cv-contact {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       margin-top: 12px;
       flex-wrap: wrap;
     }
@@ -151,15 +148,7 @@
       flex-shrink: 0;
     }
 
-    .cv-contact a {
-      color: #555;
-      text-decoration: none;
-    }
-    .cv-contact a:hover { text-decoration: underline; }
-
-    .cv-section {
-      margin-bottom: 22px;
-    }
+    .cv-section       { margin-bottom: 22px; }
 
     .cv-section-title {
       font-size: 11px;
@@ -172,9 +161,7 @@
       margin-bottom: 14px;
     }
 
-    .cv-entry {
-      margin-bottom: 14px;
-    }
+    .cv-entry         { margin-bottom: 14px; }
 
     .cv-entry-header {
       display: flex;
@@ -251,199 +238,164 @@
     }
 
     @media print {
-      body        { background: white !important; padding-top: 0 !important; }
-      .navbar,
-      .cv-topbar  { display: none !important; }
-      .cv-wrapper { padding: 0 !important; }
-      .cv-page    { box-shadow: none !important; width: 100% !important; padding: 0 !important; }
+      body     { background: white !important; padding: 0 !important; }
+      .cv-nav  { display: none !important; }
+      .label,
+      .badge   { display: none !important; }
+      .cv-page { box-shadow: none !important; width: 100% !important; padding: 20mm 15mm !important; }
     }
 
     @media (max-width: 720px) {
-      .cv-page   { width: 100%; padding: 32px 24px; }
-      .cv-topbar { max-width: 100%; }
+      .cv-page { width: 100%; padding: 32px 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Portfolio navbar (hidden on print) -->
-  <header class="navbar scrolled" role="banner">
-    <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="Back to portfolio">
-        <span class="logo-text">IL</span>
-      </a>
-      <div style="flex:1"></div>
-      <div class="lang-toggle">
-        <a href="cv-fr.html" class="lang-btn">FR</a>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn active">EN</button>
-      </div>
+  <nav class="cv-nav">
+    <a href="index.html">← Portfolio</a>
+    <div class="cv-nav__lang">
+      <a href="cv-fr.html">FR</a>
+      <span class="sep">|</span>
+      <span class="active">EN</span>
     </div>
-  </header>
+    <button class="cv-nav__print" onclick="window.print()">Print / PDF</button>
+  </nav>
 
-  <div class="cv-wrapper">
+  <div class="label">Curriculum Vitae</div>
+  <div class="badge">ATS-FRIENDLY</div>
 
-    <!-- Action bar -->
-    <div class="cv-topbar">
-      <a href="index.html" class="cv-topbar__back">
-        ← Back to portfolio
-      </a>
-      <div class="cv-topbar__right">
-        <div class="cv-lang-toggle">
-          <a href="cv-fr.html" class="cv-lang-btn">FR</a>
-          <span class="cv-lang-sep">|</span>
-          <span class="cv-lang-btn active">EN</span>
-        </div>
-        <button class="cv-print-btn" onclick="window.print()">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <polyline points="6,9 6,2 18,2 18,9"/>
-            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
-            <rect x="6" y="14" width="12" height="8"/>
-          </svg>
-          Print / PDF
-        </button>
+  <div class="cv-page">
+
+    <div class="cv-header">
+      <div class="cv-name">Ilan Jaffeux-Cheniout</div>
+      <div class="cv-title">AI Engineer — Master's in Artificial Intelligence</div>
+      <div class="cv-contact">
+        <span><div class="cv-contact-dot"></div> +33 7 83 49 65 30</span>
+        <span><div class="cv-contact-dot"></div> ilanjaffeuxcheniout@gmail.com</span>
+        <span><div class="cv-contact-dot"></div> linkedin.com/in/ilanjafchen</span>
+        <span><div class="cv-contact-dot"></div> github.com/Ilannnnnnn</span>
       </div>
     </div>
 
-    <!-- CV Sheet -->
-    <div class="cv-page">
+    <div class="cv-section">
+      <div class="cv-section-title">Work Experience</div>
 
-      <div class="cv-header">
-        <div class="cv-name">Ilan Jaffeux-Cheniout</div>
-        <div class="cv-title">AI Engineer — Master's in Artificial Intelligence</div>
-        <div class="cv-contact">
-          <span><span class="cv-contact-dot"></span> +33 7 83 49 65 30</span>
-          <span><span class="cv-contact-dot"></span> <a href="mailto:ilanjaffeuxcheniout@gmail.com">ilanjaffeuxcheniout@gmail.com</a></span>
-          <span><span class="cv-contact-dot"></span> <a href="https://linkedin.com/in/ilanjafchen" target="_blank" rel="noopener">linkedin.com/in/ilanjafchen</a></span>
-          <span><span class="cv-contact-dot"></span> <a href="https://github.com/Ilannnnnnn" target="_blank" rel="noopener">github.com/Ilannnnnnn</a></span>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">AI Engineer Apprentice — Network Analysis</div>
+          <div class="cv-entry-date">Sept. 2025 – Sept. 2026</div>
         </div>
+        <div class="cv-entry-sub">Orange, Lannion</div>
+        <ul class="cv-entry-bullets">
+          <li><strong>Wireshark trace analysis:</strong> Development of <strong>models and agents</strong> for anomaly detection based on network packet behaviour.</li>
+          <li><strong>LLM fine-tuning:</strong> Model adaptation via <strong>LoRA/QLoRA</strong> (HuggingFace) to automate technical diagnostics.</li>
+          <li><strong>Pipeline creation:</strong> Prototyping and building a phone call transcription and summarisation pipeline via API.</li>
+        </ul>
       </div>
 
-      <!-- Work Experience -->
-      <div class="cv-section">
-        <div class="cv-section-title">Work Experience</div>
-
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">AI Engineer Apprentice — Network Analysis</div>
-            <div class="cv-entry-date">Sept. 2025 – Sept. 2026</div>
-          </div>
-          <div class="cv-entry-sub">Orange, Lannion</div>
-          <ul class="cv-entry-bullets">
-            <li><strong>Wireshark trace analysis:</strong> Development of <strong>models and agents</strong> for anomaly detection based on network packet behaviour.</li>
-            <li><strong>LLM fine-tuning:</strong> Model adaptation via <strong>LoRA/QLoRA</strong> (HuggingFace) to automate technical diagnostics.</li>
-            <li><strong>Pipeline creation:</strong> Prototyping and building a phone call transcription and summarisation pipeline via API.</li>
-          </ul>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Research Intern — Sleep Apnoea Detection</div>
+          <div class="cv-entry-date">May – Sept. 2025</div>
         </div>
-
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">Research Intern — Sleep Apnoea Detection</div>
-            <div class="cv-entry-date">May – Sept. 2025</div>
-          </div>
-          <div class="cv-entry-sub">Cardiology Department, ULB (Université Libre de Bruxelles)</div>
-          <ul class="cv-entry-bullets">
-            <li><strong>CNN/RNN modelling:</strong> Architecture design via <strong>PyTorch</strong> &amp; <strong>GoogLeNet fine-tuning</strong> to identify sleep apnoea patterns.</li>
-            <li><strong>Signal processing:</strong> Feature extraction and EEG/ECG signal cleaning using <strong>Matlab</strong>.</li>
-          </ul>
-        </div>
-
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">Freelance Developer — MotoWest</div>
-            <div class="cv-entry-date">Jan. – Nov. 2025</div>
-          </div>
-          <ul class="cv-entry-bullets">
-            <li><strong>E-commerce &amp; Ops:</strong> Full deployment of an e-commerce platform using <strong>Django</strong>, <strong>PostgreSQL</strong>, and <strong>Docker</strong> containers.</li>
-            <li><strong>Autonomous design and deployment</strong>: full ownership of the product lifecycle.</li>
-          </ul>
-        </div>
+        <div class="cv-entry-sub">Cardiology Department, ULB (Université Libre de Bruxelles)</div>
+        <ul class="cv-entry-bullets">
+          <li><strong>CNN/RNN modelling:</strong> Architecture design via <strong>PyTorch</strong> &amp; <strong>GoogLeNet fine-tuning</strong> to identify sleep apnoea patterns.</li>
+          <li><strong>Signal processing:</strong> Feature extraction and EEG/ECG signal cleaning using <strong>Matlab</strong>.</li>
+        </ul>
       </div>
 
-      <!-- Education -->
-      <div class="cv-section">
-        <div class="cv-section-title">Education</div>
-
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">Engineering Degree — Master's in Artificial Intelligence</div>
-            <div class="cv-entry-date">2020 – 2026</div>
-          </div>
-          <div class="cv-entry-sub">ISEN Yncrea Ouest, Brest — AI specialisation, Apprenticeship track</div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Freelance Developer — MotoWest</div>
+          <div class="cv-entry-date">Jan. – Nov. 2025</div>
         </div>
+        <ul class="cv-entry-bullets">
+          <li><strong>E-commerce &amp; Ops:</strong> Full deployment of an e-commerce platform using <strong>Django</strong>, <strong>PostgreSQL</strong> and <strong>Docker</strong> containers.</li>
+          <li><strong>Autonomous design and deployment</strong>: full ownership of the product lifecycle.</li>
+        </ul>
+      </div>
+    </div>
 
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">French Scientific Baccalaureate — With Honours</div>
-            <div class="cv-entry-date">2020</div>
-          </div>
+    <div class="cv-section">
+      <div class="cv-section-title">Education</div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Engineering Degree — Master's in Artificial Intelligence</div>
+          <div class="cv-entry-date">2020 – 2026</div>
+        </div>
+        <div class="cv-entry-sub">ISEN Yncrea Ouest, Brest — AI specialisation, Apprenticeship track</div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">French Scientific Baccalaureate — With Honours</div>
+          <div class="cv-entry-date">2020</div>
         </div>
       </div>
+    </div>
 
-      <!-- Projects -->
-      <div class="cv-section">
-        <div class="cv-section-title">Projects</div>
+    <div class="cv-section">
+      <div class="cv-section-title">Projects</div>
 
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">LinkedIn Agent — LangGraph Automation</div>
-            <div class="cv-entry-date">2026</div>
-          </div>
-          <ul class="cv-entry-bullets">
-            <li>AI agent for LinkedIn monitoring and automation (LangGraph, LLM, Python).</li>
-          </ul>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">LinkedIn Agent — LangGraph Automation</div>
+          <div class="cv-entry-date">2026</div>
         </div>
-
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">GWARM — Bioinformatics &amp; ML</div>
-            <div class="cv-entry-date">2025</div>
-          </div>
-          <ul class="cv-entry-bullets">
-            <li>ML predictive strategy for enzymatic stability (Python, PyTorch, NumPy, Pandas).</li>
-          </ul>
-        </div>
-
-        <div class="cv-entry">
-          <div class="cv-entry-header">
-            <div class="cv-entry-title">Real-Time Object Detection</div>
-            <div class="cv-entry-date">2024</div>
-          </div>
-          <ul class="cv-entry-bullets">
-            <li>Visual recognition and real-time analysis with YOLOv8 (Python, Roboflow).</li>
-          </ul>
-        </div>
+        <ul class="cv-entry-bullets">
+          <li>AI agent for LinkedIn monitoring and automation (LangGraph, LLM, Python).</li>
+        </ul>
       </div>
 
-      <!-- Skills -->
-      <div class="cv-section">
-        <div class="cv-section-title">Technical Skills</div>
-        <div class="skills-grid">
-          <div class="skill-row">
-            <span class="skill-category">AI / ML</span>
-            <span class="skill-list">PyTorch · TensorFlow · HuggingFace · Scikit-learn · YOLO &amp; Computer Vision · LangGraph · LoRA &amp; Fine-tuning · NumPy</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-category">Languages</span>
-            <span class="skill-list">Python · JavaScript · SQL · R · Matlab · C/C++</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-category">Infrastructure</span>
-            <span class="skill-list">Docker · Git · PostgreSQL · Django · Linux</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-category">Cloud &amp; Network</span>
-            <span class="skill-list">AWS · Azure · Wireshark · Packet analysis · Telecommunications</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-category">Languages</span>
-            <span class="skill-list">French (native) · English (fluent) · Spanish (intermediate)</span>
-          </div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">GWARM — Bioinformatics &amp; ML</div>
+          <div class="cv-entry-date">2025</div>
         </div>
+        <ul class="cv-entry-bullets">
+          <li>ML predictive strategy for enzymatic stability (Python, PyTorch, NumPy, Pandas).</li>
+        </ul>
       </div>
 
-    </div><!-- /.cv-page -->
-  </div><!-- /.cv-wrapper -->
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Real-Time Object Detection</div>
+          <div class="cv-entry-date">2024</div>
+        </div>
+        <ul class="cv-entry-bullets">
+          <li>Visual recognition and real-time analysis with YOLOv8 (Python, Roboflow).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-category">AI / ML</span>
+          <span class="skill-list">PyTorch · TensorFlow · HuggingFace · Scikit-learn · YOLO &amp; Computer Vision · LangGraph · LoRA &amp; Fine-tuning · NumPy</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Languages</span>
+          <span class="skill-list">Python · JavaScript · SQL · R · Matlab · C/C++</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Infrastructure</span>
+          <span class="skill-list">Docker · Git · PostgreSQL · Django · Linux</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Cloud &amp; Network</span>
+          <span class="skill-list">AWS · Azure · Wireshark · Packet analysis · Telecommunications</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Languages</span>
+          <span class="skill-list">French (native) · English (fluent) · Spanish (intermediate)</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.cv-page -->
 
 </body>
 </html>
