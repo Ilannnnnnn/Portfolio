@@ -134,26 +134,29 @@ ul, ol { list-style: none; }
   max-width: 1100px;
   margin: 0 auto;
   height: 100%;
-  padding: 0 var(--spacing-6);
-  display: flex;
+  padding: 0 var(--spacing-8);
+  /* Grid 3 colonnes : logo | nav | controls */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: var(--spacing-8);
 }
 
-/* Logo */
-.navbar__logo { flex-shrink: 0; }
+/* Logo — colonne gauche */
+.navbar__logo {
+  justify-self: start;
+}
 
 .logo-text {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border: 1.5px solid var(--color-text);
   border-radius: var(--radius-sm);
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text);
   letter-spacing: 0.04em;
   transition: background var(--transition-fast), color var(--transition-fast);
@@ -164,12 +167,12 @@ ul, ol { list-style: none; }
   color: var(--color-bg);
 }
 
-/* Navigation desktop */
+/* Navigation desktop — colonne centrale */
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-6);
-  margin-left: auto;
+  gap: var(--spacing-8);
+  justify-self: center;
 }
 
 .nav-link {
@@ -196,11 +199,12 @@ ul, ol { list-style: none; }
 .nav-link:hover { color: var(--color-text); }
 .nav-link:hover::after { width: 100%; }
 
-/* Contrôles langue + CV */
+/* Contrôles langue + CV — colonne droite */
 .navbar__controls {
   display: flex;
   align-items: center;
   gap: var(--spacing-4);
+  justify-self: end;
 }
 
 /* Toggle langue */
@@ -283,7 +287,7 @@ ul, ol { list-style: none; }
   height: 44px;
   padding: var(--spacing-2);
   border-radius: var(--radius-sm);
-  margin-left: auto;
+  justify-self: end; /* aligné à droite dans la grille */
 }
 
 .hamburger__line {
@@ -908,6 +912,11 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) {
   .navbar__nav, .navbar__controls { display: none; }
   .hamburger { display: flex; }
+  /* Sur mobile, grille → flex (logo + hamburger) */
+  .navbar__inner {
+    display: flex;
+    justify-content: space-between;
+  }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
