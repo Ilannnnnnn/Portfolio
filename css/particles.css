@@ -1,0 +1,53 @@
+/* =====================================================
+   particles.css — Styles du canvas de particules
+   Le canvas est géré par js/particles.js
+   ===================================================== */
+
+/* Canvas plein écran, positionné derrière le contenu hero */
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* Le canvas ne bloque pas les interactions */
+  display: block;
+}
+
+/* Dégradé radial au centre du hero pour améliorer la lisibilité du texte */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 50%,
+    rgba(10, 10, 15, 0.6) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Dégradé en bas du hero pour la transition vers la prochaine section */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--color-bg) 100%
+  );
+  pointer-events: none;
+}
+
+/* S'assurer que le contenu hero est au-dessus du canvas et des pseudo-éléments */
+.hero__content {
+  position: relative;
+  z-index: 2;
+}

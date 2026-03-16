@@ -1,0 +1,120 @@
+/* =====================================================
+   animations.css — Animations du portfolio
+   Scroll reveal via IntersectionObserver (main.js)
+   ===================================================== */
+
+/* -------------------------
+   Scroll Reveal (.reveal)
+   Classe appliquée dans le HTML.
+   JS ajoute .visible quand l'élément entre dans le viewport.
+------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  /* Délai en cascade via custom property --delay */
+  transition-delay: var(--delay, 0s);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------
+   Fade-in + slide-up pour le hero
+   (appliqué via .reveal avec délais progressifs)
+------------------------- */
+.hero .availability-badge.reveal   { --delay: 0s;    }
+.hero .hero__name.reveal           { --delay: 0.1s;  }
+.hero .hero__subtitle.reveal       { --delay: 0.2s;  }
+.hero .hero__desc.reveal           { --delay: 0.3s;  }
+.hero .hero__ctas.reveal           { --delay: 0.4s;  }
+
+/* -------------------------
+   Transitions Navbar
+   (scroll → semi-opaque géré en JS)
+------------------------- */
+@keyframes navbarFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------
+   Hover glow sur les project-cards
+   (déjà dans style.css, ici on ajoute l'effet ripple)
+------------------------- */
+@keyframes cardGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(108, 99, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+}
+
+/* -------------------------
+   Animation d'entrée du logo
+------------------------- */
+.navbar__logo {
+  animation: navbarFadeIn 0.5s ease-out;
+}
+
+/* -------------------------
+   Pulse du point de disponibilité
+   (défini dans style.css, repris ici pour référence)
+------------------------- */
+/* @keyframes pulse-green → voir style.css */
+
+/* -------------------------
+   Gradient animé en fond (optionnel, subtle)
+   Appliqué sur le hero via la classe .hero
+------------------------- */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* -------------------------
+   Smooth underline sur les nav links
+   (déjà dans style.css via ::after)
+------------------------- */
+
+/* -------------------------
+   Transition des cv-pills
+------------------------- */
+.cv-pill {
+  transition:
+    color        0.15s ease,
+    border-color 0.15s ease,
+    background   0.15s ease,
+    box-shadow   0.25s ease;
+}
+
+/* -------------------------
+   Apparition du drawer mobile
+------------------------- */
+@keyframes drawerSlideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* -------------------------
+   Skeleton loading (optionnel, utilisé si JS met du temps)
+------------------------- */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}

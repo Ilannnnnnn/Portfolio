@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio d'Ilan — Ingénieur IA, alternant Orange, spécialiste LLM et analyse réseau." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ilannnnnnn.github.io/Portfolio" />
+  <meta property="og:title" content="Ilan — Ingénieur IA" />
+  <meta property="og:description" content="Portfolio d'Ilan — Ingénieur IA, alternant Orange, spécialiste LLM et analyse réseau." />
+  <meta property="og:image" content="https://ilannnnnnn.github.io/Portfolio/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ilan — Ingénieur IA" />
+  <meta name="twitter:description" content="Portfolio d'Ilan — Ingénieur IA, alternant Orange, spécialiste LLM et analyse réseau." />
+  <title data-i18n="pageTitle">Ilan — Ingénieur IA</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Feuilles de styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/particles.css" />
+</head>
+<body>
+
+  <!-- ============================
+       NAVBAR
+  ============================= -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="Accueil">
+        <span class="logo-text">IL</span>
+      </a>
+
+      <!-- Navigation principale (desktop) -->
+      <nav class="navbar__nav" role="navigation" aria-label="Navigation principale">
+        <a href="#projects" class="nav-link" data-i18n="navProjects">Projets</a>
+        <a href="#skills"   class="nav-link" data-i18n="navSkills">Compétences</a>
+        <a href="#experience" class="nav-link" data-i18n="navExperience">Expériences</a>
+        <a href="#contact"  class="nav-link" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <!-- Contrôles langue + CV -->
+      <div class="navbar__controls">
+        <!-- Toggle de langue du portfolio -->
+        <div class="lang-toggle" role="group" aria-label="Langue du portfolio">
+          <button class="lang-btn" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Pills CV (indépendants du toggle langue) -->
+        <div class="cv-pills" role="group" aria-label="Télécharger le CV">
+          <a href="cv-fr.html" class="cv-pill" id="cv-pill-fr" target="_blank" rel="noopener" data-i18n="cvFrLabel">CV·FR</a>
+          <span class="cv-sep" aria-hidden="true">|</span>
+          <a href="cv-en.html" class="cv-pill" id="cv-pill-en" target="_blank" rel="noopener" data-i18n="cvEnLabel">CV·EN</a>
+        </div>
+      </div>
+
+      <!-- Bouton hamburger (mobile) -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+
+    <!-- Drawer mobile -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Menu mobile" aria-hidden="true">
+      <nav class="mobile-drawer__nav" aria-label="Navigation mobile">
+        <a href="#projects"   class="mobile-nav-link" data-i18n="navProjects">Projets</a>
+        <a href="#skills"     class="mobile-nav-link" data-i18n="navSkills">Compétences</a>
+        <a href="#experience" class="mobile-nav-link" data-i18n="navExperience">Expériences</a>
+        <a href="#contact"    class="mobile-nav-link" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="mobile-drawer__footer">
+        <!-- Toggle langue (mobile) -->
+        <div class="lang-toggle" role="group" aria-label="Langue du portfolio">
+          <button class="lang-btn" data-lang="fr" id="btn-lang-fr-mobile" aria-pressed="true">FR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="en" id="btn-lang-en-mobile" aria-pressed="false">EN</button>
+        </div>
+        <!-- Pills CV (mobile) -->
+        <div class="cv-pills" role="group">
+          <a href="cv-fr.html" class="cv-pill" id="cv-pill-fr-mobile" target="_blank" rel="noopener">CV·FR</a>
+          <span class="cv-sep" aria-hidden="true">|</span>
+          <a href="cv-en.html" class="cv-pill" id="cv-pill-en-mobile" target="_blank" rel="noopener">CV·EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================
+         SECTION HERO
+    ============================= -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <!-- Canvas des particules (géré par particles.js) -->
+      <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero__content">
+        <!-- Badge disponibilité -->
+        <div class="availability-badge">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span data-i18n="heroAvailable">Disponible</span>
+        </div>
+
+        <!-- Nom -->
+        <h1 class="hero__name reveal">
+          Ilan <span class="hero__surname">[NOM]</span>
+        </h1>
+
+        <!-- Sous-titre -->
+        <p class="hero__subtitle reveal" data-i18n="heroSubtitle">Ingénieur IA</p>
+
+        <!-- Description courte -->
+        <p class="hero__desc reveal" data-i18n="heroDesc">
+          Étudiant en 5ème année d'ingénierie IA à ISEN Brest, alternant chez Orange sur des sujets LLM et analyse de traces réseau.
+        </p>
+
+        <!-- Boutons CTA -->
+        <div class="hero__ctas reveal">
+          <a href="#projects" class="btn btn--primary" data-i18n="heroCtaProjects">Voir mes projets</a>
+          <a href="assets/cv.pdf" class="btn btn--secondary" download data-i18n="heroCtaDownload">Télécharger CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION PROJETS
+    ============================= -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section__inner">
+        <h2 class="section__title reveal" id="projects-title">
+          <span data-i18n="sectionProjects">Projets</span>
+        </h2>
+
+        <div class="projects-grid">
+
+          <!-- Projet 1 : FitIA -->
+          <article class="project-card reveal" style="--delay: 0s">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🏋️</span>
+              <h3 class="project-card__title">FitIA</h3>
+            </div>
+            <p class="project-card__desc" data-i18n="proj1Desc">
+              Application de coaching fitness propulsée par IA
+            </p>
+            <div class="project-card__tags" aria-label="Technologies utilisées">
+              <span class="tag">RAG</span>
+              <span class="tag">Weaviate</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Python</span>
+              <span class="tag">LangChain</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Ilannnnnnn" class="project-link" target="_blank" rel="noopener" aria-label="GitHub FitIA">
+                <!-- Icône GitHub SVG inline -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link project-link--demo" aria-label="Démo FitIA">
+                <!-- Icône démo SVG inline -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                <span data-i18n="projectDemo">Démo</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Projet 2 : LLM Network Analysis -->
+          <article class="project-card reveal" style="--delay: 0.15s">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🔬</span>
+              <h3 class="project-card__title">LLM Network Analysis</h3>
+            </div>
+            <p class="project-card__desc" data-i18n="proj2Desc">
+              Analyse de traces réseau avec des LLMs pour Orange
+            </p>
+            <div class="project-card__tags" aria-label="Technologies utilisées">
+              <span class="tag">Wireshark</span>
+              <span class="tag">LLM</span>
+              <span class="tag">LoRA</span>
+              <span class="tag">QLoRA</span>
+              <span class="tag">Orange</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="project-link" aria-label="GitHub LLM Network Analysis">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link project-link--demo" aria-label="Démo LLM Network Analysis">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                <span data-i18n="projectDemo">Démo</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Projet 3 : Placeholder -->
+          <article class="project-card reveal" style="--delay: 0.3s">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🚀</span>
+              <h3 class="project-card__title" data-i18n="proj3Title">[Projet 3]</h3>
+            </div>
+            <p class="project-card__desc" data-i18n="proj3Desc">
+              [Description du projet à compléter]
+            </p>
+            <div class="project-card__tags" aria-label="Technologies utilisées">
+              <span class="tag">[Tag 1]</span>
+              <span class="tag">[Tag 2]</span>
+              <span class="tag">[Tag 3]</span>
+            </div>
+            <div class="project-card__links">
+              <a href="#" class="project-link" aria-label="GitHub Projet 3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="#" class="project-link project-link--demo" aria-label="Démo Projet 3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                  <polyline points="15,3 21,3 21,9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                <span data-i18n="projectDemo">Démo</span>
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.projects-grid -->
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION COMPÉTENCES
+    ============================= -->
+    <section class="section section--alt" id="skills" aria-labelledby="skills-title">
+      <div class="section__inner">
+        <h2 class="section__title reveal" id="skills-title">
+          <span data-i18n="sectionSkills">Compétences</span>
+        </h2>
+
+        <div class="skills-grid">
+
+          <!-- Catégorie : IA & ML -->
+          <div class="skill-category reveal" style="--delay: 0s">
+            <h3 class="skill-category__title skill-category__title--ai" data-i18n="skillsCatAI">IA & ML</h3>
+            <div class="skill-badges">
+              <span class="badge badge--ai">Python</span>
+              <span class="badge badge--ai">PyTorch</span>
+              <span class="badge badge--ai">HuggingFace</span>
+              <span class="badge badge--ai">LoRA / QLoRA</span>
+              <span class="badge badge--ai">RAG</span>
+              <span class="badge badge--ai">LangChain</span>
+              <span class="badge badge--ai">Weaviate</span>
+            </div>
+          </div>
+
+          <!-- Catégorie : Data & Infra -->
+          <div class="skill-category reveal" style="--delay: 0.1s">
+            <h3 class="skill-category__title skill-category__title--data" data-i18n="skillsCatData">Data & Infra</h3>
+            <div class="skill-badges">
+              <span class="badge badge--data">Docker</span>
+              <span class="badge badge--data">WSL</span>
+              <span class="badge badge--data">Git</span>
+              <span class="badge badge--data">SQL</span>
+              <span class="badge badge--data">Hadoop</span>
+              <span class="badge badge--data">Linux</span>
+            </div>
+          </div>
+
+          <!-- Catégorie : Réseau -->
+          <div class="skill-category reveal" style="--delay: 0.2s">
+            <h3 class="skill-category__title skill-category__title--network" data-i18n="skillsCatNetwork">Réseau</h3>
+            <div class="skill-badges">
+              <span class="badge badge--network">Wireshark</span>
+              <span class="badge badge--network">tshark</span>
+              <span class="badge badge--network">PCAP</span>
+              <span class="badge badge--network">TCP/IP</span>
+              <span class="badge badge--network">Protocoles télécom</span>
+            </div>
+          </div>
+
+          <!-- Catégorie : Web & API -->
+          <div class="skill-category reveal" style="--delay: 0.3s">
+            <h3 class="skill-category__title skill-category__title--web" data-i18n="skillsCatWeb">Web & API</h3>
+            <div class="skill-badges">
+              <span class="badge badge--web">FastAPI</span>
+              <span class="badge badge--web">HTML / CSS / JS</span>
+              <span class="badge badge--web">REST APIs</span>
+              <span class="badge badge--web">OpenRouter</span>
+            </div>
+          </div>
+
+        </div><!-- /.skills-grid -->
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION EXPÉRIENCES
+    ============================= -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section__inner">
+        <h2 class="section__title reveal" id="experience-title">
+          <span data-i18n="sectionExperience">Expériences</span>
+        </h2>
+
+        <div class="timeline">
+
+          <!-- Entrée 1 : Orange -->
+          <article class="timeline-item reveal" style="--delay: 0s">
+            <div class="timeline-item__dot" aria-hidden="true">
+              <span class="timeline-item__initials">OR</span>
+            </div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title" data-i18n="exp1Title">Ingénieur IA en alternance</h3>
+                <span class="timeline-item__company">Orange</span>
+              </div>
+              <div class="timeline-item__meta">
+                <span class="timeline-item__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  Lannion, France
+                </span>
+                <span class="timeline-item__dates" data-i18n="exp1Dates">Sept. 2024 – Présent</span>
+              </div>
+              <p class="timeline-item__desc" data-i18n="exp1Desc">
+                Fine-tuning LLM (LoRA/QLoRA), analyse de traces réseau Wireshark, développement de pipelines IA et API.
+              </p>
+            </div>
+          </article>
+
+          <!-- Entrée 2 : ISEN Brest -->
+          <article class="timeline-item reveal" style="--delay: 0.15s">
+            <div class="timeline-item__dot" aria-hidden="true">
+              <span class="timeline-item__initials">IS</span>
+            </div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title" data-i18n="exp2Title">Diplôme d'Ingénieur, spécialité IA</h3>
+                <span class="timeline-item__company">ISEN Brest</span>
+              </div>
+              <div class="timeline-item__meta">
+                <span class="timeline-item__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  Brest, France
+                </span>
+                <span class="timeline-item__dates" data-i18n="exp2Dates">2020 – 2025</span>
+              </div>
+              <p class="timeline-item__desc" data-i18n="exp2Desc">
+                Formation d'ingénieur en intelligence artificielle.
+              </p>
+            </div>
+          </article>
+
+          <!-- Entrée 3 : Placeholder -->
+          <article class="timeline-item reveal" style="--delay: 0.3s">
+            <div class="timeline-item__dot" aria-hidden="true">
+              <span class="timeline-item__initials">??</span>
+            </div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__header">
+                <h3 class="timeline-item__title" data-i18n="exp3Title">[Titre du poste]</h3>
+                <span class="timeline-item__company">[Entreprise]</span>
+              </div>
+              <div class="timeline-item__meta">
+                <span class="timeline-item__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  [Ville, Pays]
+                </span>
+                <span class="timeline-item__dates" data-i18n="exp3Dates">[Dates]</span>
+              </div>
+              <p class="timeline-item__desc" data-i18n="exp3Desc">
+                [Description de l'expérience à compléter]
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /.timeline -->
+      </div>
+    </section>
+
+    <!-- ============================
+         SECTION CONTACT
+    ============================= -->
+    <section class="section section--alt" id="contact" aria-labelledby="contact-title">
+      <div class="section__inner">
+        <h2 class="section__title reveal" id="contact-title">
+          <span data-i18n="sectionContact">Contact</span>
+        </h2>
+
+        <div class="contact-layout">
+
+          <!-- Texte d'accroche -->
+          <div class="contact-text reveal" style="--delay: 0s">
+            <p class="contact-tagline" data-i18n="contactTagline">
+              Intéressé par une collaboration ou un échange ? N'hésitez pas à me contacter.
+            </p>
+            <p class="contact-sub" data-i18n="contactSub">
+              Disponible pour des opportunités en IA, NLP et ingénierie logicielle.
+            </p>
+          </div>
+
+          <!-- Liens de contact -->
+          <div class="contact-links reveal" style="--delay: 0.15s">
+
+            <!-- Email -->
+            <a href="mailto:[placeholder]@email.com" class="contact-card" aria-label="Envoyer un email">
+              <div class="contact-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <polyline points="2,4 12,13 22,4"/>
+                </svg>
+              </div>
+              <div class="contact-card__info">
+                <span class="contact-card__label" data-i18n="contactEmail">Email</span>
+                <span class="contact-card__value">[placeholder]@email.com</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/[placeholder]" class="contact-card" target="_blank" rel="noopener" aria-label="Profil LinkedIn">
+              <div class="contact-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              <div class="contact-card__info">
+                <span class="contact-card__label">LinkedIn</span>
+                <span class="contact-card__value">linkedin.com/in/[placeholder]</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Ilannnnnnn" class="contact-card" target="_blank" rel="noopener" aria-label="Profil GitHub">
+              <div class="contact-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="contact-card__info">
+                <span class="contact-card__label">GitHub</span>
+                <span class="contact-card__value">github.com/Ilannnnnnn</span>
+              </div>
+            </a>
+
+          </div><!-- /.contact-links -->
+        </div><!-- /.contact-layout -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================
+       FOOTER
+  ============================= -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer__text" data-i18n="footerText">Fait avec ❤️ par Ilan · 2025</p>
+    <a href="https://github.com/Ilannnnnnn/Portfolio" class="footer__link" target="_blank" rel="noopener" data-i18n="footerSource">
+      Code source
+    </a>
+  </footer>
+
+  <!-- Scripts (type="module" pour l'isolation de scope) -->
+  <script type="module" src="js/translations.js"></script>
+  <script type="module" src="js/particles.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

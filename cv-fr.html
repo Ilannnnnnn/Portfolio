@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV d'Ilan — Ingénieur IA, alternant Orange Lannion, spécialiste LLM et analyse réseau." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ilannnnnnn.github.io/Portfolio/cv-fr.html" />
+  <meta property="og:title" content="CV — Ilan, Ingénieur IA" />
+  <meta property="og:description" content="CV d'Ilan — Ingénieur IA en alternance chez Orange." />
+  <title>CV FR — Ilan, Ingénieur IA</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Styles partagés avec le portfolio -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* -------------------------------------------------------
+       Styles spécifiques aux pages CV
+       Héritent des variables de style.css — ne pas hardcoder.
+    ------------------------------------------------------- */
+
+    /* Contenu centré, largeur papier */
+    .cv-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: calc(var(--navbar-height) + var(--spacing-12)) var(--spacing-6) var(--spacing-16);
+    }
+
+    /* En-tête CV */
+    .cv-header {
+      margin-bottom: var(--spacing-8);
+      padding-bottom: var(--spacing-8);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .cv-header__name {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-2);
+    }
+
+    .cv-header__name span {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cv-header__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .cv-header__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-4);
+    }
+
+    .cv-header__meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-2);
+      font-size: var(--text-sm);
+      font-family: var(--font-mono);
+      color: var(--color-text-muted);
+    }
+
+    .cv-header__meta-item a {
+      color: var(--color-accent);
+      transition: color var(--transition-fast);
+    }
+
+    .cv-header__meta-item a:hover {
+      color: var(--color-accent-cyan);
+    }
+
+    /* Sections CV */
+    .cv-section {
+      margin-bottom: var(--spacing-10);
+    }
+
+    .cv-section__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--spacing-5);
+      padding-bottom: var(--spacing-2);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* Entrées d'expérience / formation */
+    .cv-entry {
+      margin-bottom: var(--spacing-6);
+    }
+
+    .cv-entry__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: var(--spacing-2);
+      margin-bottom: var(--spacing-1);
+    }
+
+    .cv-entry__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: 600;
+    }
+
+    .cv-entry__dates {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    .cv-entry__company {
+      font-size: var(--text-sm);
+      color: var(--color-accent-cyan);
+      font-weight: 500;
+      margin-bottom: var(--spacing-2);
+    }
+
+    .cv-entry__location {
+      font-size: var(--text-xs);
+      font-family: var(--font-mono);
+      color: var(--color-text-muted);
+      margin-bottom: var(--spacing-3);
+    }
+
+    .cv-entry__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    .cv-entry__bullets {
+      padding-left: var(--spacing-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-1);
+    }
+
+    .cv-entry__bullets li {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      list-style: disc;
+    }
+
+    /* Grille de compétences CV */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-4);
+    }
+
+    .cv-skill-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-2);
+    }
+
+    .cv-skill-group__title {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+
+    .cv-skill-group__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-2);
+    }
+
+    /* Projets CV */
+    .cv-project {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-card);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-4);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .cv-project__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: 600;
+      margin-bottom: var(--spacing-1);
+    }
+
+    .cv-project__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--spacing-3);
+    }
+
+    /* Langues */
+    .cv-langs {
+      display: flex;
+      gap: var(--spacing-4);
+      flex-wrap: wrap;
+    }
+
+    .cv-lang {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-1);
+    }
+
+    .cv-lang__name {
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    .cv-lang__level {
+      font-size: var(--text-xs);
+      font-family: var(--font-mono);
+      color: var(--color-text-muted);
+    }
+
+    /* Bouton d'impression */
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-2);
+      padding: var(--spacing-3) var(--spacing-6);
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-cyan));
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-base);
+      min-height: 44px;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--color-accent-glow);
+    }
+
+    /* -------------------------------------------------------
+       @media print — Impression / Export PDF
+    ------------------------------------------------------- */
+    @media print {
+      /* Masquer la navbar et le bouton d'impression */
+      .navbar,
+      .print-actions { display: none !important; }
+
+      /* Fond blanc, texte noir */
+      body {
+        background: #fff !important;
+        color: #111 !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+
+      /* Supprimer les couleurs de fond des cards */
+      .cv-project,
+      .cv-skill-group {
+        background: none !important;
+        border-color: #ddd !important;
+      }
+
+      /* Marges papier adaptées */
+      .cv-page {
+        padding: 20mm 15mm !important;
+        max-width: 100% !important;
+      }
+
+      /* Titres en noir */
+      .cv-header__name span,
+      .cv-section__title {
+        color: #111 !important;
+        -webkit-text-fill-color: #111 !important;
+        background: none !important;
+      }
+
+      .cv-header__title,
+      .cv-entry__company,
+      .cv-header__meta-item,
+      .cv-entry__dates {
+        color: #555 !important;
+      }
+
+      /* Badges en simple texte */
+      .badge, .tag {
+        background: none !important;
+        border: 1px solid #bbb !important;
+        color: #333 !important;
+      }
+
+      /* Sauts de page appropriés */
+      .cv-section {
+        page-break-inside: avoid;
+      }
+
+      a { color: #333 !important; text-decoration: none !important; }
+    }
+
+    @media (max-width: 600px) {
+      .cv-skills-grid { grid-template-columns: 1fr; }
+      .cv-entry__header { flex-direction: column; }
+      .cv-langs { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================
+       NAVBAR CV-FR
+  ============================= -->
+  <header class="navbar scrolled" id="navbar" role="banner">
+    <div class="navbar__inner">
+
+      <!-- Logo → retour au portfolio -->
+      <a href="index.html" class="navbar__logo" aria-label="Retour au portfolio">
+        <span class="logo-text">IL</span>
+      </a>
+
+      <!-- Lien retour -->
+      <a href="index.html" class="nav-link" style="margin-left: var(--spacing-4);">
+        ← Retour au portfolio
+      </a>
+
+      <!-- Spacer -->
+      <div style="flex: 1;"></div>
+
+      <!-- Toggle langue CV -->
+      <div class="lang-toggle" role="group" aria-label="Langue du CV">
+        <span class="lang-btn active" aria-current="page">FR</span>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <a href="cv-en.html" class="lang-btn" aria-label="Version anglaise du CV">EN</a>
+      </div>
+
+      <!-- Bouton impression -->
+      <div class="print-actions" style="margin-left: var(--spacing-4);">
+        <button class="print-btn" onclick="window.print()" aria-label="Imprimer ou télécharger en PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="6,9 6,2 18,2 18,9"/>
+            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Imprimer / PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="cv-page">
+
+      <!-- ============================
+           EN-TÊTE
+      ============================= -->
+      <header class="cv-header">
+        <h1 class="cv-header__name">Ilan <span>[NOM]</span></h1>
+        <p class="cv-header__title">Ingénieur IA | Alternant Orange</p>
+        <div class="cv-header__meta">
+          <span class="cv-header__meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
+            </svg>
+            <a href="mailto:[placeholder]@email.com">[placeholder]@email.com</a>
+          </span>
+          <span class="cv-header__meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+            <a href="https://linkedin.com/in/[placeholder]" target="_blank" rel="noopener">linkedin.com/in/[placeholder]</a>
+          </span>
+          <span class="cv-header__meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <a href="https://github.com/Ilannnnnnn" target="_blank" rel="noopener">github.com/Ilannnnnnn</a>
+          </span>
+          <span class="cv-header__meta-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Brest, France
+          </span>
+        </div>
+      </header>
+
+      <!-- ============================
+           RÉSUMÉ / PROFIL
+      ============================= -->
+      <section class="cv-section" aria-labelledby="cv-profile">
+        <h2 class="cv-section__title" id="cv-profile">Profil</h2>
+        <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">
+          Étudiant en 5ème année d'ingénierie IA à ISEN Brest, en alternance chez Orange (Lannion)
+          sur des projets de fine-tuning de LLMs (LoRA/QLoRA), d'analyse de traces réseau avec Wireshark
+          et de développement de pipelines IA. Développeur de FitIA, une application de coaching fitness
+          propulsée par IA utilisant RAG, Weaviate et LangChain.
+        </p>
+      </section>
+
+      <!-- ============================
+           EXPÉRIENCES PROFESSIONNELLES
+      ============================= -->
+      <section class="cv-section" aria-labelledby="cv-experience">
+        <h2 class="cv-section__title" id="cv-experience">Expériences professionnelles</h2>
+
+        <!-- Orange -->
+        <article class="cv-entry">
+          <div class="cv-entry__header">
+            <h3 class="cv-entry__title">Ingénieur IA en alternance</h3>
+            <span class="cv-entry__dates">Sept. 2024 – Présent</span>
+          </div>
+          <div class="cv-entry__company">Orange</div>
+          <div class="cv-entry__location">Lannion, France</div>
+          <ul class="cv-entry__bullets">
+            <li>Fine-tuning de LLMs (LoRA, QLoRA) pour des cas d'usage réseau et télécom</li>
+            <li>Analyse de traces réseau (fichiers PCAP) avec Wireshark et tshark</li>
+            <li>Développement de pipelines IA et d'APIs (FastAPI, Python)</li>
+            <li>Recherche et expérimentation sur l'utilisation des LLMs pour l'analyse de protocoles télécom</li>
+          </ul>
+        </article>
+
+        <!-- Placeholder -->
+        <article class="cv-entry">
+          <div class="cv-entry__header">
+            <h3 class="cv-entry__title">[Titre du poste]</h3>
+            <span class="cv-entry__dates">[Dates]</span>
+          </div>
+          <div class="cv-entry__company">[Entreprise]</div>
+          <div class="cv-entry__location">[Ville, Pays]</div>
+          <p class="cv-entry__desc">[Description de l'expérience à compléter]</p>
+        </article>
+      </section>
+
+      <!-- ============================
+           FORMATION
+      ============================= -->
+      <section class="cv-section" aria-labelledby="cv-education">
+        <h2 class="cv-section__title" id="cv-education">Formation</h2>
+
+        <!-- ISEN Brest -->
+        <article class="cv-entry">
+          <div class="cv-entry__header">
+            <h3 class="cv-entry__title">Diplôme d'Ingénieur — Spécialité Intelligence Artificielle</h3>
+            <span class="cv-entry__dates">2020 – 2025</span>
+          </div>
+          <div class="cv-entry__company">ISEN Brest</div>
+          <div class="cv-entry__location">Brest, France</div>
+          <p class="cv-entry__desc">
+            Formation d'ingénieur en intelligence artificielle — machine learning, deep learning,
+            NLP, vision par ordinateur, systèmes embarqués et développement logiciel.
+          </p>
+        </article>
+
+        <!-- Placeholder -->
+        <article class="cv-entry">
+          <div class="cv-entry__header">
+            <h3 class="cv-entry__title">[Titre diplôme / formation]</h3>
+            <span class="cv-entry__dates">[Dates]</span>
+          </div>
+          <div class="cv-entry__company">[Établissement]</div>
+          <div class="cv-entry__location">[Ville, Pays]</div>
+          <p class="cv-entry__desc">[Description de la formation à compléter]</p>
+        </article>
+      </section>
+
+      <!-- ============================
+           COMPÉTENCES TECHNIQUES
+      ============================= -->
+      <section class="cv-section" aria-labelledby="cv-skills">
+        <h2 class="cv-section__title" id="cv-skills">Compétences techniques</h2>
+        <div class="cv-skills-grid">
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-group__title">IA & ML</span>
+            <div class="cv-skill-group__badges">
+              <span class="badge badge--ai">Python</span>
+              <span class="badge badge--ai">PyTorch</span>
+              <span class="badge badge--ai">HuggingFace</span>
+              <span class="badge badge--ai">LoRA / QLoRA</span>
+              <span class="badge badge--ai">RAG</span>
+              <span class="badge badge--ai">LangChain</span>
+              <span class="badge badge--ai">Weaviate</span>
+            </div>
+          </div>
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-group__title">Data & Infra</span>
+            <div class="cv-skill-group__badges">
+              <span class="badge badge--data">Docker</span>
+              <span class="badge badge--data">WSL</span>
+              <span class="badge badge--data">Git</span>
+              <span class="badge badge--data">SQL</span>
+              <span class="badge badge--data">Hadoop</span>
+              <span class="badge badge--data">Linux</span>
+            </div>
+          </div>
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-group__title">Réseau & Télécom</span>
+            <div class="cv-skill-group__badges">
+              <span class="badge badge--network">Wireshark</span>
+              <span class="badge badge--network">tshark</span>
+              <span class="badge badge--network">PCAP</span>
+              <span class="badge badge--network">TCP/IP</span>
+              <span class="badge badge--network">Protocoles télécom</span>
+            </div>
+          </div>
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-group__title">Web & API</span>
+            <div class="cv-skill-group__badges">
+              <span class="badge badge--web">FastAPI</span>
+              <span class="badge badge--web">HTML / CSS / JS</span>
+              <span class="badge badge--web">REST APIs</span>
+              <span class="badge badge--web">OpenRouter</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================
+           PROJETS NOTABLES
+      ============================= -->
+      <section class="cv-section" aria-labelledby="cv-projects">
+        <h2 class="cv-section__title" id="cv-projects">Projets notables</h2>
+
+        <div class="cv-project">
+          <h3 class="cv-project__title">FitIA</h3>
+          <p class="cv-project__desc">Application de coaching fitness propulsée par IA — pipeline RAG avec Weaviate, interface web et backend Python.</p>
+          <div style="display: flex; gap: var(--spacing-2); flex-wrap: wrap;">
+            <span class="tag">RAG</span>
+            <span class="tag">Weaviate</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Python</span>
+            <span class="tag">LangChain</span>
+          </div>
+        </div>
+
+        <div class="cv-project">
+          <h3 class="cv-project__title">LLM Network Analysis</h3>
+          <p class="cv-project__desc">Analyse de traces réseau (PCAP) avec des LLMs fine-tunés pour détecter et classifier des comportements réseau chez Orange.</p>
+          <div style="display: flex; gap: var(--spacing-2); flex-wrap: wrap;">
+            <span class="tag">Wireshark</span>
+            <span class="tag">LLM</span>
+            <span class="tag">LoRA</span>
+            <span class="tag">QLoRA</span>
+            <span class="tag">Orange</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================
+           LANGUES
+      ============================= -->
+      <section class="cv-section" aria-labelledby="cv-languages">
+        <h2 class="cv-section__title" id="cv-languages">Langues</h2>
+        <div class="cv-langs">
+          <div class="cv-lang">
+            <span class="cv-lang__name">Français</span>
+            <span class="cv-lang__level">Langue maternelle</span>
+          </div>
+          <div class="cv-lang">
+            <span class="cv-lang__name">Anglais</span>
+            <span class="cv-lang__level">Courant</span>
+          </div>
+          <div class="cv-lang">
+            <span class="cv-lang__name">[Autre langue]</span>
+            <span class="cv-lang__level">[Niveau — à compléter]</span>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.cv-page -->
+  </main>
+
+</body>
+</html>
