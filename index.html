@@ -25,81 +25,6 @@
 </head>
 <body>
 
-  <!-- ============================
-       NAVBAR
-  ============================= -->
-  <header class="navbar" id="navbar" role="banner">
-    <div class="navbar__inner">
-
-      <!-- Logo -->
-      <a href="index.html" class="navbar__logo" aria-label="Accueil">
-        <span class="logo-text">IL</span>
-      </a>
-
-      <!-- Navigation principale (desktop) -->
-      <nav class="navbar__nav" role="navigation" aria-label="Navigation principale">
-        <a href="#projects" class="nav-link" data-i18n="navProjects">Projets</a>
-        <a href="#skills"   class="nav-link" data-i18n="navSkills">Compétences</a>
-        <a href="#experience" class="nav-link" data-i18n="navExperience">Expériences</a>
-        <a href="#contact"  class="nav-link" data-i18n="navContact">Contact</a>
-      </nav>
-
-      <!-- Contrôles langue + CV -->
-      <div class="navbar__controls">
-        <!-- Toggle de langue du portfolio -->
-        <div class="lang-toggle" role="group" aria-label="Langue du portfolio">
-          <button class="lang-btn" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button class="lang-btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-
-        <!-- Pills CV (indépendants du toggle langue) -->
-        <div class="cv-pills" role="group" aria-label="Télécharger le CV">
-          <a href="cv-fr.html" class="cv-pill" id="cv-pill-fr" target="_blank" rel="noopener" data-i18n="cvFrLabel">CV·FR</a>
-          <span class="cv-sep" aria-hidden="true">|</span>
-          <a href="cv-en.html" class="cv-pill" id="cv-pill-en" target="_blank" rel="noopener" data-i18n="cvEnLabel">CV·EN</a>
-        </div>
-      </div>
-
-      <!-- Bouton hamburger (mobile) -->
-      <button
-        class="hamburger"
-        id="hamburger"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-        aria-controls="mobile-drawer"
-      >
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
-    </div>
-
-    <!-- Drawer mobile -->
-    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Menu mobile" aria-hidden="true">
-      <nav class="mobile-drawer__nav" aria-label="Navigation mobile">
-        <a href="#projects"   class="mobile-nav-link" data-i18n="navProjects">Projets</a>
-        <a href="#skills"     class="mobile-nav-link" data-i18n="navSkills">Compétences</a>
-        <a href="#experience" class="mobile-nav-link" data-i18n="navExperience">Expériences</a>
-        <a href="#contact"    class="mobile-nav-link" data-i18n="navContact">Contact</a>
-      </nav>
-      <div class="mobile-drawer__footer">
-        <!-- Toggle langue (mobile) -->
-        <div class="lang-toggle" role="group" aria-label="Langue du portfolio">
-          <button class="lang-btn" data-lang="fr" id="btn-lang-fr-mobile" aria-pressed="true">FR</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button class="lang-btn" data-lang="en" id="btn-lang-en-mobile" aria-pressed="false">EN</button>
-        </div>
-        <!-- Pills CV (mobile) -->
-        <div class="cv-pills" role="group">
-          <a href="cv-fr.html" class="cv-pill" id="cv-pill-fr-mobile" target="_blank" rel="noopener">CV·FR</a>
-          <span class="cv-sep" aria-hidden="true">|</span>
-          <a href="cv-en.html" class="cv-pill" id="cv-pill-en-mobile" target="_blank" rel="noopener">CV·EN</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <main>
 
     <!-- ============================
@@ -347,7 +272,7 @@
                   </svg>
                   Lannion, France
                 </span>
-                <span class="timeline-item__dates" data-i18n="exp1Dates">Sept. 2024 – Présent</span>
+                <span class="timeline-item__dates" data-i18n="exp1Dates">Sept. 2025 – Présent</span>
               </div>
               <p class="timeline-item__desc" data-i18n="exp1Desc">
                 Fine-tuning LLM (LoRA/QLoRA), analyse de traces réseau Wireshark, développement de pipelines IA et API.
@@ -372,7 +297,7 @@
                   </svg>
                   Brest, France
                 </span>
-                <span class="timeline-item__dates" data-i18n="exp2Dates">2020 – 2025</span>
+                <span class="timeline-item__dates" data-i18n="exp2Dates">2020 – 2026</span>
               </div>
               <p class="timeline-item__desc" data-i18n="exp2Desc">
                 Formation d'ingénieur en intelligence artificielle.
@@ -387,17 +312,17 @@
             </div>
             <div class="timeline-item__content">
               <div class="timeline-item__header">
-                <h3 class="timeline-item__title" data-i18n="exp3Title">[Titre du poste]</h3>
-                <span class="timeline-item__company">[Entreprise]</span>
+                <h3 class="timeline-item__title" data-i18n="exp3Title">Stagiaire Recherche – Détection de l'Apnée du Sommeil</h3>
+                <span class="timeline-item__company">Cardiology Department, ULB (Université Libre de Bruxelles)</span>
               </div>
               <div class="timeline-item__meta">
                 <span class="timeline-item__location">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                   </svg>
-                  [Ville, Pays]
+                  Bruxelles, Belgique
                 </span>
-                <span class="timeline-item__dates" data-i18n="exp3Dates">[Dates]</span>
+                <span class="timeline-item__dates" data-i18n="exp3Dates">Mai 2025 – Sept. 2025</span>
               </div>
               <p class="timeline-item__desc" data-i18n="exp3Desc">
                 [Description de l'expérience à compléter]
