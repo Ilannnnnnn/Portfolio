@@ -22,7 +22,8 @@ var TRANSLATIONS = {
     proj2Desc:  'Analyse de traces réseau avec des LLMs pour Orange',
     proj3Title: '[Projet 3]',
     proj3Desc:  '[Description du projet à compléter]',
-    projectDemo: 'Démo',
+    projectDemo:   'Démo',
+    projectDetail: 'Détails →',
     skillsCatAI:      'IA & ML',
     skillsCatData:    'Data & Infra',
     skillsCatNetwork: 'Réseau',
@@ -41,6 +42,15 @@ var TRANSLATIONS = {
     contactEmail:   'Email',
     footerText:   'Fait avec ❤️ par Ilan · 2025',
     footerSource: 'Code source',
+
+    /* Pages détail projet */
+    backToPortfolio:    '← Retour au portfolio',
+    viewDemo:           'Voir la démo',
+    sectionContext:     'Contexte',
+    sectionStack:       'Stack technique',
+    sectionArchitecture:'Architecture & Fonctionnement',
+    sectionApproach:    'Approche & Méthode',
+    sectionResults:     'Résultats & Points clés',
   },
   en: {
     pageTitle: 'Ilan — AI Engineer',
@@ -57,7 +67,8 @@ var TRANSLATIONS = {
     proj2Desc:  'Network trace analysis using LLMs for Orange',
     proj3Title: '[Project 3]',
     proj3Desc:  '[Project description to be filled in]',
-    projectDemo: 'Demo',
+    projectDemo:   'Demo',
+    projectDetail: 'Details →',
     skillsCatAI:      'AI & ML',
     skillsCatData:    'Data & Infra',
     skillsCatNetwork: 'Network',
@@ -76,6 +87,15 @@ var TRANSLATIONS = {
     contactEmail:   'Email',
     footerText:   'Made with ❤️ by Ilan · 2025',
     footerSource: 'Source code',
+
+    /* Project detail pages */
+    backToPortfolio:    '← Back to portfolio',
+    viewDemo:           'View demo',
+    sectionContext:     'Context',
+    sectionStack:       'Tech stack',
+    sectionArchitecture:'Architecture & How it works',
+    sectionApproach:    'Approach & Method',
+    sectionResults:     'Results & Key takeaways',
   }
 };
 

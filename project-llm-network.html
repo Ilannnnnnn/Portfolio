@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM Network Analysis — Détail du projet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+</head>
+<body>
+
+  <!-- Barre de langue -->
+  <div class="lang-bar">
+    <button class="lang-bar__btn active" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <!-- Navigation retour -->
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">
+        ← <span data-i18n="backToPortfolio">Retour au portfolio</span>
+      </a>
+      <div class="project-page__nav-links">
+        <!-- GITHUB (décommente si dispo) :
+        <a href="#" class="project-link project-link--github" target="_blank" rel="noopener">GitHub</a>
+        -->
+      </div>
+    </nav>
+
+    <!-- Header du projet -->
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">Wireshark</span>
+        <span class="tag">LLM</span>
+        <span class="tag">LoRA</span>
+        <span class="tag">QLoRA</span>
+        <span class="tag">Python</span>
+        <span class="tag">Orange</span>
+      </div>
+      <h1 class="project-header__title">LLM Network Analysis</h1>
+      <p class="project-header__subtitle" data-i18n="llm_subtitle">
+        Fine-tuning de LLMs pour l'analyse automatique de traces réseau Wireshark — projet réalisé en alternance chez Orange.
+      </p>
+    </header>
+
+    <!-- Section : Contexte -->
+    <section class="project-section">
+      <h2 class="project-section__title" data-i18n="sectionContext">Contexte</h2>
+      <p class="project-section__text" data-i18n="llm_context_1">
+        Dans le cadre de mon alternance chez Orange (Lannion), j'ai travaillé sur l'exploitation des modèles de langage pour analyser automatiquement des captures réseau. Les traces Wireshark représentent des volumes massifs de données difficiles à interpréter manuellement — l'objectif était d'automatiser cette analyse grâce aux LLMs.
+      </p>
+      <p class="project-section__text" data-i18n="llm_context_2">
+        [Complète ici avec le contexte spécifique — équipe, enjeux business, contraintes de confidentialité éventuelles…]
+      </p>
+    </section>
+
+    <!-- Section : Stack technique -->
+    <section class="project-section">
+      <h2 class="project-section__title" data-i18n="sectionStack">Stack technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-item__name">Python</span>
+          <span class="tech-item__role" data-i18n="tech_python_role">Backend / logique métier</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">HuggingFace</span>
+          <span class="tech-item__role" data-i18n="tech_hf_role">Modèles & fine-tuning</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">LoRA / QLoRA</span>
+          <span class="tech-item__role" data-i18n="tech_lora_role">Fine-tuning efficace</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Wireshark / tshark</span>
+          <span class="tech-item__role" data-i18n="tech_wireshark_role">Capture & export PCAP</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">PyTorch</span>
+          <span class="tech-item__role" data-i18n="tech_pytorch_role">Entraînement des modèles</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Docker</span>
+          <span class="tech-item__role" data-i18n="tech_docker_role">Conteneurisation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Approche & Méthode -->
+    <section class="project-section">
+      <h2 class="project-section__title" data-i18n="sectionApproach">Approche & Méthode</h2>
+      <p class="project-section__text" data-i18n="llm_approach_intro">
+        La démarche s'est articulée en plusieurs phases :
+      </p>
+      <ul class="project-list" style="margin-top: 1.5rem">
+        <li data-i18n="llm_approach_1">Extraction et prétraitement des traces réseau depuis les fichiers PCAP (tshark → JSON structuré).</li>
+        <li data-i18n="llm_approach_2">Construction d'un dataset d'entraînement à partir des traces annotées.</li>
+        <li data-i18n="llm_approach_3">Fine-tuning d'un LLM de base via LoRA/QLoRA pour spécialiser le modèle sur l'analyse réseau télécom.</li>
+        <li data-i18n="llm_approach_4">Évaluation des performances du modèle affiné vs. modèle de base sur les tâches d'analyse.</li>
+        <li data-i18n="llm_approach_5">[Complète avec tes étapes spécifiques…]</li>
+      </ul>
+    </section>
+
+    <!-- Section : Résultats & Points clés -->
+    <section class="project-section">
+      <h2 class="project-section__title" data-i18n="sectionResults">Résultats & Points clés</h2>
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value" data-i18n="llm_metric1_val">[XX]%</div>
+          <div class="metric-card__label" data-i18n="llm_metric1_label">Amélioration vs. base</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value" data-i18n="llm_metric2_val">[XX]k</div>
+          <div class="metric-card__label" data-i18n="llm_metric2_label">Échantillons d'entraînement</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value" data-i18n="llm_metric3_val">[XX]B</div>
+          <div class="metric-card__label" data-i18n="llm_metric3_label">Paramètres du modèle</div>
+        </div>
+      </div>
+      <ul class="project-list" style="margin-top: 1.5rem">
+        <li data-i18n="llm_result_1">[Résultat clé 1 — ex : score sur benchmark, gain de précision…]</li>
+        <li data-i18n="llm_result_2">[Résultat clé 2 — ex : réduction du temps d'analyse, cas d'usage validés…]</li>
+        <li data-i18n="llm_result_3">[Résultat clé 3 — ex : limites identifiées, perspectives…]</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back">← <span data-i18n="backToPortfolio">Retour au portfolio</span></a>
+    </footer>
+
+  </div><!-- /.project-page -->
+
+  <script src="js/main.js?v=2"></script>
+
+</body>
+</html>

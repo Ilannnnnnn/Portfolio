@@ -416,7 +416,209 @@ ul, ol { list-style: none; }
 }
 
 .project-link:hover { color: var(--color-text); }
-.project-link--demo:hover { color: var(--color-accent); }
+.project-link--demo:hover  { color: var(--color-accent); }
+.project-link--github:hover { color: var(--color-text); }
+
+/* Bouton Détails — poussé à droite, accent vert */
+.project-link--detail {
+  margin-left: auto;
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+.project-link--detail:hover { color: var(--color-accent-dark); }
+
+/* -------------------------
+   PAGES PROJET DÉTAIL
+------------------------- */
+.project-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding-top: 2.5rem; /* hauteur lang-bar */
+}
+
+/* Mini nav retour */
+.project-page__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--spacing-6) var(--spacing-8);
+}
+
+.project-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+.project-page__back:hover { color: var(--color-text); }
+
+.project-page__nav-links {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+/* Header du projet */
+.project-header {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-8) var(--spacing-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-header__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-5);
+}
+
+.project-header__title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-4);
+}
+
+.project-header__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 600px;
+  margin-bottom: var(--spacing-8);
+}
+
+.project-header__actions {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+/* Sections de contenu */
+.project-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--spacing-12) var(--spacing-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-section:last-of-type { border-bottom: none; }
+
+.project-section__title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border-dark);
+  padding-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-8);
+}
+
+.project-section__text {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+.project-section__text + .project-section__text { margin-top: var(--spacing-4); }
+
+/* Grille de stack technique */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  padding: var(--spacing-4) var(--spacing-5);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 120px;
+}
+
+.tech-item__name {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.tech-item__role {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+}
+
+/* Liste à puces style CV */
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  max-width: 680px;
+}
+
+.project-list li {
+  display: flex;
+  gap: var(--spacing-3);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.project-list li::before {
+  content: '–';
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Métriques / résultats */
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-6);
+}
+
+.metric-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-6);
+}
+
+.metric-card__value {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+}
+
+.metric-card__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
 
 /* -------------------------
    SECTION COMPÉTENCES
