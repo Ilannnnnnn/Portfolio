@@ -1,79 +1,151 @@
 /**
- * main.js — Logique principale du portfolio
- * Gère : scroll reveal, smooth scroll
+ * main.js — i18n FR/EN + scroll reveal + smooth scroll
+ * Script classique (pas de module ES) pour fiabilité maximale.
  */
 
-import { translations } from './translations.js';
-
 /* -------------------------------------------------------
-   Constantes
+   Traductions (inline — aucun import externe)
 ------------------------------------------------------- */
-const STORAGE_KEY = 'portfolio-lang';
-const DEFAULT_LANG = 'fr';
+var TRANSLATIONS = {
+  fr: {
+    pageTitle: 'Ilan — Ingénieur IA',
+    heroAvailable:   'Disponible',
+    heroSubtitle:    'Ingénieur IA',
+    heroDesc:        "Étudiant en 5ème année d'ingénierie IA à ISEN Brest, alternant chez Orange sur des sujets LLM et analyse de traces réseau.",
+    heroCtaProjects: 'Voir mes projets',
+    heroCtaDownload: 'Télécharger CV',
+    sectionProjects:   'Projets',
+    sectionSkills:     'Compétences',
+    sectionExperience: 'Expériences',
+    sectionContact:    'Contact',
+    proj1Desc:  'Application de coaching fitness propulsée par IA',
+    proj2Desc:  'Analyse de traces réseau avec des LLMs pour Orange',
+    proj3Title: '[Projet 3]',
+    proj3Desc:  '[Description du projet à compléter]',
+    projectDemo: 'Démo',
+    skillsCatAI:      'IA & ML',
+    skillsCatData:    'Data & Infra',
+    skillsCatNetwork: 'Réseau',
+    skillsCatWeb:     'Web & API',
+    exp1Title: 'Ingénieur IA en alternance',
+    exp1Dates: 'Sept. 2024 – Présent',
+    exp1Desc:  'Fine-tuning LLM (LoRA/QLoRA), analyse de traces réseau Wireshark, développement de pipelines IA et API.',
+    exp2Title: "Diplôme d'Ingénieur, spécialité IA",
+    exp2Dates: '2020 – 2025',
+    exp2Desc:  "Formation d'ingénieur en intelligence artificielle.",
+    exp3Title: 'Stagiaire Recherche – Détection de l\'Apnée du Sommeil',
+    exp3Dates: 'Mai 2025 – Sept. 2025',
+    exp3Desc:  "[Description de l'expérience à compléter]",
+    contactTagline: "Intéressé par une collaboration ou un échange ? N'hésitez pas à me contacter.",
+    contactSub:     'Disponible pour des opportunités en IA, NLP et ingénierie logicielle.',
+    contactEmail:   'Email',
+    footerText:   'Fait avec ❤️ par Ilan · 2025',
+    footerSource: 'Code source',
+  },
+  en: {
+    pageTitle: 'Ilan — AI Engineer',
+    heroAvailable:   'Open to work',
+    heroSubtitle:    'AI Engineer',
+    heroDesc:        '5th-year AI engineering student at ISEN Brest, working at Orange on LLM topics and network trace analysis.',
+    heroCtaProjects: 'See my projects',
+    heroCtaDownload: 'Download CV',
+    sectionProjects:   'Projects',
+    sectionSkills:     'Skills',
+    sectionExperience: 'Experience',
+    sectionContact:    'Contact',
+    proj1Desc:  'AI-powered fitness coaching application',
+    proj2Desc:  'Network trace analysis using LLMs for Orange',
+    proj3Title: '[Project 3]',
+    proj3Desc:  '[Project description to be filled in]',
+    projectDemo: 'Demo',
+    skillsCatAI:      'AI & ML',
+    skillsCatData:    'Data & Infra',
+    skillsCatNetwork: 'Network',
+    skillsCatWeb:     'Web & API',
+    exp1Title: 'AI Engineer (Apprenticeship)',
+    exp1Dates: 'Sept. 2024 – Present',
+    exp1Desc:  'LLM fine-tuning (LoRA/QLoRA), network trace analysis with Wireshark, AI pipeline and API development.',
+    exp2Title: 'Engineering Degree, AI specialization',
+    exp2Dates: '2020 – 2025',
+    exp2Desc:  'Engineering degree specializing in artificial intelligence.',
+    exp3Title: 'Research Intern – Sleep Apnea Detection',
+    exp3Dates: 'May 2025 – Sept. 2025',
+    exp3Desc:  '[Experience description to be filled in]',
+    contactTagline: 'Interested in a collaboration or just a chat? Feel free to reach out.',
+    contactSub:     'Available for opportunities in AI, NLP, and software engineering.',
+    contactEmail:   'Email',
+    footerText:   'Made with ❤️ by Ilan · 2025',
+    footerSource: 'Source code',
+  }
+};
 
 /* -------------------------------------------------------
    Langue
 ------------------------------------------------------- */
+var STORAGE_KEY = 'portfolio-lang';
 
-/**
- * Détecte la langue initiale :
- * 1. localStorage (persistance)
- * 2. navigator.language (langue navigateur)
- * 3. Défaut : français
- * @returns {'fr'|'en'}
- */
 function detectInitialLang() {
-  const stored = localStorage.getItem(STORAGE_KEY);
+  var stored = localStorage.getItem(STORAGE_KEY);
   if (stored === 'fr' || stored === 'en') return stored;
-
-  const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
-  return nav.startsWith('en') ? 'en' : DEFAULT_LANG;
+  var nav = (navigator.language || '').toLowerCase();
+  return nav.startsWith('en') ? 'en' : 'fr';
 }
 
-/**
- * Applique la langue à toute la page :
- * - Met à jour tous les éléments [data-i18n]
- * - Met à jour l'attribut lang sur <html>
- * - Persiste le choix dans localStorage
- * @param {'fr'|'en'} lang
- */
 function setLanguage(lang) {
   if (lang !== 'fr' && lang !== 'en') return;
+  var t = TRANSLATIONS[lang];
 
-  const t = translations[lang];
-
-  /* Met à jour le textContent de tous les éléments data-i18n */
-  document.querySelectorAll('[data-i18n]').forEach((el) => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) {
-      el.textContent = t[key];
-    }
+  /* Mise à jour des textes */
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
   });
 
-  /* Met à jour l'attribut lang HTML pour l'accessibilité */
+  /* Attribut lang + title */
   document.documentElement.setAttribute('lang', lang);
-
-  /* Met à jour le title de la page */
   if (t.pageTitle) document.title = t.pageTitle;
 
-  /* Highlighting des boutons de langue */
-  document.querySelectorAll('.lang-bar__btn').forEach((btn) => {
-    const isActive = btn.dataset.lang === lang;
-    btn.classList.toggle('active', isActive);
-    btn.setAttribute('aria-pressed', String(isActive));
+  /* Boutons actifs */
+  document.querySelectorAll('.lang-bar__btn').forEach(function(btn) {
+    var active = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', String(active));
   });
 
-  /* Persistance */
   localStorage.setItem(STORAGE_KEY, lang);
 }
 
 /* -------------------------------------------------------
-   Smooth scroll pour les ancres de navigation
+   Scroll Reveal
+------------------------------------------------------- */
+function initScrollReveal() {
+  var elements = document.querySelectorAll('.reveal');
+  if (!elements.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    elements.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  elements.forEach(function(el) { observer.observe(el); });
+}
+
+/* -------------------------------------------------------
+   Smooth Scroll
 ------------------------------------------------------- */
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(anchor.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -82,58 +154,22 @@ function initSmoothScroll() {
 }
 
 /* -------------------------------------------------------
-   Scroll Reveal — IntersectionObserver
-------------------------------------------------------- */
-function initScrollReveal() {
-  const elements = document.querySelectorAll('.reveal');
-  if (!elements.length) return;
-
-  /* Préférence d'accessibilité : désactive les animations si demandé */
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) {
-    elements.forEach((el) => el.classList.add('visible'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px',
-    }
-  );
-
-  elements.forEach((el) => observer.observe(el));
-}
-
-/* -------------------------------------------------------
-   Initialisation globale
+   Init
 ------------------------------------------------------- */
 function init() {
-  /* 1. Détection et application de la langue */
-  const lang = detectInitialLang();
+  var lang = detectInitialLang();
   setLanguage(lang);
 
-  /* 2. Écouteurs sur les boutons de langue */
-  document.querySelectorAll('.lang-bar__btn').forEach((btn) => {
-    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+  document.querySelectorAll('.lang-bar__btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setLanguage(btn.getAttribute('data-lang'));
+    });
   });
 
-  /* 3. Smooth scroll */
   initSmoothScroll();
-
-  /* 3. Scroll reveal */
   initScrollReveal();
 }
 
-/* Lance l'initialisation quand le DOM est prêt */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
