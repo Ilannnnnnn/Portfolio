@@ -56,6 +56,13 @@ function setLanguage(lang) {
   /* Met à jour le title de la page */
   if (t.pageTitle) document.title = t.pageTitle;
 
+  /* Highlighting des boutons de langue */
+  document.querySelectorAll('.lang-bar__btn').forEach((btn) => {
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
+  });
+
   /* Persistance */
   localStorage.setItem(STORAGE_KEY, lang);
 }
@@ -114,7 +121,12 @@ function init() {
   const lang = detectInitialLang();
   setLanguage(lang);
 
-  /* 2. Smooth scroll */
+  /* 2. Écouteurs sur les boutons de langue */
+  document.querySelectorAll('.lang-bar__btn').forEach((btn) => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+  });
+
+  /* 3. Smooth scroll */
   initSmoothScroll();
 
   /* 3. Scroll reveal */
