@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Projet 3] — Détail du projet</title>
+  <title>MotoWest — Détail du projet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -29,31 +29,59 @@
 
     <header class="project-header">
       <div class="project-header__tags">
-        <span class="tag">[Tag 1]</span>
-        <span class="tag">[Tag 2]</span>
-        <span class="tag">[Tag 3]</span>
+        <span class="tag">Django</span>
+        <span class="tag">E-commerce</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Stripe</span>
+        <span class="tag">RGPD</span>
       </div>
-      <h1 class="project-header__title" data-i18n="proj3Title">[Projet 3]</h1>
+      <h1 class="project-header__title" data-i18n="proj3Title">MotoWest</h1>
       <p class="project-header__subtitle" data-i18n="proj3Desc">
-        [Description du projet à compléter]
+        Plateforme e-commerce complète pour un revendeur de pièces moto breton — catalogue interactif, diagrammes éclatés, marketplace d'occasion et gestion d'entreprise intégrée.
       </p>
     </header>
 
     <section class="project-section">
       <h2 class="project-section__title" data-i18n="sectionContext">Contexte</h2>
-      <p class="project-section__text">[À compléter]</p>
+      <p class="project-section__text" data-i18n="proj3Context">
+        MotoWest est un revendeur de pièces et accessoires moto basé à Concarneau (Bretagne), spécialisé dans la marque SHERCO. Le client avait besoin d'une solution digitale couvrant l'ensemble de ses opérations : vente de pièces neuves, revente de pièces d'occasion, gestion des stocks et traitement des commandes. J'ai conçu et développé de bout en bout une plateforme Django sur mesure, deployée en production sur Render avec une base de données PostgreSQL.
+      </p>
     </section>
 
     <section class="project-section">
       <h2 class="project-section__title" data-i18n="sectionStack">Stack technique</h2>
       <div class="tech-grid">
         <div class="tech-item">
-          <span class="tech-item__name">[Technologie 1]</span>
-          <span class="tech-item__role">[Rôle]</span>
+          <span class="tech-item__name">Django</span>
+          <span class="tech-item__role" data-i18n="tech1Role">Backend & ORM</span>
         </div>
         <div class="tech-item">
-          <span class="tech-item__name">[Technologie 2]</span>
-          <span class="tech-item__role">[Rôle]</span>
+          <span class="tech-item__name">PostgreSQL</span>
+          <span class="tech-item__role" data-i18n="tech2Role">Base de données</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Stripe</span>
+          <span class="tech-item__role" data-i18n="tech3Role">Paiement en ligne</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Render</span>
+          <span class="tech-item__role" data-i18n="tech4Role">Hébergement & déploiement</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">HTML / CSS</span>
+          <span class="tech-item__role" data-i18n="tech5Role">Frontend responsive</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Gmail SMTP</span>
+          <span class="tech-item__role" data-i18n="tech6Role">Emails transactionnels</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Ionos DNS</span>
+          <span class="tech-item__role" data-i18n="tech7Role">Nom de domaine personnalisé</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Django Admin</span>
+          <span class="tech-item__role" data-i18n="tech8Role">Gestion back-office</span>
         </div>
       </div>
     </section>
@@ -61,17 +89,22 @@
     <section class="project-section">
       <h2 class="project-section__title" data-i18n="sectionArchitecture">Architecture & Fonctionnement</h2>
       <ul class="project-list">
-        <li>[Étape 1]</li>
-        <li>[Étape 2]</li>
-        <li>[Étape 3]</li>
+        <li data-i18n="proj3Arch1"><strong>Catalogue double :</strong> gestion séparée des pièces neuves (MotoPiece) et des pièces d'occasion (OccasionPiece), avec fiches produit, photos et gestion des stocks en temps réel.</li>
+        <li data-i18n="proj3Arch2"><strong>Diagrammes éclatés interactifs :</strong> visualisation des schémas de pièces par moto, permettant à l'utilisateur d'identifier et commander une pièce directement depuis le diagramme.</li>
+        <li data-i18n="proj3Arch3"><strong>Tunnel d'achat Stripe :</strong> intégration complète du paiement en ligne avec gestion des webhooks, confirmation de commande et emails automatiques via Gmail SMTP.</li>
+        <li data-i18n="proj3Arch4"><strong>Back-office Django Admin :</strong> interface de gestion des commandes, des stocks, des utilisateurs et des permissions, configurée sur mesure pour le client.</li>
+        <li data-i18n="proj3Arch5"><strong>Conformité RGPD :</strong> consentement aux cookies, mentions légales, politique de confidentialité et gestion des données personnelles intégrées dès la conception.</li>
+        <li data-i18n="proj3Arch6"><strong>Design responsive :</strong> interface adaptée mobile et desktop avec la police Audiowide et une identité visuelle bleu/jaune propre à la marque MotoWest.</li>
       </ul>
     </section>
 
     <section class="project-section">
       <h2 class="project-section__title" data-i18n="sectionResults">Résultats & Points clés</h2>
       <ul class="project-list">
-        <li>[Résultat clé 1]</li>
-        <li>[Résultat clé 2]</li>
+        <li data-i18n="proj3Result1">Plateforme complète livrée de A à Z, couvrant catalogue, paiement, gestion des stocks et conformité légale pour un client réel en production.</li>
+        <li data-i18n="proj3Result2">Architecture Django scalable permettant d'ajouter de nouvelles marques, catégories et fonctionnalités sans refonte du cœur applicatif.</li>
+        <li data-i18n="proj3Result3">Implémentation proactive de la conformité RGPD en amont du déploiement des outils de tracking, évitant une mise en conformité coûteuse a posteriori.</li>
+        <li data-i18n="proj3Result4">Système de facturation professionnel intégré, respectant les exigences légales des auto-entrepreneurs français et les besoins de gestion du client.</li>
       </ul>
     </section>
 
@@ -82,6 +115,42 @@
   </div>
 
   <script src="js/main.js?v=2"></script>
+
+  <!-- Traductions EN pour le contenu MotoWest -->
+  <script>
+    // Patch i18n pour les nouvelles clés MotoWest (EN)
+    // Ce bloc s'exécute après main.js et enrichit les traductions existantes
+    document.addEventListener('DOMContentLoaded', () => {
+      const motowestEN = {
+        proj3Title: "MotoWest",
+        proj3Desc: "Full-stack e-commerce platform for a Breton motorcycle parts retailer — interactive catalog, exploded diagrams, used parts marketplace and integrated business management.",
+        proj3Context: "MotoWest is a motorcycle parts and accessories retailer based in Concarneau (Brittany), specialising in the SHERCO brand. The client needed a digital solution covering all their operations: new parts sales, used parts resale, stock management and order processing. I designed and developed a custom Django platform end-to-end, deployed in production on Render with a PostgreSQL database.",
+        tech1Role: "Backend & ORM",
+        tech2Role: "Database",
+        tech3Role: "Online payment",
+        tech4Role: "Hosting & deployment",
+        tech5Role: "Responsive frontend",
+        tech6Role: "Transactional emails",
+        tech7Role: "Custom domain",
+        tech8Role: "Back-office management",
+        proj3Arch1: "<strong>Dual catalogue:</strong> separate management of new parts (MotoPiece) and used parts (OccasionPiece), with product sheets, photos and real-time stock tracking.",
+        proj3Arch2: "<strong>Interactive exploded diagrams:</strong> motorcycle parts schematics visualisation, allowing users to identify and order a part directly from the diagram.",
+        proj3Arch3: "<strong>Stripe checkout:</strong> full payment integration with webhook handling, order confirmation and automatic emails via Gmail SMTP.",
+        proj3Arch4: "<strong>Django Admin back-office:</strong> custom order, stock, user and permission management interface tailored for the client.",
+        proj3Arch5: "<strong>GDPR compliance:</strong> cookie consent, legal notices, privacy policy and personal data management built in from the ground up.",
+        proj3Arch6: "<strong>Responsive design:</strong> mobile and desktop interface with the Audiowide font and MotoWest's blue/yellow brand identity.",
+        proj3Result1: "Complete platform delivered end-to-end, covering catalogue, payment, stock management and legal compliance for a real client in production.",
+        proj3Result2: "Scalable Django architecture allowing new brands, categories and features to be added without rearchitecting the core application.",
+        proj3Result3: "Proactive GDPR compliance implemented before deploying tracking tools, avoiding costly after-the-fact remediation.",
+        proj3Result4: "Integrated professional invoicing system meeting French auto-entrepreneur legal requirements and the client's management needs.",
+      };
+
+      // Injecter dans window.i18n si le système de traduction l'expose
+      if (window.i18n && window.i18n.en) {
+        Object.assign(window.i18n.en, motowestEN);
+      }
+    });
+  </script>
 
 </body>
 </html>
