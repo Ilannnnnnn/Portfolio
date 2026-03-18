@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>FitIA — Détail du projet</title>
+  <title data-i18n="fitia.pageTitle">FitIA — Détail du projet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -17,7 +17,7 @@
 
   <!-- Barre de langue -->
   <div class="lang-bar">
-    <button class="lang-bar__btn active" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+    <button class="lang-bar__btn" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
     <span class="lang-bar__sep" aria-hidden="true">|</span>
     <button class="lang-bar__btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
   </div>
@@ -27,7 +27,7 @@
     <!-- Navigation retour -->
     <nav class="project-page__nav">
       <a href="index.html" class="project-page__back">
-        ← <span data-i18n="backToPortfolio">Retour au portfolio</span>
+        ← <span data-i18n="common.backToPortfolio">Retour au portfolio</span>
       </a>
       <div class="project-page__nav-links">
         <!-- GITHUB (décommente si dispo) :
@@ -37,7 +37,7 @@
         </a>
         -->
         <!-- DÉMO (décommente si dispo) :
-        <a href="#" class="btn btn--primary" target="_blank" rel="noopener" data-i18n="viewDemo">Voir la démo</a>
+        <a href="#" class="btn btn--primary" target="_blank" rel="noopener" data-i18n="common.viewDemo">Voir la démo</a>
         -->
       </div>
     </nav>
@@ -53,108 +53,101 @@
         <span class="tag">FastAPI</span>
       </div>
       <h1 class="project-header__title">FitIA</h1>
-      <p class="project-header__subtitle" data-i18n="fitia_subtitle">
+      <p class="project-header__subtitle" data-i18n="fitia.subtitle">
         Application de coaching fitness entièrement propulsée par IA — génération de programmes d'entraînement personnalisés via RAG et LLM.
       </p>
-      <div class="project-header__actions">
-        <!-- GITHUB (décommente si dispo) :
-        <a href="https://github.com/Ilannnnnnn/fitia" class="btn btn--primary" target="_blank" rel="noopener">GitHub →</a>
-        -->
-        <!-- DÉMO (décommente si dispo) :
-        <a href="#" class="btn btn--secondary" target="_blank" rel="noopener" data-i18n="viewDemo">Voir la démo</a>
-        -->
-      </div>
     </header>
 
     <!-- Section : Contexte -->
     <section class="project-section">
-      <h2 class="project-section__title" data-i18n="sectionContext">Contexte</h2>
-      <p class="project-section__text" data-i18n="fitia_context_1">
+      <h2 class="project-section__title" data-i18n="common.sectionContext">Contexte</h2>
+      <p class="project-section__text" data-i18n="fitia.context1">
         FitIA est né d'un constat simple : les applications de coaching fitness existantes proposent des programmes génériques, peu adaptés aux besoins individuels. L'objectif était de construire un système capable de générer des programmes d'entraînement réellement personnalisés en exploitant la puissance des LLMs et du retrieval augmenté.
       </p>
-      <p class="project-section__text" data-i18n="fitia_context_2">
+      <p class="project-section__text" data-i18n="fitia.context2">
         [Complète ici avec le contexte de ton projet — pourquoi tu as lancé FitIA, dans quel cadre, quelles étaient les contraintes initiales…]
       </p>
     </section>
 
     <!-- Section : Stack technique -->
     <section class="project-section">
-      <h2 class="project-section__title" data-i18n="sectionStack">Stack technique</h2>
+      <h2 class="project-section__title" data-i18n="common.sectionStack">Stack technique</h2>
       <div class="tech-grid">
         <div class="tech-item">
           <span class="tech-item__name">Python</span>
-          <span class="tech-item__role" data-i18n="tech_python_role">Backend / logique métier</span>
+          <span class="tech-item__role" data-i18n="fitia.techPython">Backend / logique métier</span>
         </div>
         <div class="tech-item">
           <span class="tech-item__name">LangChain</span>
-          <span class="tech-item__role" data-i18n="tech_langchain_role">Orchestration LLM + RAG</span>
+          <span class="tech-item__role" data-i18n="fitia.techLangchain">Orchestration LLM + RAG</span>
         </div>
         <div class="tech-item">
           <span class="tech-item__name">Weaviate</span>
-          <span class="tech-item__role" data-i18n="tech_weaviate_role">Base vectorielle</span>
+          <span class="tech-item__role" data-i18n="fitia.techWeaviate">Base vectorielle</span>
         </div>
         <div class="tech-item">
           <span class="tech-item__name">FastAPI</span>
-          <span class="tech-item__role" data-i18n="tech_fastapi_role">API REST</span>
+          <span class="tech-item__role" data-i18n="fitia.techFastapi">API REST</span>
         </div>
         <div class="tech-item">
           <span class="tech-item__name">Docker</span>
-          <span class="tech-item__role" data-i18n="tech_docker_role">Conteneurisation</span>
+          <span class="tech-item__role" data-i18n="fitia.techDocker">Conteneurisation</span>
         </div>
         <div class="tech-item">
           <span class="tech-item__name">OpenRouter</span>
-          <span class="tech-item__role" data-i18n="tech_openrouter_role">Accès modèles LLM</span>
+          <span class="tech-item__role" data-i18n="fitia.techOpenrouter">Accès modèles LLM</span>
         </div>
       </div>
     </section>
 
     <!-- Section : Architecture & Fonctionnement -->
     <section class="project-section">
-      <h2 class="project-section__title" data-i18n="sectionArchitecture">Architecture & Fonctionnement</h2>
-      <p class="project-section__text" data-i18n="fitia_arch_intro">
+      <h2 class="project-section__title" data-i18n="common.sectionArchitecture">Architecture & Fonctionnement</h2>
+      <p class="project-section__text" data-i18n="fitia.archIntro">
         Le pipeline FitIA repose sur une architecture RAG (Retrieval-Augmented Generation) en plusieurs étapes :
       </p>
       <ul class="project-list" style="margin-top: 1.5rem">
-        <li data-i18n="fitia_arch_1">L'utilisateur saisit ses objectifs, son niveau et ses contraintes via l'interface.</li>
-        <li data-i18n="fitia_arch_2">Les données sont encodées et une recherche de similarité est effectuée dans Weaviate pour récupérer les exercices les plus pertinents.</li>
-        <li data-i18n="fitia_arch_3">Le contexte enrichi est transmis au LLM (via OpenRouter) pour générer un programme structuré.</li>
-        <li data-i18n="fitia_arch_4">La réponse est formatée et renvoyée via l'API FastAPI.</li>
-        <li data-i18n="fitia_arch_5">[Complète avec les détails spécifiques de ton implémentation…]</li>
+        <li data-i18n="fitia.arch1">L'utilisateur saisit ses objectifs, son niveau et ses contraintes via l'interface.</li>
+        <li data-i18n="fitia.arch2">Les données sont encodées et une recherche de similarité est effectuée dans Weaviate pour récupérer les exercices les plus pertinents.</li>
+        <li data-i18n="fitia.arch3">Le contexte enrichi est transmis au LLM (via OpenRouter) pour générer un programme structuré.</li>
+        <li data-i18n="fitia.arch4">La réponse est formatée et renvoyée via l'API FastAPI.</li>
+        <li data-i18n="fitia.arch5">[Complète avec les détails spécifiques de ton implémentation…]</li>
       </ul>
     </section>
 
     <!-- Section : Résultats & Points clés -->
     <section class="project-section">
-      <h2 class="project-section__title" data-i18n="sectionResults">Résultats & Points clés</h2>
+      <h2 class="project-section__title" data-i18n="common.sectionResults">Résultats & Points clés</h2>
       <div class="project-metrics">
         <div class="metric-card">
-          <div class="metric-card__value" data-i18n="fitia_metric1_val">[XX]%</div>
-          <div class="metric-card__label" data-i18n="fitia_metric1_label">Pertinence des programmes générés</div>
+          <div class="metric-card__value" data-i18n="fitia.metric1Val">[XX]%</div>
+          <div class="metric-card__label" data-i18n="fitia.metric1Label">Pertinence des programmes générés</div>
         </div>
         <div class="metric-card">
-          <div class="metric-card__value" data-i18n="fitia_metric2_val">[XX]ms</div>
-          <div class="metric-card__label" data-i18n="fitia_metric2_label">Temps de réponse moyen</div>
+          <div class="metric-card__value" data-i18n="fitia.metric2Val">[XX]ms</div>
+          <div class="metric-card__label" data-i18n="fitia.metric2Label">Temps de réponse moyen</div>
         </div>
         <div class="metric-card">
-          <div class="metric-card__value" data-i18n="fitia_metric3_val">[XX]</div>
-          <div class="metric-card__label" data-i18n="fitia_metric3_label">Exercices en base vectorielle</div>
+          <div class="metric-card__value" data-i18n="fitia.metric3Val">[XX]</div>
+          <div class="metric-card__label" data-i18n="fitia.metric3Label">Exercices en base vectorielle</div>
         </div>
       </div>
       <ul class="project-list" style="margin-top: 1.5rem">
-        <li data-i18n="fitia_result_1">[Résultat clé 1 — ex : précision du RAG, qualité des programmes…]</li>
-        <li data-i18n="fitia_result_2">[Résultat clé 2 — ex : scalabilité, performance, retours utilisateurs…]</li>
-        <li data-i18n="fitia_result_3">[Résultat clé 3 — ex : ce que tu as appris, challenges surmontés…]</li>
+        <li data-i18n="fitia.result1">[Résultat clé 1 — ex : précision du RAG, qualité des programmes…]</li>
+        <li data-i18n="fitia.result2">[Résultat clé 2 — ex : scalabilité, performance, retours utilisateurs…]</li>
+        <li data-i18n="fitia.result3">[Résultat clé 3 — ex : ce que tu as appris, challenges surmontés…]</li>
       </ul>
     </section>
 
     <!-- Footer -->
     <footer class="footer" style="margin-top: 0">
-      <a href="index.html" class="project-page__back">← <span data-i18n="backToPortfolio">Retour au portfolio</span></a>
+      <a href="index.html" class="project-page__back">← <span data-i18n="common.backToPortfolio">Retour au portfolio</span></a>
     </footer>
 
   </div><!-- /.project-page -->
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/i18n.js?v=1"></script>
+  <script src="js/main.js?v=4"></script>
 
 </body>
 </html>
