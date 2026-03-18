@@ -20,8 +20,8 @@ var TRANSLATIONS = {
     sectionContact:    'Contact',
     proj1Desc:  'Application de coaching fitness propulsée par IA',
     proj2Desc:  'Analyse de traces réseau avec des LLMs pour Orange',
-    proj3Title: '[Projet 3]',
-    proj3Desc:  '[Description du projet à compléter]',
+    proj3Title: 'MotoWest',
+    proj3Desc:  'Plateforme e-commerce complète pour un revendeur de pièces moto breton.',
     projectDemo:   'Démo',
     projectDetail: 'Détails →',
     skillsCatAI:      'IA & ML',
@@ -40,7 +40,7 @@ var TRANSLATIONS = {
     contactTagline: "Intéressé par une collaboration ou un échange ? N'hésitez pas à me contacter.",
     contactSub:     'Disponible pour des opportunités en IA, NLP et ingénierie logicielle.',
     contactEmail:   'Email',
-    footerText:   'Fait avec ❤️ par Ilan · 2025',
+    footerText:   '',
     footerSource: 'Code source',
 
     /* Pages détail projet */
@@ -65,8 +65,8 @@ var TRANSLATIONS = {
     sectionContact:    'Contact',
     proj1Desc:  'AI-powered fitness coaching application',
     proj2Desc:  'Network trace analysis using LLMs for Orange',
-    proj3Title: '[Project 3]',
-    proj3Desc:  '[Project description to be filled in]',
+    proj3Title: 'MotoWest',
+    proj3Desc:  'Complete e-commerce platform for a Breton motorcycle parts dealer.',
     projectDemo:   'Demo',
     projectDetail: 'Details →',
     skillsCatAI:      'AI & ML',
@@ -85,7 +85,7 @@ var TRANSLATIONS = {
     contactTagline: 'Interested in a collaboration or just a chat? Feel free to reach out.',
     contactSub:     'Available for opportunities in AI, NLP, and software engineering.',
     contactEmail:   'Email',
-    footerText:   'Made with ❤️ by Ilan · 2025',
+    footerText:   '',
     footerSource: 'Source code',
 
     /* Project detail pages */
