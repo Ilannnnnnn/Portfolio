@@ -27,36 +27,41 @@
     "llmDesc": "Analyse de traces réseau avec des LLMs pour Orange",
     "motowestTitle": "MotoWest",
     "motowestDesc": "Plateforme e-commerce complète pour un revendeur de pièces moto breton.",
-    "skillsCatAI": "IA & ML",
-    "skillsCatData": "Data & Infra",
-    "skillsCatNetwork": "Réseau",
-    "skillsCatWeb": "Web & API",
-    "exp1Title": "Ingénieur IA en alternance",
-    "exp1Company": "Orange",
-    "exp1Location": "Lannion, France",
-    "exp1Initials": "OR",
-    "exp1Dates": "Sept. 2025 – Présent",
-    "exp1Desc": "Fine-tuning LLM (LoRA/QLoRA), analyse de traces réseau Wireshark, développement de pipelines IA et API.",
-    "exp2Title": "Diplôme d'Ingénieur, spécialité IA",
-    "exp2Company": "ISEN Brest",
-    "exp2Location": "Brest, France",
-    "exp2Initials": "IS",
-    "exp2Dates": "2020 – 2026",
-    "exp2Desc": "Formation d'ingénieur en intelligence artificielle.",
-    "exp3Title": "Stagiaire Recherche – Détection de l'Apnée du Sommeil",
-    "exp3Company": "Cardiology Department, ULB (Université Libre de Bruxelles)",
-    "exp3Location": "Bruxelles, Belgique",
-    "exp3Initials": "UL",
-    "exp3Dates": "Mai 2025 – Sept. 2025",
-    "exp3Desc": "[Description de l'expérience à compléter]",
-    "skillsData": {
-      "ai": ["Python", "PyTorch", "HuggingFace", "LoRA / QLoRA", "RAG", "LangChain", "Weaviate"],
-      "data": ["Docker", "WSL", "Git", "SQL", "Hadoop", "Linux"],
-      "network": ["Wireshark", "tshark", "PCAP", "TCP/IP", "Protocoles télécom"],
-      "web": ["FastAPI", "HTML / CSS / JS", "REST APIs", "OpenRouter"]
-    },
     "contactTagline": "Intéressé par une collaboration ou un échange ? N'hésitez pas à me contacter.",
-    "contactSub": "Disponible pour des opportunités en IA, NLP et ingénierie logicielle."
+    "contactSub": "Disponible pour des opportunités en IA, NLP et ingénierie logicielle.",
+    "skillsCategories": [
+      { "id": "ai",      "label": "IA & ML",      "type": "ai",      "skills": ["Python", "PyTorch", "HuggingFace", "LoRA / QLoRA", "RAG", "LangChain", "Weaviate"] },
+      { "id": "data",    "label": "Data & Infra",  "type": "data",    "skills": ["Docker", "WSL", "Git", "SQL", "Hadoop", "Linux"] },
+      { "id": "network", "label": "Réseau",        "type": "network", "skills": ["Wireshark", "tshark", "PCAP", "TCP/IP", "Protocoles télécom"] },
+      { "id": "web",     "label": "Web & API",     "type": "web",     "skills": ["FastAPI", "HTML / CSS / JS", "REST APIs", "OpenRouter"] }
+    ],
+    "experiences": [
+      {
+        "title":    "Ingénieur IA en alternance",
+        "company":  "Orange",
+        "location": "Lannion, France",
+        "initials": "OR",
+        "dates":    "Sept. 2025 – Présent",
+        "desc":     "Fine-tuning LLM (LoRA/QLoRA), analyse de traces réseau Wireshark, développement de pipelines IA et API."
+      },
+      {
+        "title":    "Diplôme d'Ingénieur, spécialité IA",
+        "company":  "ISEN Brest",
+        "location": "Brest, France",
+        "initials": "IS",
+        "dates":    "2020 – 2026",
+        "desc":     "Formation d'ingénieur en intelligence artificielle."
+      },
+      {
+        "title":    "Stagiaire Recherche – Détection de l'Apnée du Sommeil",
+        "company":  "Cardiology Department, ULB (Université Libre de Bruxelles)",
+        "location": "Bruxelles, Belgique",
+        "initials": "UL",
+        "dates":    "Mai 2025 – Sept. 2025",
+        "desc":     "[Description de l'expérience à compléter]"
+      }
+    ],
+    "extraProjects": []
   },
 
   "fitia": {

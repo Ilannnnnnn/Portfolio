@@ -27,36 +27,41 @@
     "llmDesc": "Network trace analysis using LLMs for Orange",
     "motowestTitle": "MotoWest",
     "motowestDesc": "Complete e-commerce platform for a Breton motorcycle parts dealer.",
-    "skillsCatAI": "AI & ML",
-    "skillsCatData": "Data & Infra",
-    "skillsCatNetwork": "Network",
-    "skillsCatWeb": "Web & API",
-    "exp1Title": "AI Engineer (Apprenticeship)",
-    "exp1Company": "Orange",
-    "exp1Location": "Lannion, France",
-    "exp1Initials": "OR",
-    "exp1Dates": "Sept. 2025 – Present",
-    "exp1Desc": "LLM fine-tuning (LoRA/QLoRA), network trace analysis with Wireshark, AI pipeline and API development.",
-    "exp2Title": "Engineering Degree, AI specialization",
-    "exp2Company": "ISEN Brest",
-    "exp2Location": "Brest, France",
-    "exp2Initials": "IS",
-    "exp2Dates": "2020 – 2026",
-    "exp2Desc": "Engineering degree specializing in artificial intelligence.",
-    "exp3Title": "Research Intern – Sleep Apnea Detection",
-    "exp3Company": "Cardiology Department, ULB (Université Libre de Bruxelles)",
-    "exp3Location": "Brussels, Belgium",
-    "exp3Initials": "UL",
-    "exp3Dates": "May 2025 – Sept. 2025",
-    "exp3Desc": "[Experience description to be filled in]",
-    "skillsData": {
-      "ai": ["Python", "PyTorch", "HuggingFace", "LoRA / QLoRA", "RAG", "LangChain", "Weaviate"],
-      "data": ["Docker", "WSL", "Git", "SQL", "Hadoop", "Linux"],
-      "network": ["Wireshark", "tshark", "PCAP", "TCP/IP", "Telecom protocols"],
-      "web": ["FastAPI", "HTML / CSS / JS", "REST APIs", "OpenRouter"]
-    },
     "contactTagline": "Interested in a collaboration or just a chat? Feel free to reach out.",
-    "contactSub": "Available for opportunities in AI, NLP, and software engineering."
+    "contactSub": "Available for opportunities in AI, NLP, and software engineering.",
+    "skillsCategories": [
+      { "id": "ai",      "label": "AI & ML",       "type": "ai",      "skills": ["Python", "PyTorch", "HuggingFace", "LoRA / QLoRA", "RAG", "LangChain", "Weaviate"] },
+      { "id": "data",    "label": "Data & Infra",   "type": "data",    "skills": ["Docker", "WSL", "Git", "SQL", "Hadoop", "Linux"] },
+      { "id": "network", "label": "Network",        "type": "network", "skills": ["Wireshark", "tshark", "PCAP", "TCP/IP", "Telecom protocols"] },
+      { "id": "web",     "label": "Web & API",      "type": "web",     "skills": ["FastAPI", "HTML / CSS / JS", "REST APIs", "OpenRouter"] }
+    ],
+    "experiences": [
+      {
+        "title":    "AI Engineer (Apprenticeship)",
+        "company":  "Orange",
+        "location": "Lannion, France",
+        "initials": "OR",
+        "dates":    "Sept. 2025 – Present",
+        "desc":     "LLM fine-tuning (LoRA/QLoRA), network trace analysis with Wireshark, AI pipeline and API development."
+      },
+      {
+        "title":    "Engineering Degree, AI specialization",
+        "company":  "ISEN Brest",
+        "location": "Brest, France",
+        "initials": "IS",
+        "dates":    "2020 – 2026",
+        "desc":     "Engineering degree specializing in artificial intelligence."
+      },
+      {
+        "title":    "Research Intern – Sleep Apnea Detection",
+        "company":  "Cardiology Department, ULB (Université Libre de Bruxelles)",
+        "location": "Brussels, Belgium",
+        "initials": "UL",
+        "dates":    "May 2025 – Sept. 2025",
+        "desc":     "[Experience description to be filled in]"
+      }
+    ],
+    "extraProjects": []
   },
 
   "fitia": {
