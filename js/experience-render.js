@@ -15,6 +15,7 @@
     if (!Array.isArray(exps)) return;
 
     container.innerHTML = exps.map(function (exp, i) {
+      /* Note: reveal class added — initScrollReveal() called after */
       var delay = (i * 0.15).toFixed(2) + 's';
       return (
         '<article class="timeline-item reveal" style="--delay:' + delay + '">' +
@@ -41,9 +42,13 @@
   }
 
   function loadAndRender(lang) {
-    fetch('locales/' + lang + '.json?v=2')
+    fetch('locales/' + lang + '.json?v=3')
       .then(function (r) { return r.json(); })
-      .then(function (data) { renderExperiences(data); })
+      .then(function (data) {
+        renderExperiences(data);
+        /* Re-register newly added .reveal elements with the scroll observer */
+        if (typeof initScrollReveal === 'function') initScrollReveal();
+      })
       .catch(function (err) {
         console.warn('[experience-render] Erreur de chargement :', err);
       });

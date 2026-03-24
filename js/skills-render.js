@@ -14,6 +14,7 @@
     var cats = data && data.index && data.index.skillsCategories;
     if (!Array.isArray(cats)) return;
 
+    var catDelay = 0;
     grid.innerHTML = cats.map(function (cat, i) {
       var delay = (i * 0.1).toFixed(1) + 's';
       var badges = (cat.skills || []).map(function (s) {
@@ -29,6 +30,9 @@
 
     /* Extra projects (projets ajoutés via admin) */
     renderExtraProjects(data);
+
+    /* Re-register newly added .reveal elements with the scroll observer */
+    if (typeof initScrollReveal === 'function') initScrollReveal();
   }
 
   function renderExtraProjects(data) {
@@ -62,7 +66,7 @@
   }
 
   function loadAndRender(lang) {
-    fetch('locales/' + lang + '.json?v=2')
+    fetch('locales/' + lang + '.json?v=3')
       .then(function (r) { return r.json(); })
       .then(function (data) { renderSkillsFromData(data); })
       .catch(function (err) {

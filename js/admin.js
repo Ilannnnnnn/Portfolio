@@ -81,7 +81,7 @@
   }
 
   function loadFallback() {
-    fetch('locales/fr.json?v=2')
+    fetch('locales/fr.json?v=3')
       .then(function (r) { return r.json(); })
       .then(function (data) {
         state.frData = data;
@@ -252,7 +252,7 @@
      CATÉGORIES DE COMPÉTENCES — dynamique
   -------------------------------------------------------- */
   function collectSkillCategories() {
-    return Array.from(document.querySelectorAll('.skill-cat-card-dyn')).map(function (card) {
+    return Array.from(document.querySelectorAll('.skills-cat-card-dyn')).map(function (card) {
       var tagsEl = card.querySelector('.skills-tags-editor');
       var skills = Array.from(tagsEl.querySelectorAll('.skill-tag[data-skill]'))
         .map(function (t) { return t.getAttribute('data-skill'); });
