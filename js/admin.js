@@ -349,8 +349,9 @@
         title:  card.querySelector('[data-f="title"]').value.trim(),
         desc:   card.querySelector('[data-f="desc"]').value.trim(),
         tags:   tags,
-        github: card.querySelector('[data-f="github"]').value.trim(),
-        demo:   card.querySelector('[data-f="demo"]').value.trim()
+        github:  card.querySelector('[data-f="github"]').value.trim(),
+        demo:    card.querySelector('[data-f="demo"]').value.trim(),
+        detail:  card.querySelector('[data-f="detail"]').value.trim()
       };
     });
   }
@@ -381,7 +382,9 @@
           '<input type="url" class="admin-field__input" data-f="github" value="' + esc(proj.github) + '" placeholder="https://github.com/…" /></div>' +
         '<div class="admin-field"><label class="admin-field__label">Lien Démo (optionnel)</label>' +
           '<input type="url" class="admin-field__input" data-f="demo" value="' + esc(proj.demo) + '" placeholder="https://…" /></div>' +
-      '</div>';
+      '</div>' +
+      '<div class="admin-field" style="margin-top:.5rem"><label class="admin-field__label">Lien Détail (optionnel)</label>' +
+        '<input type="url" class="admin-field__input" data-f="detail" value="' + esc(proj.detail) + '" placeholder="https://… ou project-mon-projet.html" /></div>';
 
     /* Existing tags */
     var tagsEl = card.querySelector('.skills-tags-editor');

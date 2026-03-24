@@ -48,6 +48,9 @@
       if (p.demo) {
         links += '<a href="' + p.demo + '" class="project-link project-link--demo" target="_blank" rel="noopener">Démo</a>';
       }
+      if (p.detail) {
+        links += '<a href="' + p.detail + '" class="project-link project-link--detail">Détails →</a>';
+      }
       return (
         '<article class="project-card">' +
           '<div class="project-card__header">' +

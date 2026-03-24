@@ -293,7 +293,7 @@ ul, ol { list-style: none; }
    SECTIONS (communes)
 ------------------------- */
 .section {
-  padding: var(--spacing-24) var(--spacing-6);
+  padding: 9rem var(--spacing-6);
 }
 
 .section--alt {
