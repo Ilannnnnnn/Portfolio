@@ -18,7 +18,7 @@
       /* Note: reveal class added — initScrollReveal() called after */
       var delay = (i * 0.15).toFixed(2) + 's';
       return (
-        '<article class="timeline-item reveal" style="--delay:' + delay + '">' +
+        '<article class="timeline-item">' +
           '<div class="timeline-item__dot" aria-hidden="true">' +
             '<span class="timeline-item__initials">' + (exp.initials || '') + '</span>' +
           '</div>' +
@@ -46,8 +46,6 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         renderExperiences(data);
-        /* Re-register newly added .reveal elements with the scroll observer */
-        if (typeof initScrollReveal === 'function') initScrollReveal();
       })
       .catch(function (err) {
         console.warn('[experience-render] Erreur de chargement :', err);

@@ -21,7 +21,7 @@
         return '<span class="badge badge--' + (cat.type || 'ai') + '">' + s + '</span>';
       }).join('');
       return (
-        '<div class="skill-category reveal" style="--delay:' + delay + '">' +
+        '<div class="skill-category">' +
           '<h3 class="skill-category__title skill-category__title--' + (cat.type || 'ai') + '">' + cat.label + '</h3>' +
           '<div class="skill-badges">' + badges + '</div>' +
         '</div>'
@@ -30,9 +30,6 @@
 
     /* Extra projects (projets ajoutés via admin) */
     renderExtraProjects(data);
-
-    /* Re-register newly added .reveal elements with the scroll observer */
-    if (typeof initScrollReveal === 'function') initScrollReveal();
   }
 
   function renderExtraProjects(data) {
@@ -52,7 +49,7 @@
         links += '<a href="' + p.demo + '" class="project-link project-link--demo" target="_blank" rel="noopener">Démo</a>';
       }
       return (
-        '<article class="project-card reveal" style="--delay:' + delay + '">' +
+        '<article class="project-card">' +
           '<div class="project-card__header">' +
             '<span class="project-card__icon" aria-hidden="true">' + (p.icon || '🚀') + '</span>' +
             '<h3 class="project-card__title">' + (p.title || '') + '</h3>' +
