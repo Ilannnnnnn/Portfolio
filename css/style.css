@@ -620,6 +620,94 @@ ul, ol { list-style: none; }
   color: var(--color-text-muted);
 }
 
+/* Bloc mis en avant */
+.highlight-block {
+  background: rgba(45, 106, 79, 0.06);
+  border-left: 2px solid var(--color-accent);
+  padding: var(--spacing-5) var(--spacing-6);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: var(--spacing-6) 0;
+}
+.highlight-block p {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Bloc note (ROC, etc.) */
+.note-block {
+  display: flex;
+  gap: var(--spacing-6);
+  align-items: flex-start;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-6);
+  margin-top: var(--spacing-6);
+}
+.note-block__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  min-width: 60px;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+.note-block__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Timeline de phases */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-5);
+}
+.phase-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4) var(--spacing-5);
+}
+.phase-card__month {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-2);
+}
+.phase-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Sous-titre de section */
+.subsection-title {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: var(--spacing-8) 0 var(--spacing-3);
+}
+
+/* Code inline */
+.code-inline {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--color-accent);
+  background: rgba(45, 106, 79, 0.07);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+}
+
 /* -------------------------
    SECTION COMPÉTENCES
 ------------------------- */
