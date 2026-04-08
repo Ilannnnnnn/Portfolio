@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>GWARM — Détail du projet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
+</head>
+<body>
+
+  <!-- Barre de langue -->
+  <div class="lang-bar">
+    <button class="lang-bar__btn" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">← Retour au portfolio</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">Bioinformatique</span>
+        <span class="tag">ESM-2</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Python</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">BLASTP</span>
+        <span class="tag">Biologie synthétique</span>
+      </div>
+      <h1 class="project-header__title">GWARM</h1>
+      <p class="project-header__subtitle">
+        Prédiction de la thermostabilité enzymatique par fine-tuning d'un modèle de langage protéique — vers l'ingénierie d'enzymes hyperthermophiles assistée par IA.
+      </p>
+    </header>
+
+    <!-- Contexte -->
+    <section class="project-section">
+      <h2 class="project-section__title">Contexte</h2>
+      <p class="project-section__text">
+        Projet de recherche mené en première année de Master à l'<strong>ISEN Brest</strong> (janvier – avril 2025), sous la supervision de Matthieu Saumard et Yann Moalic, enseignants-chercheurs spécialisés en bioinformatique.
+      </p>
+      <p class="project-section__text">
+        Les <strong>enzymes hyperthermophiles</strong> — capables de fonctionner au-delà de 80 °C — représentent une ressource précieuse pour les industries biotechnologiques : biocarburants, chimie verte, dégradation de déchets organiques. Le problème : les voies métaboliques d'intérêt sont souvent absentes chez les organismes hyperthermophiles, et le simple transfert de gènes depuis des organismes mésophiles échoue. Les protéines traduites se révèlent non fonctionnelles à haute température, en raison de différences profondes dans le code génétique, la structure de l'ARNm et les signaux de régulation.
+      </p>
+      <p class="project-section__text">
+        GWARM explore une approche radicalement différente : exploiter des centaines de millions de séquences protéiques connues pour entraîner un modèle d'IA capable de <em>prédire</em> si une enzyme est thermostable — et, à terme, de <em>réécrire</em> des séquences mésophiles pour les rendre compatibles avec les conditions hyperthermophiles.
+      </p>
+    </section>
+
+    <!-- Stack -->
+    <section class="project-section">
+      <h2 class="project-section__title">Stack technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-item__name">Python 3.10</span>
+          <span class="tech-item__role">Scripts bioinformatiques & pipeline ML</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">ESM-2</span>
+          <span class="tech-item__role">Modèle de langage protéique (Meta AI)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">HuggingFace</span>
+          <span class="tech-item__role">Transformers + Datasets</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">PyTorch</span>
+          <span class="tech-item__role">Entraînement supervisé (MLP)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">BLASTP</span>
+          <span class="tech-item__role">Alignement de séquences protéiques</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">NCBI API</span>
+          <span class="tech-item__role">Récupération des génomes</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Biopython</span>
+          <span class="tech-item__role">Traitement des données biologiques</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Google Colab</span>
+          <span class="tech-item__role">Entraînement GPU (Tesla T4 / V100)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset -->
+    <section class="project-section">
+      <h2 class="project-section__title">Construction du dataset</h2>
+      <p class="project-section__text">
+        L'une des contributions majeures du projet est la constitution d'un dataset biologique original à grande échelle, entièrement automatisée.
+      </p>
+
+      <h3 class="subsection-title">Sélection des organismes</h3>
+      <p class="project-section__text">
+        Deux bases de données ont été mobilisées : <strong>GOSHA</strong> (Zhang et al., 2023), qui recense plus de 18 000 organismes avec leur température optimale de croissance validée, et <strong>ThermoBase</strong> (Li et al., 2021), spécialisée dans les espèces thermophiles. Un script Python filtrant les entrées par seuil de température (≤ 38 °C pour les mésophiles, ≥ 50 °C pour les thermophiles) a généré une base de ~24 000 mésophiles et ~1 200 thermophiles.
+      </p>
+
+      <h3 class="subsection-title">Récupération et traitement des génomes</h3>
+      <p class="project-section__text">
+        Les génomes correspondants ont été récupérés via l'API NCBI Entrez, avec un système de gestion des requêtes (max 3/s) et de reprise sur erreur. Les fichiers <code class="code-inline">.faa</code> contenant les séquences protéiques de chaque génome ont été téléchargés en parallèle, pour un total d'environ <strong>25 Go</strong> de données.
+      </p>
+
+      <h3 class="subsection-title">Construction des paires homologues</h3>
+      <p class="project-section__text">
+        BLASTP a été utilisé pour identifier les paires de séquences homologues entre organismes mésophiles et thermophiles, avec des critères stricts (≥ 50 % d'identité, E-value ≤ 1e-10, bit score ≥ 50). Les calculs ont été parallélisés sur un cluster à 6 cœurs, produisant finalement environ <strong>1 million de paires représentatives</strong> issues d'un dataset brut de 42+ millions de séquences.
+      </p>
+    </section>
+
+    <!-- Architecture IA -->
+    <section class="project-section">
+      <h2 class="project-section__title">Architecture du modèle</h2>
+      <p class="project-section__text">
+        Le choix du modèle a fait l'objet d'une analyse comparative approfondie. Trois candidats ont été évalués.
+      </p>
+
+      <h3 class="subsection-title">Évaluation des alternatives</h3>
+      <ul class="project-list" style="margin-bottom: var(--spacing-5);">
+        <li><strong>Evo 2</strong> — Modèle génomique fondation de très grande envergure (9,3 trillions de paires de bases), mais orienté ADN et génération, pas classification protéique. Trop coûteux computationnellement pour notre cadre.</li>
+        <li><strong>ProtBert</strong> — Architecture BERT adaptée aux protéines, 420M paramètres, 217M séquences d'entraînement. Bon, mais moins flexible qu'ESM-2.</li>
+        <li><strong>ESM-2</strong> (retenu) — Développé par Meta AI, entraîné sur UniRef50 (250M+ séquences), disponible en plusieurs tailles, intégration native PyTorch, performances état de l'art.</li>
+      </ul>
+
+      <h3 class="subsection-title">Implémentation ESM-2</h3>
+      <p class="project-section__text">
+        La variante choisie est <code class="code-inline">facebook/esm2_t6_8M_UR50D</code> : 6 couches Transformer, 8M paramètres — un compromis optimal entre richesse des représentations et coût computationnel accessible. Le modèle a été fine-tuné en tant que <code class="code-inline">AutoModelForSequenceClassification</code> pour une prédiction binaire directe (thermophile / mésophile).
+      </p>
+
+      <div class="highlight-block">
+        <p>Les embeddings ESM-2 encodent implicitement des informations structurales (structure secondaire et tertiaire, domaines fonctionnels, sites actifs) à partir de la seule séquence d'acides aminés — sans alignement multiple ni annotation préalable.</p>
+      </div>
+
+      <h3 class="subsection-title">Pipeline d'entraînement</h3>
+      <ul class="project-list">
+        <li>Tokenisation des séquences (max 512 tokens, stratégie par acide aminé)</li>
+        <li>Split stratifié 80 % / 10 % / 10 % (train / val / test)</li>
+        <li>Optimiseur Adam, learning rate 1e-4, batch size 256</li>
+        <li>Early stopping sur la perte de validation pour éviter le surapprentissage</li>
+        <li>Entraînement effectué sur Google Colab (GPU T4/V100), ~1 heure</li>
+      </ul>
+    </section>
+
+    <!-- Résultats -->
+    <section class="project-section">
+      <h2 class="project-section__title">Résultats</h2>
+      <p class="project-section__text">
+        Le modèle a été évalué sur un jeu de test indépendant de 1 000 séquences (485 mésophiles, 515 thermophiles) couvrant une large diversité de familles enzymatiques et d'origines taxonomiques.
+      </p>
+
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value">94,7 %</div>
+          <div class="metric-card__label">Accuracy globale sur le jeu de test</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">0,95</div>
+          <div class="metric-card__label">F1-score (équilibré pour les deux classes)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">99,8 %</div>
+          <div class="metric-card__label">Rappel pour la classe mésophile</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">99,8 %</div>
+          <div class="metric-card__label">Précision pour la classe thermophile</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">42 M+</div>
+          <div class="metric-card__label">Séquences protéiques dans le dataset brut</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">1 M</div>
+          <div class="metric-card__label">Paires homologues retenues pour l'entraînement</div>
+        </div>
+      </div>
+
+      <div class="note-block">
+        <span class="note-block__label">AUC ROC</span>
+        <p class="note-block__text">La courbe ROC affiche une AUC de 0,66 — un score à interpréter dans le contexte des contraintes d'entraînement (moins de 10 000 steps). Des tests exploratoires menés avec l'encadrant sur 110 000 steps et des séquences de 1 024 tokens ont produit une accuracy de <strong>0,9994</strong> et un F1 de <strong>0,9994</strong>, confirmant que les performances sont principalement limitées par les ressources, non par l'architecture.</p>
+      </div>
+
+      <p class="project-section__text" style="margin-top: var(--spacing-6);">
+        La matrice de confusion révèle une asymétrie intéressante : 52 thermophiles sont mal classés comme mésophiles (faux négatifs), contre un seul mésophile prédit thermophile. Cette tendance s'explique probablement par une plus grande diversité structurelle des enzymes mésophiles dans le dataset, et par le fait que certaines enzymes thermophiles présentent des caractéristiques séquentielles proches de celles de mésophiles.
+      </p>
+    </section>
+
+    <!-- Planning -->
+    <section class="project-section">
+      <h2 class="project-section__title">Organisation du projet</h2>
+      <p class="project-section__text">
+        Le projet s'est déroulé de janvier à avril 2025, avec une approche agile et des réunions hebdomadaires de suivi.
+      </p>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-card__month">Janvier</div>
+          <div class="phase-card__desc">État de l'art, revue bibliographique, identification des données</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Février</div>
+          <div class="phase-card__desc">Constitution du dataset, scripts NCBI, alignement BLASTP</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Mars</div>
+          <div class="phase-card__desc">Développement du modèle ESM-2, entraînement, validation</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Avril</div>
+          <div class="phase-card__desc">Analyse des résultats, rédaction du rapport, présentation orale</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apprentissages -->
+    <section class="project-section">
+      <h2 class="project-section__title">Points clés & apprentissages</h2>
+      <ul class="project-list">
+        <li>Maîtrise complète d'un pipeline de <strong>bioinformatique computationnelle</strong> : de la collecte de données génomiques brutes à l'entraînement d'un modèle de deep learning</li>
+        <li>Exploration approfondie des <strong>Protein Language Models</strong> (ESM-2, ProtBert, Evo 2) et de leurs spécificités pour des tâches de classification fonctionnelle</li>
+        <li>Gestion de datasets à très grande échelle (25 Go, 42 M séquences) avec scripts d'automatisation, parallélisation et gestion des erreurs API</li>
+        <li>Confrontation concrète aux <strong>limites computationnelles</strong> de la recherche académique, et à l'impact du nombre de steps d'entraînement sur les performances</li>
+        <li>Travail à l'intersection de la biologie synthétique, de la génomique comparative et du machine learning appliqué</li>
+      </ul>
+
+      <div class="highlight-block" style="margin-top: var(--spacing-8);">
+        <p>Les résultats obtenus dans des conditions contraintes (1 epoch, 512 tokens, ressources Colab) surpassent plusieurs références de la littérature dans le domaine de la prédiction de thermostabilité enzymatique. Ce projet pose les bases d'une approche d'ingénierie enzymatique <em>in silico</em>, plus rapide et économique que les méthodes d'évolution dirigée traditionnelles.</p>
+      </div>
+    </section>
+
+    <!-- Perspectives -->
+    <section class="project-section">
+      <h2 class="project-section__title">Perspectives</h2>
+      <p class="project-section__text">GWARM ouvre plusieurs directions de recherche et d'application concrètes :</p>
+      <ul class="project-list">
+        <li><strong>Passage en régression</strong> : prédire directement la température optimale de fonctionnement sur une échelle continue, plutôt qu'une classification binaire</li>
+        <li><strong>Fine-tuning complet</strong> : 50 000+ steps avec séquences de 1 024 tokens sur infrastructure distribuée, pour atteindre le plein potentiel du modèle</li>
+        <li><strong>Ingénierie générative</strong> : utiliser le classifieur ESM-2 comme discriminateur pour évaluer des séquences générées par Evo 2 et proposer des mutations thermostabilisantes</li>
+        <li><strong>Interface accessible</strong> : déploiement via Streamlit ou Gradio pour les biologistes sans compétences en programmation</li>
+        <li><strong>Publication scientifique</strong> : résultats suffisamment originaux pour viser des conférences spécialisées (ISMB/ECCB, Bioinformatics)</li>
+      </ul>
+    </section>
+
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back">← Retour au portfolio</a>
+    </footer>
+
+  </div>
+
+  <script src="js/i18n.js?v=1"></script>
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>
