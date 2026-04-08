@@ -39,7 +39,7 @@
     "exp2Desc": "Engineering degree specializing in artificial intelligence.",
     "exp3Title": "Research Intern – Sleep Apnea Detection",
     "exp3Dates": "May 2025 – Sept. 2025",
-    "exp3Desc": "[Experience description to be filled in]",
+    "exp3Desc": "Deep learning pipeline (GoogLeNet + CWT) for sleep apnea detection from ECG signals — research internship at Hôpital Erasme / ULB, in collaboration with ESA.",
     "contactTagline": "Interested in a collaboration or just a chat? Feel free to reach out.",
     "contactSub": "Available for opportunities in AI, NLP, and software engineering."
   },
