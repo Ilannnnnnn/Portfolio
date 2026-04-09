@@ -620,6 +620,140 @@ ul, ol { list-style: none; }
   color: var(--color-text-muted);
 }
 
+/* Institution badge (pages expérience) */
+.institution-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-4);
+  margin-top: var(--spacing-6);
+}
+.institution-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+.institution-badge__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+.institution-badge__text strong { color: var(--color-text); }
+
+/* Highlight block */
+.highlight-block {
+  background: rgba(45, 106, 79, 0.06);
+  border-left: 2px solid var(--color-accent);
+  padding: var(--spacing-5) var(--spacing-6);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: var(--spacing-6) 0;
+}
+.highlight-block p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Results table */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-5);
+  font-size: var(--text-sm);
+}
+.results-table th {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 2px solid var(--color-border-dark);
+  text-align: left;
+  background: var(--color-bg);
+}
+.results-table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+.results-table tr:hover td { background: var(--color-bg-card); }
+.results-table td:first-child { color: var(--color-text); }
+.results-table .highlight-row td { background: var(--color-bg-card); }
+.results-table .highlight-row td:not(:first-child) { color: var(--color-accent); font-weight: 600; }
+
+/* Phase list */
+.phase-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-5);
+}
+.phase-item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4) var(--spacing-5);
+}
+.phase-item__month {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-2);
+}
+.phase-item__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Subsection title */
+.subsection-title {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  margin: var(--spacing-8) 0 var(--spacing-3);
+}
+
+/* Challenge block */
+.challenge-block {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4) var(--spacing-5);
+  margin-bottom: var(--spacing-3);
+}
+.challenge-block__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-2);
+}
+.challenge-block__title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-2);
+}
+.challenge-block__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
 /* -------------------------
    SECTION COMPÉTENCES
 ------------------------- */
