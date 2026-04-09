@@ -689,20 +689,50 @@ ul, ol { list-style: none; }
 .results-table .highlight-row td { background: var(--color-bg-card); }
 .results-table .highlight-row td:not(:first-child) { color: var(--color-accent); font-weight: 600; }
 
+/* Bloc note (ROC, etc.) */
+.note-block {
+  display: flex;
+  gap: var(--spacing-6);
+  align-items: flex-start;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-6);
+  margin-top: var(--spacing-6);
+}
+.note-block__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  min-width: 60px;
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+.note-block__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
 /* Phase list */
-.phase-list {
+.phase-list,
+.phase-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: var(--spacing-3);
   margin-top: var(--spacing-5);
 }
-.phase-item {
+.phase-item,
+.phase-card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-4) var(--spacing-5);
 }
-.phase-item__month {
+.phase-item__month,
+.phase-card__month {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   letter-spacing: 0.12em;
@@ -710,7 +740,8 @@ ul, ol { list-style: none; }
   text-transform: uppercase;
   margin-bottom: var(--spacing-2);
 }
-.phase-item__desc {
+.phase-item__desc,
+.phase-card__desc {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.5;
@@ -752,6 +783,16 @@ ul, ol { list-style: none; }
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.65;
+}
+
+/* Code inline */
+.code-inline {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--color-accent);
+  background: rgba(45, 106, 79, 0.07);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
 }
 
 /* -------------------------
