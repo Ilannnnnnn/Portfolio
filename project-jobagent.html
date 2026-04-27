@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>JobAgent — Détail du projet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
+</head>
+<body>
+
+  <!-- Barre de langue -->
+  <div class="lang-bar">
+    <button class="lang-bar__btn" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <!-- Navigation retour -->
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">← Retour au portfolio</a>
+      <div class="project-page__nav-links">
+        <a href="https://github.com/Ilannnnnnn/JobAgent" class="project-link project-link--github" target="_blank" rel="noopener" aria-label="Voir le code source sur GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+
+    <!-- Header du projet -->
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">LangGraph</span>
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Claude API</span>
+        <span class="tag">Apify</span>
+        <span class="tag">SQLite</span>
+      </div>
+      <h1 class="project-header__title">JobAgent</h1>
+      <p class="project-header__subtitle">
+        Pipeline agentique autonome de collecte, scoring et suivi d'offres d'emploi, avec adaptation de CV par IA.
+      </p>
+      <div class="availability-badge" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>En production</span>
+      </div>
+    </header>
+
+    <!-- Section : Contexte -->
+    <section class="project-section">
+      <h2 class="project-section__title">Contexte</h2>
+      <p class="project-section__text">
+        Projet personnel développé en 2025-2026 dans le cadre d'une recherche de CDI en ingénierie IA. Face au volume d'offres à surveiller quotidiennement sur cinq plateformes différentes, l'objectif est d'automatiser entièrement la veille : collecte, déduplication, scoring par LLM et adaptation du CV — pour postuler moins mais mieux.
+      </p>
+      <p class="project-section__text">
+        L'agent tourne en local et orchestre cinq scrapers en parallèle. Chaque nouvelle offre est scorée par Claude Haiku sur une échelle de 0 à 100, en regard du profil candidat. Un dashboard Streamlit permet de piloter les candidatures et de déclencher l'adaptation du CV en un clic.
+      </p>
+    </section>
+
+    <!-- Section : Architecture LangGraph -->
+    <section class="project-section">
+      <h2 class="project-section__title">Architecture — Pipeline LangGraph</h2>
+      <p class="project-section__text">
+        Le cœur du système est un graphe agentique LangGraph composé de quatre nœuds et un edge conditionnel. Les cinq sources couvertes sont <strong>Adzuna API</strong>, <strong>APEC via Apify</strong>, <strong>Indeed via JobSpy</strong>, <strong>Welcome to the Jungle via Apify</strong> et <strong>Google Jobs via JobSpy</strong>.
+      </p>
+
+      <!-- Diagramme SVG du pipeline LangGraph -->
+      <div style="margin: 2.5rem 0; overflow-x: auto;">
+        <svg viewBox="0 0 560 510" width="100%" style="max-width: 560px; display: block; margin: 0 auto;" role="img" aria-label="Diagramme du pipeline LangGraph de JobAgent : START → collecter → should_score? → scorer_batch → generer_rapport → generer_excel → END, avec une branche conditionnelle sautant scorer_batch si zéro nouvelle offre">
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#1a1a1a"/>
+            </marker>
+            <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#2d6a4f"/>
+            </marker>
+          </defs>
+
+          <!-- ─── START ─── -->
+          <circle cx="280" cy="28" r="22" fill="#1a1a1a"/>
+          <text x="280" y="33" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#f0ede8" letter-spacing="0.08em">START</text>
+
+          <!-- Arrow START → collecter -->
+          <line x1="280" y1="50" x2="280" y2="70" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <!-- ─── NŒUD 1 : collecter ─── -->
+          <rect x="80" y="74" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="98" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">collecter</text>
+          <text x="280" y="116" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">5 sources · ThreadPoolExecutor · déduplication URL</text>
+
+          <!-- Arrow collecter → should_score -->
+          <line x1="280" y1="128" x2="280" y2="148" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <!-- ─── EDGE CONDITIONNEL : should_score? (losange vert) ─── -->
+          <polygon points="280,152 348,184 280,216 212,184" fill="rgba(45,106,79,0.07)" stroke="#2d6a4f" stroke-width="1.8"/>
+          <text x="280" y="181" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#2d6a4f">should_score</text>
+          <text x="280" y="196" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#2d6a4f">nouvelles offres ?</text>
+
+          <!-- Arrow should_score → scorer_batch (oui) -->
+          <line x1="280" y1="216" x2="280" y2="254" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+          <text x="264" y="239" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="10" fill="#999999">oui</text>
+
+          <!-- ─── NŒUD 2 : scorer_batch ─── -->
+          <rect x="80" y="258" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="282" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">scorer_batch</text>
+          <text x="280" y="300" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">Claude Haiku · score 0-100 · points forts / faibles</text>
+
+          <!-- Arrow scorer_batch → generer_rapport -->
+          <line x1="280" y1="312" x2="280" y2="332" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <!-- ─── NŒUD 3 : generer_rapport ─── -->
+          <rect x="80" y="336" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="360" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">generer_rapport</text>
+          <text x="280" y="378" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">rapport TXT horodaté · classement par score</text>
+
+          <!-- Arrow generer_rapport → generer_excel -->
+          <line x1="280" y1="390" x2="280" y2="410" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <!-- ─── NŒUD 4 : generer_excel ─── -->
+          <rect x="80" y="414" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="438" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">generer_excel</text>
+          <text x="280" y="456" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">offres.xlsx · code couleur priorité · auto-filtres</text>
+
+          <!-- Arrow generer_excel → END -->
+          <line x1="280" y1="468" x2="280" y2="486" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <!-- ─── END ─── -->
+          <circle cx="280" cy="494" r="16" fill="#1a1a1a"/>
+          <text x="280" y="498" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#f0ede8" letter-spacing="0.08em">END</text>
+
+          <!-- ─── BYPASS conditionnel (tirets verts) : should_score → generer_rapport ─── -->
+          <!-- Chemin : droite du losange → x=500 → descend → x=480 (bord droit du rect) -->
+          <polyline points="348,184 500,184 500,363 480,363" fill="none" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-green)"/>
+
+          <!-- Label bypass -->
+          <text text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="10" fill="#2d6a4f" transform="translate(518,274) rotate(90)">0 nouvelle offre → skip scorer</text>
+        </svg>
+      </div>
+
+      <!-- Légende -->
+      <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 32px; height: 18px; background: white; border: 1.5px solid #1a1a1a; border-radius: 3px; flex-shrink: 0;"></div>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Nœud LangGraph</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="32" height="18" viewBox="0 0 32 18" aria-hidden="true">
+            <polygon points="16,2 30,9 16,16 2,9" fill="rgba(45,106,79,0.07)" stroke="#2d6a4f" stroke-width="1.5"/>
+          </svg>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Edge conditionnel</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="32" height="4" viewBox="0 0 32 4" aria-hidden="true">
+            <line x1="0" y1="2" x2="32" y2="2" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5,3"/>
+          </svg>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Branche skip (0 offre)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Fonctionnalités -->
+    <section class="project-section">
+      <h2 class="project-section__title">Fonctionnalités</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Collecte</div>
+          <div class="challenge-block__title">Multi-sources parallèle</div>
+          <div class="challenge-block__text">5 scrapers en ThreadPoolExecutor (Adzuna, APEC, Indeed, WTTJ, Google Jobs). Normalisation au format unifié. Déduplication automatique par contrainte UNIQUE SQLite sur l'URL.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Scoring IA</div>
+          <div class="challenge-block__title">Claude Haiku 0-100</div>
+          <div class="challenge-block__text">Analyse du titre, de la description et du profil candidat. Retourne un score structuré via Pydantic : score, explication en 2-3 phrases, points forts et points faibles.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Dashboard</div>
+          <div class="challenge-block__title">Streamlit interactif</div>
+          <div class="challenge-block__text">Filtres multi-critères, vue détail par offre avec courbe salaire vs marché, suivi du statut de candidature, enrichissement entreprise via Tavily.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Adaptation CV</div>
+          <div class="challenge-block__title">Claude Sonnet streaming</div>
+          <div class="challenge-block__text">Lit le portfolio HTML, le profil YAML et l'analyse de l'offre pour adapter le CV HTML de base. Génération en streaming (~30 s) depuis le dashboard.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Export</div>
+          <div class="challenge-block__title">Excel code couleur</div>
+          <div class="challenge-block__text">Fichier <code class="code-inline">offres.xlsx</code> mis à jour à chaque run : vert (≥ 85), jaune (≥ 60), gris (< 60). Auto-filtres sur 12 colonnes dont l'analyse IA.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Enrichissement</div>
+          <div class="challenge-block__title">Tavily API</div>
+          <div class="challenge-block__text">Informations entreprise récupérées à la demande dans le panneau détail : activité, secteur, taille. Déclenché uniquement au besoin, sans appel systématique.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section : Stack technique -->
+    <section class="project-section">
+      <h2 class="project-section__title">Stack technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-item__name">LangGraph</span>
+          <span class="tech-item__role">Orchestration agentique</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Claude Haiku</span>
+          <span class="tech-item__role">Scoring des offres</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Claude Sonnet</span>
+          <span class="tech-item__role">Adaptation du CV</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Apify</span>
+          <span class="tech-item__role">Scraping APEC & WTTJ</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">JobSpy</span>
+          <span class="tech-item__role">Scraping Indeed & Google</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Adzuna API</span>
+          <span class="tech-item__role">Source directe REST</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Streamlit</span>
+          <span class="tech-item__role">Dashboard interactif</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">SQLite</span>
+          <span class="tech-item__role">Stockage & déduplication</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Plotly</span>
+          <span class="tech-item__role">Visualisation salaires</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Tavily</span>
+          <span class="tech-item__role">Enrichissement entreprise</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">BeautifulSoup</span>
+          <span class="tech-item__role">Extraction portfolio</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">openpyxl</span>
+          <span class="tech-item__role">Export Excel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Métriques -->
+    <section class="project-section">
+      <h2 class="project-section__title">Métriques</h2>
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value">5</div>
+          <div class="metric-card__label">Sources de scraping</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">200+</div>
+          <div class="metric-card__label">Offres collectées par run</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">4</div>
+          <div class="metric-card__label">Nœuds LangGraph</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">100</div>
+          <div class="metric-card__label">Score maximum par offre</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Fonctionnement détaillé -->
+    <section class="project-section">
+      <h2 class="project-section__title">Fonctionnement détaillé</h2>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-card__month">Étape 1</div>
+          <div class="phase-card__desc"><strong>Collecte parallèle</strong> — 5 scrapers en ThreadPoolExecutor, normalisation au format unifié, déduplication par URL via contrainte UNIQUE SQLite. Deal-breakers filtrés avant insertion.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Étape 2</div>
+          <div class="phase-card__desc"><strong>Scoring conditionnel</strong> — si des nouvelles offres existent, Claude Haiku analyse titre + description + profil candidat. Sleep 1 s entre chaque appel. Résultat validé par Pydantic.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Étape 3</div>
+          <div class="phase-card__desc"><strong>Dashboard</strong> — lecture DB en temps réel, filtres score / source / contrat / statut, vue détail avec courbe salaire vs marché, bouton Postuler.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Étape 4</div>
+          <div class="phase-card__desc"><strong>Adaptation CV</strong> — Claude Sonnet lit le portfolio HTML (BeautifulSoup, 8 000 car. max / fichier), le profil YAML et l'analyse de l'offre. Streaming vers un fichier HTML adapté.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Étape 5</div>
+          <div class="phase-card__desc"><strong>Export</strong> — fichier <code class="code-inline">offres.xlsx</code> permanent mis à jour à chaque run, rapport TXT horodaté généré après chaque cycle de collecte.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Highlight technique — Edge conditionnel -->
+    <section class="project-section">
+      <h2 class="project-section__title">Highlight technique</h2>
+      <h3 class="subsection-title">L'edge conditionnel <code class="code-inline">should_score</code> — agents vs scripts</h3>
+      <div class="highlight-block">
+        <p>Si zéro nouvelle offre n'est détectée après la collecte, le graphe <strong>saute directement</strong> le nœud <code class="code-inline">scorer_batch</code> et passe à <code class="code-inline">generer_rapport</code>. Cette décision est prise dynamiquement par LangGraph en lisant <code class="code-inline">state["new_offers_count"]</code> — c'est la différence fondamentale entre un <em>script séquentiel</em> et un <em>agent</em> : le flux d'exécution n'est pas figé, il s'adapte au contexte à l'exécution.</p>
+      </div>
+      <p class="project-section__text" style="margin-top: 1.5rem;">
+        Concrètement : la fonction <code class="code-inline">should_score()</code> retourne soit la chaîne <code class="code-inline">"scorer_batch"</code>, soit <code class="code-inline">"generer_rapport"</code>. LangGraph route alors le graphe vers le nœud correspondant. Ce pattern d'edge conditionnel est réutilisable pour n'importe quelle logique de branchement agentique — retry, fork, escalade.
+      </p>
+    </section>
+
+    <!-- Section : Résultats -->
+    <section class="project-section">
+      <h2 class="project-section__title">Résultats</h2>
+
+      <div class="note-block">
+        <span class="note-block__label">Collecte</span>
+        <p class="note-block__text">~2 minutes pour 200+ offres toutes sources confondues, grâce aux 5 scrapers en parallèle.</p>
+      </div>
+      <div class="note-block" style="margin-top: 0.75rem;">
+        <span class="note-block__label">Scoring</span>
+        <p class="note-block__text">~3 minutes pour scorer 100 offres (Claude Haiku + sleep 1 s entre chaque appel API).</p>
+      </div>
+      <div class="note-block" style="margin-top: 0.75rem;">
+        <span class="note-block__label">Prioritaires</span>
+        <p class="note-block__text">15-20 % des offres collectées atteignent un score ≥ 85 (catégorie PRIORITAIRE ★★★), ce qui représente typiquement 15 à 40 offres à fort potentiel par run.</p>
+      </div>
+      <div class="note-block" style="margin-top: 0.75rem;">
+        <span class="note-block__label">CV adapté</span>
+        <p class="note-block__text">~30 secondes pour générer un CV HTML adapté à une offre spécifique, en streaming depuis Claude Sonnet, déclenché en un clic depuis le dashboard.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back">← Retour au portfolio</a>
+    </footer>
+
+  </div><!-- /.project-page -->
+
+  <script src="js/i18n.js?v=1"></script>
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>
