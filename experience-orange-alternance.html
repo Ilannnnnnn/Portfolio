@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Alternance Orange Innovation — Détail du projet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
+</head>
+<body>
+
+  <!-- Barre de langue -->
+  <div class="lang-bar">
+    <button class="lang-bar__btn" id="btn-lang-fr" data-lang="fr" aria-pressed="true">FR</button>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn" id="btn-lang-en" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <!-- Navigation retour -->
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">
+        <span data-i18n="common.backToPortfolio">← Retour au portfolio</span>
+      </a>
+      <div class="project-page__nav-links">
+        <a href="https://github.com/Ilannnnnnn" class="project-link project-link--github" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+
+    <!-- Header du projet -->
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">LLM Fine-tuning</span>
+        <span class="tag">PCAP Analysis</span>
+        <span class="tag">SIP/IPSEC</span>
+        <span class="tag">Go</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">Whisper</span>
+        <span class="tag">Réseau</span>
+        <span class="tag">Python</span>
+        <span class="tag">Agentique</span>
+      </div>
+      <h1 class="project-header__title">Alternance Ingénieur IA &amp; Télécommunications — Orange Innovation</h1>
+      <p class="project-header__subtitle">
+        Développement de systèmes d'IA appliqués aux infrastructures télécom — analyse de traces réseau, fine-tuning de modèles de langage, passerelle IPSEC, assistant vocal, et agentique appliqué aux technologies télécom.
+      </p>
+      <div class="institution-badge">
+        <div class="institution-badge__dot"></div>
+        <div class="institution-badge__text">
+          Alternance M2 · <strong>Orange Innovation</strong> · Lannion · Septembre 2025 – Septembre 2026
+        </div>
+      </div>
+    </header>
+
+    <!-- Contexte -->
+    <section class="project-section">
+      <h2 class="project-section__title">Contexte</h2>
+      <p class="project-section__text">
+        Orange Innovation est la direction R&amp;D d'Orange Group, dont l'antenne de Lannion (Bretagne) est historiquement spécialisée dans les technologies télécom : protocoles SIP, infrastructure réseau, et plus récemment IA appliquée aux réseaux. Mon alternance s'inscrit dans une équipe dont la mission est de proposer et expérimenter des innovations à fort potentiel, pouvant donner lieu à des dépôts de brevets.
+      </p>
+      <p class="project-section__text">
+        Les missions sont à l'intersection de l'IA/ML et des infrastructures télécom : fine-tuning de LLMs, analyse de traces réseau par IA, développement de passerelles en Go, et prototypage d'assistants vocaux.
+      </p>
+    </section>
+
+    <!-- Stack technique -->
+    <section class="project-section">
+      <h2 class="project-section__title" data-i18n="common.sectionStack">Stack technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-item__name">Python 3</span>
+          <span class="tech-item__role">Pipelines ML, scripts d'analyse, traitement de données réseau</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Go</span>
+          <span class="tech-item__role">Développement passerelle IPSEC (A-SBC/IPSECGW)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">PyTorch / HuggingFace</span>
+          <span class="tech-item__role">Fine-tuning, inférence, évaluation de modèles</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Whisper / pyannote.audio</span>
+          <span class="tech-item__role">Transcription speech-to-text, diarisation locuteur</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Wireshark / PCAP</span>
+          <span class="tech-item__role">Capture et analyse de traces réseau</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Linux / Docker / Azure</span>
+          <span class="tech-item__role">Infrastructure, déploiement, GPU server "colossus"</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Qwen2.5-3B / Phi-3</span>
+          <span class="tech-item__role">Modèles fine-tunés et déployés</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">LLM Proxy Orange</span>
+          <span class="tech-item__role">Gemini 2.5 Flash Lite via vertex_ai — inférence interne</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">SQLite</span>
+          <span class="tech-item__role">Stockage structuré pour le POC assistant vocal</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Git / GitHub</span>
+          <span class="tech-item__role">Versioning, revues de code</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Missions & Projets -->
+    <section class="project-section">
+      <h2 class="project-section__title">Missions &amp; Projets</h2>
+      <p class="project-section__text">
+        Cinq missions menées en parallèle, couvrant l'ensemble de la chaîne IA appliquée aux infrastructures télécom.
+      </p>
+      <div class="phase-list">
+        <div class="phase-item">
+          <div class="phase-item__month">Mission 1</div>
+          <div class="phase-item__desc"><strong>Assistant IA pour l'analyse de traces PCAP</strong> — Développement d'un assistant capable d'analyser automatiquement des fichiers de capture réseau (PCAP/Wireshark). Le défi central : les fichiers PCAP bruts ont une entropie proche du maximum théorique (~7,5 bits/octet), ce qui rend leur traitement direct par LLM très difficile. Exploration de plusieurs approches : RLM, LLMcap, TrafficLLM, segmentation entropique inspirée du Byte Latent Transformer. Utilisation du proxy LLM interne Orange (Gemini 2.5 Flash Lite). Insight clé : les formats CSV extraits (type CIC/UNB) sont plus exploitables que le binaire brut. Ce travail s'inscrit dans une démarche d'agentique appliqué aux technologies télécom, actuellement en cours de valorisation.</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Mission 2</div>
+          <div class="phase-item__desc"><strong>Fine-tuning Qwen2.5-3B pour le support télécom</strong> — Fine-tuning supervisé d'un LLM 3 milliards de paramètres pour la réponse à des questions de support technique télécom. Évaluation systématique de 16 variantes selon une rubrique structurée (pertinence, qualité de solution, complétude, clarté, absence d'erreurs — 10 pts). Résultat : aucune variante n'a surpassé le modèle de base (~88/90 pts). Problèmes identifiés : répétition de questions, duplication de texte, hallucinations, dérive thématique. Apprentissage concret : un modèle fine-tuné ne surpasse pas automatiquement le modèle de base — l'évaluation rigoureuse est indispensable avant déploiement.</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Mission 3</div>
+          <div class="phase-item__desc"><strong>Passerelle IPSEC en Go (A-SBC/IPSECGW)</strong> — Développement et maintenance d'une passerelle IPSEC/SIP en Go gérant jusqu'à 250 000 utilisateurs simultanés. Deux axes : (1) Migration cryptographique de MD5 vers SHA-1-96 pour l'ESP IPSEC, avec gestion d'une subtilité critique — le serveur A-SBC accepte SHA-1 pour IPSEC mais annonce MD5 pour l'authentification SIP digest dans la même réponse 401. (2) Implémentation d'un filtre anti-DEREG massif (style DDoS) via une architecture à quatre maps séparant le tracking REGISTER et DEREG. Tests avec l'outil raptor16 (simulateur SIP multi-UE).</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Mission 4</div>
+          <div class="phase-item__desc"><strong>POC "Mon Compagnon" — assistant vocal</strong> — Développement d'un assistant vocal de bout en bout pour l'analyse d'appels téléphoniques. Pipeline : Whisper (speech-to-text) → Phi-3 MIT (résumé/LLM) → SQLite (stockage). Ajout de la diarisation locuteur via pyannote.audio pour distinguer Agent et Client dans les transcriptions. Déployé sur serveur GPU "colossus". Choix de Phi-3 motivé par sa licence MIT, compatible avec un dépôt de brevet.</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Mission 5</div>
+          <div class="phase-item__desc"><strong>Recherche &amp; veille technique transverse</strong> — Inventory de datasets PCAP publics annotés (NETRESEC, CIC/UNB, CAIDA, UNSW-NB15, Wireshark SampleCaptures, sources SIP/VoIP). Étude des protocoles inter-agents IA (MCP, A2A Google, ACP IBM/BeeAI) et de leur applicabilité aux infrastructures réseau. Conception de pipelines ML pour détection d'anomalies TCP (slow start, congestion, bufferbloat). Formation sur les architectures transformer (attention multi-têtes, scaling laws, nanochat/Karpathy).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Résultats -->
+    <section class="project-section">
+      <h2 class="project-section__title" data-i18n="common.sectionResults">Résultats &amp; Points clés</h2>
+
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value">16</div>
+          <div class="metric-card__label">Variantes Qwen2.5-3B évaluées</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">250k</div>
+          <div class="metric-card__label">Utilisateurs gérés par la passerelle IPSEC</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">4 maps</div>
+          <div class="metric-card__label">Architecture filtre anti-DEREG</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">5</div>
+          <div class="metric-card__label">Projets conduits en parallèle</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Défis rencontrés -->
+    <section class="project-section">
+      <h2 class="project-section__title">Défis rencontrés</h2>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Défi 01 · Données réseau</div>
+        <div class="challenge-block__title">Entropie maximale des PCAP bruts</div>
+        <div class="challenge-block__text">Les fichiers PCAP bruts approchent le maximum théorique d'entropie (~7,5 bits/octet), ce qui sature les fenêtres de contexte des LLMs et dégrade fortement leur compréhension. Solution : exploration de l'extraction de KPIs en CSV, segmentation entropique dynamique, et formats intermédiaires plus "compressibles" par les modèles.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Défi 02 · Fine-tuning</div>
+        <div class="challenge-block__title">Aucune variante ne surpasse le modèle de base</div>
+        <div class="challenge-block__text">Sur 16 runs de fine-tuning de Qwen2.5-3B, le meilleur score obtenu (88/90) est identique au modèle de base. Problèmes systémiques identifiés : qualité insuffisante du dataset d'entraînement, répétitions de questions dans certains prompts, hallucinations. Prise de conscience concrète que le fine-tuning requiert une évaluation structurée et un dataset de haute qualité.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Défi 03 · IPSEC/SIP</div>
+        <div class="challenge-block__title">Confusion entre deux systèmes d'authentification indépendants</div>
+        <div class="challenge-block__text">Le serveur A-SBC peut utiliser MD5 pour l'authentification SIP digest et SHA-1 pour l'ESP IPSEC simultanément dans la même réponse 401. Confondre ces deux niveaux causa des bugs subtils (IPSEC non activé après migration SHA-1). Solution : logique conditionnelle séparant explicitement les deux systèmes dans le code Go.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Défi 04 · Infrastructure</div>
+        <div class="challenge-block__title">Accès réseau restreint en environnement corporate</div>
+        <div class="challenge-block__text">Le proxy corporate Orange bloque de nombreuses APIs externes (OpenRouter, HuggingFace direct). Adaptation : utilisation systématique du proxy LLM interne Orange (<code>management.llmproxy.ai.orange</code>) et configuration des variables d'environnement proxy pour toutes les requêtes sortantes.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Défi 05 · Évaluation LLM</div>
+        <div class="challenge-block__title">Subjectivité et reproductibilité des métriques</div>
+        <div class="challenge-block__text">Évaluer des réponses de LLMs de manière reproductible sur des questions de support télécom est non-trivial. Développement d'une rubrique à 5 critères, 10 points, avec scoring systématique sur 9 prompts × 17 modèles, permettant un ranking objectif et des recommandations actionnables.</div>
+      </div>
+    </section>
+
+    <!-- Compétences développées -->
+    <section class="project-section">
+      <h2 class="project-section__title">Compétences développées</h2>
+      <ul class="project-list">
+        <li>Maîtrise du cycle complet de <strong>fine-tuning LLM</strong> : préparation de dataset, SFT, évaluation structurée, analyse des échecs</li>
+        <li>Développement en <strong>Go</strong> d'une passerelle télécom industrielle gérant de larges volumes d'utilisateurs simultanés</li>
+        <li>Compréhension approfondie des <strong>protocoles SIP, IPSEC, TCP/UDP, RTP</strong> et de leurs interactions</li>
+        <li>Analyse de traces réseau (<strong>Wireshark/PCAP</strong>) et extraction de KPIs pour pipelines ML</li>
+        <li>Prototypage de <strong>pipelines speech-to-text</strong> avec diarisation locuteur (Whisper + pyannote.audio)</li>
+        <li>Exploration des architectures <strong>agentiques</strong> (MCP, A2A, ACP) et de leur applicabilité télécom</li>
+        <li>Travail en <strong>environnement R&amp;D industriel</strong> : contraintes IP, proxy corporate, GPU server partagé, logique de brevet</li>
+      </ul>
+    </section>
+
+    <!-- Perspectives -->
+    <section class="project-section">
+      <h2 class="project-section__title">Perspectives</h2>
+      <p class="project-section__text">
+        Disponible pour de nouvelles opportunités à partir d'<strong>octobre 2026</strong>. Les travaux menés ouvrent des pistes sur : l'analyse automatisée de traces réseau à grande échelle, le déploiement de LLMs spécialisés télécom, et des architectures agentiques pour la supervision d'infrastructures réseau. Un travail de valorisation est en cours de rédaction.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back"><span data-i18n="common.backToPortfolio">← Retour au portfolio</span></a>
+    </footer>
+
+  </div><!-- /.project-page -->
+
+  <script src="js/i18n.js?v=1"></script>
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>
