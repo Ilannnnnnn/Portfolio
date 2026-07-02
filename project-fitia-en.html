@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>FitIA — Project details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
+</head>
+<body>
+
+  <div class="lang-bar">
+    <a href="project-fitia.html" class="lang-bar__btn" style="text-decoration:none" aria-label="Passer en français">FR</a>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn active" id="btn-lang-en" aria-pressed="true">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">← Back to portfolio</a>
+      <div class="project-page__nav-links">
+      </div>
+    </nav>
+
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">Flutter</span>
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Gemini</span>
+        <span class="tag">Weaviate</span>
+        <span class="tag">RAG</span>
+      </div>
+      <h1 class="project-header__title">FitIA</h1>
+      <p class="project-header__subtitle">
+        AI-powered personalised fitness coaching application — RAG pipeline over 4M+ documents, LLM-generated structured training plans and progress tracking.
+      </p>
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; margin-bottom: 0; padding: 0.4rem 0.9rem; background: rgba(45,106,79,0.07); border: 1px solid rgba(45,106,79,0.25); border-radius: var(--radius-full); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent);">
+        M2 Project · Team POC
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Context</h2>
+      <p class="project-section__text">
+        Existing fitness coaching applications offer generic programmes that are poorly tailored to individual needs. FitIA's goal was to build a system capable of generating truly personalised coaching advice and training plans by combining the power of LLMs with a structured fitness knowledge base — all accessible from a native mobile application.
+      </p>
+      <p class="project-section__text">
+        Developed as a team project during the M2 year, FitIA is a fully functional Proof of Concept: a Flutter interface with a Material 3 dark theme, a Python FastAPI backend, and a RAG (Retrieval-Augmented Generation) pipeline based on Weaviate indexing over 4 million fitness documents. The application supports two operating modes — Standalone (direct Gemini API calls from Flutter) and Full RAG (FastAPI + Weaviate for context-grounded responses).
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Architecture</h2>
+      <p class="project-section__text">
+        The application relies on a three-layer architecture: the Flutter interface communicates via HTTP REST with the FastAPI server, which orchestrates semantic search in Weaviate and text generation via Gemini. SentenceTransformers generates the 384-dimensional embeddings injected into the vector database.
+      </p>
+
+      <div style="margin: 2.5rem 0; overflow-x: auto;">
+        <svg viewBox="0 0 560 490" width="100%" style="max-width: 560px; display: block; margin: 0 auto;" role="img" aria-label="FitIA architecture: Flutter App sends HTTP REST requests to FastAPI Server, which queries Weaviate (Vector DB, near-vector search) and Gemini API (LLM generation). SentenceTransformers generates the embeddings injected into Weaviate.">
+          <defs>
+            <marker id="arr-fitia" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#1a1a1a"/>
+            </marker>
+            <marker id="arr-fitia-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#2d6a4f"/>
+            </marker>
+          </defs>
+
+          <rect x="160" y="20" width="240" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="44" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">Flutter App</text>
+          <text x="280" y="62" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">Dart 3.0+ · Material Design 3 · 9 screens</text>
+
+          <line x1="280" y1="74" x2="280" y2="108" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr-fitia)"/>
+          <text x="286" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#999999">HTTP REST</text>
+
+          <rect x="50" y="112" width="460" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="136" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">FastAPI Server</text>
+          <text x="280" y="154" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">/chat · /training-plan · /health · Uvicorn ASGI</text>
+
+          <polyline points="280,166 127,166 127,250" fill="none" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr-fitia)"/>
+          <polyline points="280,166 432,166 432,250" fill="none" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr-fitia)"/>
+
+          <rect x="20" y="254" width="215" height="60" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="127" y="280" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">Weaviate</text>
+          <text x="127" y="298" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">Vector DB · near-vector · top-K=5</text>
+
+          <rect x="325" y="254" width="215" height="60" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="432" y="280" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">Gemini API</text>
+          <text x="432" y="298" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">gemini-flash · Markdown · structured JSON</text>
+
+          <line x1="235" y1="284" x2="325" y2="284" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr-fitia-green)"/>
+          <text x="280" y="278" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#2d6a4f">RAG context</text>
+
+          <rect x="20" y="380" width="215" height="54" rx="6" fill="rgba(45,106,79,0.05)" stroke="#2d6a4f" stroke-width="1.5"/>
+          <text x="127" y="402" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" fill="#2d6a4f">SentenceTransformers</text>
+          <text x="127" y="420" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">all-MiniLM-L6-v2 · 384D embeddings</text>
+
+          <line x1="127" y1="380" x2="127" y2="314" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr-fitia-green)"/>
+          <text x="133" y="352" font-family="'DM Sans', sans-serif" font-size="9" fill="#2d6a4f">embeddings</text>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 32px; height: 18px; background: white; border: 1.5px solid #1a1a1a; border-radius: 3px; flex-shrink: 0;"></div>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">System component</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 32px; height: 18px; background: rgba(45,106,79,0.05); border: 1.5px solid #2d6a4f; border-radius: 3px; flex-shrink: 0;"></div>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">ML module</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="32" height="4" viewBox="0 0 32 4" aria-hidden="true">
+            <line x1="0" y1="2" x2="32" y2="2" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="4,2"/>
+          </svg>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">RAG context injection</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <h3 class="subsection-title">2 operating modes</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div class="note-block">
+            <span class="note-block__label">Standalone</span>
+            <p class="note-block__text">Flutter calls the Gemini API directly, bypassing the backend. Simplified deployment with no server infrastructure. Ideal for quick demonstrations.</p>
+          </div>
+          <div class="note-block">
+            <span class="note-block__label">Full RAG</span>
+            <p class="note-block__text">FastAPI orchestrates semantic search in Weaviate and injects context into the Gemini prompt. Responses grounded in a 4M+ document fitness knowledge base.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Features</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Chatbot</div>
+          <div class="challenge-block__title">Real-time AI coach</div>
+          <div class="challenge-block__text">Conversational fitness AI coach. Markdown responses (via <code class="code-inline">flutter_markdown</code>), persistent history via <code class="code-inline">shared_preferences</code>, user profile automatically injected into every prompt.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Training plan</div>
+          <div class="challenge-block__title">8-week programme in JSON</div>
+          <div class="challenge-block__text">Generates a structured plan tailored to level and goals: exercises, sets, reps, rest times, coaching notes. Returned as JSON via Gemini's <code class="code-inline">response_mime_type: "application/json"</code>.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">User profile</div>
+          <div class="challenge-block__title">Advanced personalisation</div>
+          <div class="challenge-block__text">Age, weight, height, calculated BMI, sex, level (beginner / intermediate / advanced), goals (muscle gain, weight loss, endurance…) and medical conditions (hypertension, diabetes, asthma).</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Tracking</div>
+          <div class="challenge-block__title">Weekly log</div>
+          <div class="challenge-block__text">Records weight, fatigue level (0–10), sleep duration and completed sessions each week. Data persisted locally and used to refine recommendations.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Statistics</div>
+          <div class="challenge-block__title">Progress charts</div>
+          <div class="challenge-block__text">Weight, fatigue and sleep trend visualisation via <code class="code-inline">fl_chart</code>. Analytical view of multi-week progress to identify patterns.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Dashboard</div>
+          <div class="challenge-block__title">Overview</div>
+          <div class="challenge-block__text">Home screen with current plan summary, last recorded weight, and 4-tab bottom navigation (Home, Chat, Training, Profile). Consistent Material 3 dark theme across all 9 screens.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Tech stack</h2>
+
+      <h3 class="subsection-title">Frontend</h3>
+      <div class="tech-grid" style="margin-top: 1rem;">
+        <div class="tech-item">
+          <span class="tech-item__name">Flutter / Dart 3.0+</span>
+          <span class="tech-item__role">Mobile application · Material Design 3 dark</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">fl_chart</span>
+          <span class="tech-item__role">Weight, fatigue and sleep charts</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">flutter_markdown</span>
+          <span class="tech-item__role">Markdown rendering of AI responses</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">shared_preferences</span>
+          <span class="tech-item__role">Local persistence of profile &amp; history</span>
+        </div>
+      </div>
+
+      <h3 class="subsection-title" style="margin-top: 2rem;">Backend</h3>
+      <div class="tech-grid" style="margin-top: 1rem;">
+        <div class="tech-item">
+          <span class="tech-item__name">Python / FastAPI</span>
+          <span class="tech-item__role">REST API · RAG orchestration</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Uvicorn</span>
+          <span class="tech-item__role">ASGI server (port 8000)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Weaviate</span>
+          <span class="tech-item__role">Self-hosted vector database via Docker</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Docker</span>
+          <span class="tech-item__role">Weaviate containerisation</span>
+        </div>
+      </div>
+
+      <h3 class="subsection-title" style="margin-top: 2rem;">AI &amp; Data</h3>
+      <div class="tech-grid" style="margin-top: 1rem;">
+        <div class="tech-item">
+          <span class="tech-item__name">Gemini API</span>
+          <span class="tech-item__role">Text &amp; JSON generation (gemini-flash)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">SentenceTransformers</span>
+          <span class="tech-item__role">all-MiniLM-L6-v2 · 384D embeddings</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Claude Opus (Anthropic)</span>
+          <span class="tech-item__role">Fine-tuning dataset generation (Q&amp;A pairs)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Fitness datasets</span>
+          <span class="tech-item__role">5 normalised datasets · ~4M documents</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Metrics</h2>
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value">4M+</div>
+          <div class="metric-card__label">Fitness documents indexed in Weaviate</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">40K+</div>
+          <div class="metric-card__label">Exercises merged in the database</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">9</div>
+          <div class="metric-card__label">Flutter screens (login, home, chat, training, tracking, stats, profile…)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">2</div>
+          <div class="metric-card__label">Deployment modes (Standalone / Full RAG)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">RAG Pipeline — How it works</h2>
+      <p class="project-section__text">
+        The RAG pipeline is the heart of the Full RAG mode: it transforms a user question into a context-grounded response anchored in the fitness knowledge base.
+      </p>
+      <div class="phase-grid" style="margin-top: 1.5rem;">
+        <div class="phase-card">
+          <div class="phase-card__month">Step 1</div>
+          <div class="phase-card__desc"><strong>Question encoding</strong> — The user's question is converted into a 384-dimensional vector by SentenceTransformers (<code class="code-inline">all-MiniLM-L6-v2</code>), running locally on the FastAPI server.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 2</div>
+          <div class="phase-card__desc"><strong>Near-vector semantic search</strong> — The vector is compared against 4M+ documents indexed in Weaviate via cosine similarity. The top-K=5 most relevant documents are retrieved.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 3</div>
+          <div class="phase-card__desc"><strong>Context formatting by type</strong> — Retrieved documents are formatted according to their Weaviate class: <code class="code-inline">exercise</code>, <code class="code-inline">exercise_qa</code> or <code class="code-inline">faq</code>. Each type produces a distinct context block.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 4</div>
+          <div class="phase-card__desc"><strong>User profile injection</strong> — Age, BMI, goals, level and medical conditions are systematically injected into the system prompt, making the AI coach aware of the user's constraints and contraindications.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 5</div>
+          <div class="phase-card__desc"><strong>Conversation window</strong> — The last 10 messages of the conversation are included to maintain dialogue coherence, allowing the AI to reference previous exchanges and refine its recommendations.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 6</div>
+          <div class="phase-card__desc"><strong>Gemini call with enriched prompt</strong> — The final prompt combines: fitness coach system prompt + RAG context + user profile + history. Gemini generates a Markdown response (chat) or structured JSON (training plan).</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 7</div>
+          <div class="phase-card__desc"><strong>Return to Flutter</strong> — The response is sent back to the mobile application via FastAPI. Markdown is rendered natively by <code class="code-inline">flutter_markdown</code>; JSON is parsed to display the structured training plan.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Technical highlight</h2>
+      <h3 class="subsection-title">Structured JSON generation via <code class="code-inline">response_mime_type</code></h3>
+      <div class="highlight-block">
+        <p>For training plan generation, the Gemini API is called with <code class="code-inline">response_mime_type: "application/json"</code>. This forces the model to return valid JSON rather than free text — no post-processing or fragile regex needed. The JSON schema (exercises, sets, reps, rest times, coaching notes) is described in the system prompt, and Gemini guarantees structural compliance of the response.</p>
+      </div>
+      <p class="project-section__text" style="margin-top: 1.5rem;">
+        This pattern is combined with <strong>medical awareness</strong>: every prompt injects the user's declared health conditions (hypertension, diabetes, asthma…). Gemini automatically adapts the proposed exercises — reduced intensities, low-impact movements, integrated warnings in coaching notes — without any server-side filtering logic.
+      </p>
+
+      <h3 class="subsection-title" style="margin-top: 2rem;">Fine-tuning dataset via Claude Opus</h3>
+      <p class="project-section__text">
+        The knowledge base was enriched via an automated conversion script: raw dataset content (exercises, FAQs) is transformed into structured Q&amp;A pairs via the Claude Opus API (Anthropic SDK). This fine-tuning pipeline produced documents better suited to semantic search and RAG context injection.
+      </p>
+    </section>
+
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back">← Back to portfolio</a>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>

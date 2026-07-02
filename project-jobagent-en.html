@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>JobAgent — Project details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
+</head>
+<body>
+
+  <div class="lang-bar">
+    <a href="project-jobagent.html" class="lang-bar__btn" style="text-decoration:none" aria-label="Passer en français">FR</a>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn active" id="btn-lang-en" aria-pressed="true">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">← Back to portfolio</a>
+      <div class="project-page__nav-links">
+        <a href="https://github.com/Ilannnnnnn/JobAgent" class="project-link project-link--github" target="_blank" rel="noopener" aria-label="View source code on GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">LangGraph</span>
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Claude API</span>
+        <span class="tag">Apify</span>
+        <span class="tag">SQLite</span>
+      </div>
+      <h1 class="project-header__title">JobAgent</h1>
+      <p class="project-header__subtitle">
+        Autonomous agentic pipeline for collecting, scoring and tracking job listings, with AI-powered CV tailoring.
+      </p>
+      <div class="availability-badge" style="margin-top: 1.5rem; margin-bottom: 0;">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>In production</span>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Context</h2>
+      <p class="project-section__text">
+        Personal project developed in 2025–2026 during a permanent-position job search in AI engineering. Faced with the volume of listings to monitor daily across five different platforms, the goal was to fully automate the process: collection, deduplication, LLM-based scoring and CV tailoring — to apply to fewer positions, but better-targeted ones.
+      </p>
+      <p class="project-section__text">
+        The agent runs locally and orchestrates five scrapers in parallel. Each new listing is scored by Claude Haiku on a 0-to-100 scale, benchmarked against the candidate profile. A Streamlit dashboard allows tracking applications and triggering CV tailoring in a single click.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Architecture — LangGraph pipeline</h2>
+      <p class="project-section__text">
+        The core of the system is a LangGraph agentic graph composed of four nodes and one conditional edge. The five covered sources are <strong>Adzuna API</strong>, <strong>APEC via Apify</strong>, <strong>Indeed via JobSpy</strong>, <strong>Welcome to the Jungle via Apify</strong> and <strong>Google Jobs via JobSpy</strong>.
+      </p>
+
+      <div style="margin: 2.5rem 0; overflow-x: auto;">
+        <svg viewBox="0 0 560 510" width="100%" style="max-width: 560px; display: block; margin: 0 auto;" role="img" aria-label="JobAgent LangGraph pipeline: START → collect → should_score? → score_batch → generate_report → generate_excel → END, with a conditional branch skipping score_batch when zero new listings">
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#1a1a1a"/>
+            </marker>
+            <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0,0 8,3 0,6" fill="#2d6a4f"/>
+            </marker>
+          </defs>
+
+          <circle cx="280" cy="28" r="22" fill="#1a1a1a"/>
+          <text x="280" y="33" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#f0ede8" letter-spacing="0.08em">START</text>
+
+          <line x1="280" y1="50" x2="280" y2="70" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <rect x="80" y="74" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="98" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">collect</text>
+          <text x="280" y="116" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">5 sources · ThreadPoolExecutor · URL deduplication</text>
+
+          <line x1="280" y1="128" x2="280" y2="148" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <polygon points="280,152 348,184 280,216 212,184" fill="rgba(45,106,79,0.07)" stroke="#2d6a4f" stroke-width="1.8"/>
+          <text x="280" y="181" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#2d6a4f">should_score</text>
+          <text x="280" y="196" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#2d6a4f">new listings?</text>
+
+          <line x1="280" y1="216" x2="280" y2="254" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+          <text x="264" y="239" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="10" fill="#999999">yes</text>
+
+          <rect x="80" y="258" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="282" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">score_batch</text>
+          <text x="280" y="300" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">Claude Haiku · score 0-100 · strengths / weaknesses</text>
+
+          <line x1="280" y1="312" x2="280" y2="332" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <rect x="80" y="336" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="360" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">generate_report</text>
+          <text x="280" y="378" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">timestamped TXT report · ranked by score</text>
+
+          <line x1="280" y1="390" x2="280" y2="410" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <rect x="80" y="414" width="400" height="54" rx="6" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+          <text x="280" y="438" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#1a1a1a">generate_excel</text>
+          <text x="280" y="456" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="11" fill="#666666">listings.xlsx · priority colour coding · auto-filters</text>
+
+          <line x1="280" y1="468" x2="280" y2="486" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+          <circle cx="280" cy="494" r="16" fill="#1a1a1a"/>
+          <text x="280" y="498" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#f0ede8" letter-spacing="0.08em">END</text>
+
+          <polyline points="348,184 500,184 500,363 480,363" fill="none" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-green)"/>
+          <text text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="10" fill="#2d6a4f" transform="translate(518,274) rotate(90)">0 new listings → skip scorer</text>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 32px; height: 18px; background: white; border: 1.5px solid #1a1a1a; border-radius: 3px; flex-shrink: 0;"></div>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">LangGraph node</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="32" height="18" viewBox="0 0 32 18" aria-hidden="true">
+            <polygon points="16,2 30,9 16,16 2,9" fill="rgba(45,106,79,0.07)" stroke="#2d6a4f" stroke-width="1.5"/>
+          </svg>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Conditional edge</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="32" height="4" viewBox="0 0 32 4" aria-hidden="true">
+            <line x1="0" y1="2" x2="32" y2="2" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5,3"/>
+          </svg>
+          <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Skip branch (0 listings)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Features</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Collection</div>
+          <div class="challenge-block__title">Parallel multi-source scraping</div>
+          <div class="challenge-block__text">5 scrapers in ThreadPoolExecutor (Adzuna, APEC, Indeed, WTTJ, Google Jobs). Normalisation to a unified format. Automatic deduplication via a UNIQUE SQLite constraint on the URL.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">AI scoring</div>
+          <div class="challenge-block__title">Claude Haiku 0-100</div>
+          <div class="challenge-block__text">Analysis of title, description and candidate profile. Returns a structured score via Pydantic: score, 2-3 sentence explanation, strengths and weaknesses.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Dashboard</div>
+          <div class="challenge-block__title">Interactive Streamlit</div>
+          <div class="challenge-block__text">Multi-criteria filters, per-listing detail view with salary-vs-market curve, application status tracking, company enrichment via Tavily.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">CV tailoring</div>
+          <div class="challenge-block__title">Claude Sonnet streaming</div>
+          <div class="challenge-block__text">Reads the portfolio HTML, YAML profile and listing analysis to adapt the base HTML CV. Streamed generation (~30 s) triggered from the dashboard.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Export</div>
+          <div class="challenge-block__title">Colour-coded Excel</div>
+          <div class="challenge-block__text"><code class="code-inline">listings.xlsx</code> updated on every run: green (≥ 85), yellow (≥ 60), grey (&lt; 60). Auto-filters across 12 columns including the AI analysis.</div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-block__label">Enrichment</div>
+          <div class="challenge-block__title">Tavily API</div>
+          <div class="challenge-block__text">Company information retrieved on demand in the detail panel: activity, sector, size. Triggered only when needed, not on every listing.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Tech stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-item__name">LangGraph</span>
+          <span class="tech-item__role">Agentic orchestration</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Claude Haiku</span>
+          <span class="tech-item__role">Listing scoring</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Claude Sonnet</span>
+          <span class="tech-item__role">CV tailoring</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Apify</span>
+          <span class="tech-item__role">APEC &amp; WTTJ scraping</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">JobSpy</span>
+          <span class="tech-item__role">Indeed &amp; Google scraping</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Adzuna API</span>
+          <span class="tech-item__role">Direct REST source</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Streamlit</span>
+          <span class="tech-item__role">Interactive dashboard</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">SQLite</span>
+          <span class="tech-item__role">Storage &amp; deduplication</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Plotly</span>
+          <span class="tech-item__role">Salary visualisation</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">Tavily</span>
+          <span class="tech-item__role">Company enrichment</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">BeautifulSoup</span>
+          <span class="tech-item__role">Portfolio extraction</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">openpyxl</span>
+          <span class="tech-item__role">Excel export</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Metrics</h2>
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value">5</div>
+          <div class="metric-card__label">Scraping sources</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">200+</div>
+          <div class="metric-card__label">Listings collected per run</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">4</div>
+          <div class="metric-card__label">LangGraph nodes</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">100</div>
+          <div class="metric-card__label">Maximum score per listing</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">How it works</h2>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-card__month">Step 1</div>
+          <div class="phase-card__desc"><strong>Parallel collection</strong> — 5 scrapers in ThreadPoolExecutor, normalisation to a unified format, URL deduplication via a UNIQUE SQLite constraint. Deal-breakers filtered before insertion.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 2</div>
+          <div class="phase-card__desc"><strong>Conditional scoring</strong> — if new listings exist, Claude Haiku analyses title + description + candidate profile. 1 s sleep between each call. Result validated by Pydantic.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 3</div>
+          <div class="phase-card__desc"><strong>Dashboard</strong> — real-time database reads, filters by score / source / contract / status, detail view with salary-vs-market curve, Apply button.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 4</div>
+          <div class="phase-card__desc"><strong>CV tailoring</strong> — Claude Sonnet reads the portfolio HTML (BeautifulSoup, 8,000 chars max / file), the YAML profile and the listing analysis. Streams to a tailored HTML file.</div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card__month">Step 5</div>
+          <div class="phase-card__desc"><strong>Export</strong> — persistent <code class="code-inline">listings.xlsx</code> updated on each run, timestamped TXT report generated after every collection cycle.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Technical highlight</h2>
+      <h3 class="subsection-title">The <code class="code-inline">should_score</code> conditional edge — agents vs scripts</h3>
+      <div class="highlight-block">
+        <p>If zero new listings are detected after collection, the graph <strong>jumps directly</strong> past the <code class="code-inline">score_batch</code> node and moves to <code class="code-inline">generate_report</code>. This decision is made dynamically by LangGraph by reading <code class="code-inline">state["new_offers_count"]</code> — this is the fundamental difference between a <em>sequential script</em> and an <em>agent</em>: the execution flow is not fixed, it adapts to context at runtime.</p>
+      </div>
+      <p class="project-section__text" style="margin-top: 1.5rem;">
+        In practice: the <code class="code-inline">should_score()</code> function returns either the string <code class="code-inline">"score_batch"</code> or <code class="code-inline">"generate_report"</code>. LangGraph then routes the graph to the corresponding node. This conditional edge pattern is reusable for any branching logic — retry, fork, escalation.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Results</h2>
+
+      <div class="note-block">
+        <span class="note-block__label">Collection</span>
+        <p class="note-block__text">~2 minutes for 200+ listings across all sources, thanks to 5 parallel scrapers.</p>
+      </div>
+      <div class="note-block" style="margin-top: 0.75rem;">
+        <span class="note-block__label">Scoring</span>
+        <p class="note-block__text">~3 minutes to score 100 listings (Claude Haiku + 1 s sleep between each API call).</p>
+      </div>
+      <div class="note-block" style="margin-top: 0.75rem;">
+        <span class="note-block__label">Top-priority</span>
+        <p class="note-block__text">15-20% of collected listings reach a score ≥ 85 (PRIORITY category), typically representing 15 to 40 high-potential listings per run.</p>
+      </div>
+      <div class="note-block" style="margin-top: 0.75rem;">
+        <span class="note-block__label">Tailored CV</span>
+        <p class="note-block__text">~30 seconds to generate an HTML CV tailored to a specific listing, streamed from Claude Sonnet, triggered in one click from the dashboard.</p>
+      </div>
+    </section>
+
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back">← Back to portfolio</a>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>
