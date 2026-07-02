@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Erasme Hospital Internship — Project details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
+</head>
+<body>
+
+  <div class="lang-bar">
+    <a href="experience-erasme-apnee.html" class="lang-bar__btn" style="text-decoration:none" aria-label="Passer en français">FR</a>
+    <span class="lang-bar__sep" aria-hidden="true">|</span>
+    <button class="lang-bar__btn active" id="btn-lang-en" aria-pressed="true">EN</button>
+  </div>
+
+  <div class="project-page">
+
+    <nav class="project-page__nav">
+      <a href="index.html" class="project-page__back">
+        <span>← Back to portfolio</span>
+      </a>
+      <div class="project-page__nav-links">
+        <a href="https://github.com/Ilannnnnnn" class="project-link project-link--github" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+
+    <header class="project-header">
+      <div class="project-header__tags">
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Biomedical signal</span>
+        <span class="tag">GoogLeNet</span>
+        <span class="tag">Transfer Learning</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">CWT</span>
+        <span class="tag">ECG</span>
+        <span class="tag">Research</span>
+      </div>
+      <h1 class="project-header__title">Automatic sleep apnea detection</h1>
+      <p class="project-header__subtitle">
+        Development of a deep learning pipeline for apnea detection from ECG, SCG and BCG signals — research internship at Erasme Hospital, Brussels.
+      </p>
+      <div class="institution-badge">
+        <div class="institution-badge__dot"></div>
+        <div class="institution-badge__text">
+          M1 Internship · <strong>Erasme Hospital / ULB</strong> · LPHYS Laboratory · May – September 2025 · Brussels
+        </div>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Context</h2>
+      <p class="project-section__text">
+        Obstructive sleep apnea-hypopnea syndrome (OSAHS) is a widespread and largely underdiagnosed disorder, characterised by repeated interruptions of breathing during sleep. These episodes cause sleep fragmentation and drops in oxygen saturation, which can lead over time to hypertension, cardiovascular disease, and metabolic disorders such as type 2 diabetes.
+      </p>
+      <p class="project-section__text">
+        Polysomnography (PSG) remains the gold standard for diagnosing these conditions, but its cost, logistical complexity and the requirement for a dedicated sleep laboratory limit access. The long-term objective of this project is to develop an automatic, explainable detection system based on non-invasive signals: electrocardiogram (ECG), seismocardiography (SCG) and ballistocardiography (BCG).
+      </p>
+      <p class="project-section__text">
+        This work is part of a broader research initiative between Erasme Hospital and the <strong>European Space Agency (ESA)</strong>, which is developing physiological monitoring systems for extreme environments — polar stations, space missions — where PSG cannot be deployed.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Host institution</h2>
+      <p class="project-section__text">
+        The internship took place within the <strong>Laboratory of Physics and Physiology (LPHYS)</strong>, a research unit integrated into Erasme Hospital and affiliated with the Université Libre de Bruxelles. The laboratory works on kinocardiography, multimodal fusion of cardiac signals (ECG, SCG, BCG) and video-based physiological monitoring. It is funded in part by BELSPO (Belgian Science Policy Office) and ESA.
+      </p>
+      <p class="project-section__text">
+        I worked under the supervision of <strong>Paniz Balali</strong> (PhD candidate) and <strong>Dr Amin Hossein</strong>, with occasional input from <strong>Professor Olivier Debeir</strong> (ULB) on AI aspects, and from <strong>Damien Gorlier</strong> on industrialisation of the Python pipeline.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Tech stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-item__name">Python 3.10</span>
+          <span class="tech-item__role">Full pipeline &amp; processing scripts</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">PyTorch</span>
+          <span class="tech-item__role">Training, transfer learning, AMP</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">GoogLeNet</span>
+          <span class="tech-item__role">Pre-trained CNN backbone (ImageNet)</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">CWT / PyWavelets</span>
+          <span class="tech-item__role">Time-frequency scalograms</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">SciPy / NumPy</span>
+          <span class="tech-item__role">ECG filtering, R-peak detection</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">scikit-learn</span>
+          <span class="tech-item__role">Patient-wise splits, metrics</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">LIME</span>
+          <span class="tech-item__role">Prediction explainability</span>
+        </div>
+        <div class="tech-item">
+          <span class="tech-item__name">LISA / Colab</span>
+          <span class="tech-item__role">GPU training (RTX 2080 Ti / V100)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Internship timeline</h2>
+      <p class="project-section__text">
+        The internship was organised in three main phases, following an iterative and agile approach with weekly progress meetings.
+      </p>
+      <div class="phase-list">
+        <div class="phase-item">
+          <div class="phase-item__month">Phase 1</div>
+          <div class="phase-item__desc">Literature review of 40+ papers, comparison matrix construction, reference model selection</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Phase 2</div>
+          <div class="phase-item__desc">ECG pipeline implementation: preprocessing, minute-level labelling, scalograms, GoogLeNet training</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Phase 3</div>
+          <div class="phase-item__desc">Adaptation to Erasme data, targeted fine-tuning, preparation of SCG/BCG multimodal hooks</div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item__month">Cross-cutting</div>
+          <div class="phase-item__desc">Codebase industrialisation (Click, just, uv), documentation, reproducibility, label auditing</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Technical pipeline</h2>
+      <p class="project-section__text">
+        The entire pipeline was developed in Python with a modular architecture, designed to be reusable, testable in isolation, and extensible to SCG and BCG signals.
+      </p>
+
+      <h3 class="subsection-title">ECG preprocessing</h3>
+      <p class="project-section__text">
+        Two processing paths were designed: one for public PhysioNet data (well-structured research data) and one for Erasme Hospital clinical data (ambulatory recordings with motion artefacts, noise, clock offsets). Both paths converge to a common representation before the time-frequency transform.
+      </p>
+      <ul class="project-list" style="margin-bottom: 1.5rem">
+        <li>0.5 Hz high-pass and 50 Hz notch filter (zero-phase IIR) for clinical data</li>
+        <li>5–15 Hz bandpass filter (Butterworth) centred on QRS energy</li>
+        <li>R-peak detection via Pan-Tompkins-style algorithm</li>
+        <li>Resampling to 200 Hz and segmentation into 1-minute windows aligned with PSG</li>
+        <li>Labelling: a segment is labelled as apnea if the total apnea duration within the minute exceeds 5 seconds</li>
+      </ul>
+
+      <h3 class="subsection-title">Scalogram generation</h3>
+      <p class="project-section__text">
+        Each ECG segment is converted into a time-frequency image (scalogram) via the Continuous Wavelet Transform (CWT) with an analytic Morlet wavelet, across 128 log-spaced pseudo-frequencies in the 5–15 Hz band. Magnitudes are normalised, converted to RGB with a fixed colormap, and exported as 224 × 224 × 3 images — compatible with ImageNet-pretrained CNNs.
+      </p>
+
+      <h3 class="subsection-title">Model: GoogLeNet + Transfer Learning</h3>
+      <p class="project-section__text">
+        The selected model was chosen following a comparative analysis presented to Professor Debeir. GoogLeNet, pre-trained on ImageNet, is fine-tuned for binary classification (apnea / normal). Its Inception modules enable multi-scale feature extraction with high parameter efficiency — a key advantage on limited-size biomedical datasets.
+      </p>
+      <ul class="project-list">
+        <li>Two optimiser groups: classification heads learn 10x faster than the backbone</li>
+        <li>Cross-entropy loss with auxiliary losses weighted at 0.3 (Inception architecture)</li>
+        <li>Mixed precision (AMP) on GPU, dropout p = 0.5</li>
+        <li>5-fold cross-validation, strictly patient-wise (no patient overlaps between subsets)</li>
+        <li>Progressive unfreezing: FT-4 (from Inception 4a) or FT-3 (from Inception 3a)</li>
+      </ul>
+
+      <div class="highlight-block">
+        <p>All validation decisions (thresholds, model selection) are made on the validation set only. The test set remains strictly unseen until final evaluation — unlike the practice observed in the reference paper, which I documented and flagged to the authors.</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Results &amp; Key takeaways</h2>
+      <p class="project-section__text">
+        Four configurations were evaluated under a strict patient-wise protocol, with metrics computed per fold and aggregated.
+      </p>
+
+      <div style="overflow-x: auto;">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Configuration</th>
+              <th>Accuracy</th>
+              <th>F1</th>
+              <th>Recall</th>
+              <th>Specificity</th>
+              <th>MCC</th>
+              <th>AUC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td>PhysioNet → PhysioNet (in-domain)</td>
+              <td>0.89</td>
+              <td>0.83</td>
+              <td>0.85</td>
+              <td>0.90</td>
+              <td>0.75</td>
+              <td>0.94</td>
+            </tr>
+            <tr>
+              <td>PhysioNet → Erasme (no adaptation)</td>
+              <td>0.63</td>
+              <td>0.18</td>
+              <td>0.15</td>
+              <td>0.83</td>
+              <td>-0.01</td>
+              <td>0.49</td>
+            </tr>
+            <tr>
+              <td>Erasme → Erasme (in-domain)</td>
+              <td>0.69</td>
+              <td>0.16</td>
+              <td>0.12</td>
+              <td>0.93</td>
+              <td>0.08</td>
+              <td>0.59</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>PhysioNet + Fine-tuning → Erasme</td>
+              <td>0.68</td>
+              <td>0.30</td>
+              <td>0.26</td>
+              <td>0.85</td>
+              <td>0.13</td>
+              <td>0.65</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="project-section__text" style="margin-top: 1.5rem">
+        In-domain results on PhysioNet are stable and credible under strict patient-wise evaluation. Direct transfer to Erasme collapses, confirming a strong domain shift driven by motion artefacts, cohort differences and acquisition context. Targeted fine-tuning meaningfully improves recall and AUC on Erasme without modifying the scalogram representation.
+      </p>
+
+      <div class="project-metrics">
+        <div class="metric-card">
+          <div class="metric-card__value">0.94</div>
+          <div class="metric-card__label">AUC ROC — PhysioNet in-domain</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">40+</div>
+          <div class="metric-card__label">Papers reviewed in literature survey</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">42 k</div>
+          <div class="metric-card__label">Labelled segments (filtered Erasme data)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-card__value">5</div>
+          <div class="metric-card__label">Patient-wise cross-validation folds</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Challenges</h2>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Challenge 01 · Data</div>
+        <div class="challenge-block__title">PSG annotation labelling and consistency</div>
+        <div class="challenge-block__text">PSG exports contained clinically incompatible overlapping events (e.g. simultaneous obstructive and central apneas). After liaising with the PSG team, I corrected the extraction scripts, regenerated the event tables, and added quality controls: mutual exclusivity, mass verification (sum of apnea seconds per minute = total annotated ± tolerance), and traceability archiving.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Challenge 02 · Temporal alignment</div>
+        <div class="challenge-block__title">Movesense / PSG synchronisation — up to 5-hour offset</div>
+        <div class="challenge-block__text">Movesense and PSG clocks were not synchronised. The mean offset discovered was ~2 hours, with a maximum of 5 hours — well beyond the initial assumption of a few minutes. Root causes: PSG encoded in GMT vs. local Brussels time (CET/CEST), and daylight saving time changes during the recording period. Solution: UTC normalisation, raw offset estimation via RR series cross-correlation, then beat-by-beat refinement.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Challenge 03 · Reproducibility</div>
+        <div class="challenge-block__title">Methodological limitations in the reference paper</div>
+        <div class="challenge-block__text">Attempting to reproduce Choudhury et al. (2025) revealed several inconsistencies: dropout reported as 1–7% but displayed as 10–70% in figures, hyperparameters selected on the test set (data leakage), segment-level rather than patient-level splits. Direct correspondence with the first author confirmed. These findings shaped my methodological choices towards a strictly conservative evaluation framework.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Challenge 04 · Infrastructure</div>
+        <div class="challenge-block__title">Instability of the shared Einstein machine</div>
+        <div class="challenge-block__text">For approximately three weeks, long training runs could not complete reliably on the shared Einstein workstation (GPU conflicts, disk saturation, version incompatibilities). Migrated to ULB's LISA servers with pinned environments, timestamped run folders, and deterministic checkpoint-resume scripts.</div>
+      </div>
+
+      <div class="challenge-block">
+        <div class="challenge-block__label">Challenge 05 · Tooling</div>
+        <div class="challenge-block__title">Simultaneous adoption of Click, just and uv</div>
+        <div class="challenge-block__text">Introducing three new tools at once (Click CLI framework, just task runner, uv environment manager) while cleaning data and training models created significant cognitive load. Resolved by stabilising the CLIs first, keeping the justfile minimal, and centralising defaults in a single Python module imported everywhere.</div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Skills developed</h2>
+      <ul class="project-list">
+        <li>End-to-end <strong>biomedical signal processing</strong> pipeline: filtering, peak detection, time-frequency representation, multi-sensor synchronisation</li>
+        <li>Reproducible <strong>deep learning</strong> pipeline: patient-wise splits, multi-fold metrics, checkpointing, logging, data leakage detection</li>
+        <li><strong>Critical reading of scientific papers</strong>: identifying validation biases, contacting authors, rigorous documentation of inconsistencies</li>
+        <li>Working in a <strong>hospital research environment</strong>: collaboration with researchers, PhD candidates and clinical experts, formal presentation to a professor</li>
+        <li>Python codebase industrialisation: CLI interfaces (Click), automation (just), environment management (uv), PoSUMS conventions</li>
+        <li>Managing an open-scope research project: criteria-based termination of an unproductive approach, reallocation towards data auditing and targeted fine-tuning</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2 class="project-section__title">Future directions</h2>
+      <p class="project-section__text">
+        The ECG pipeline is delivered with SCG/BCG integration hooks, frozen CSV splits and patient-wise evaluation. Next steps include:
+      </p>
+      <ul class="project-list" style="margin-top: 1.5rem">
+        <li><strong>Multimodal fusion</strong>: activating SCG and BCG branches, starting with late fusion (one CNN branch per modality + embedding concatenation), then systematic ablations — ECG alone vs ECG+SCG vs ECG+BCG vs all</li>
+        <li><strong>Decision threshold calibration</strong> per fold on the validation set only (Youden criterion or F1-max), then fixed for the final test</li>
+        <li><strong>Class imbalance handling</strong>: replacing subsampling with a weighted loss or focal loss to retain more data from the small Erasme dataset</li>
+        <li><strong>Explainability</strong>: integrating LIME analyses once the operating point is fixed, to validate that model decisions correspond to genuine physiological patterns</li>
+        <li><strong>Apnea sub-type differentiation</strong> (obstructive vs central) once multimodal fusion is in place</li>
+      </ul>
+    </section>
+
+    <footer class="footer" style="margin-top: 0">
+      <a href="index.html" class="project-page__back"><span>← Back to portfolio</span></a>
+    </footer>
+
+  </div>
+
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>

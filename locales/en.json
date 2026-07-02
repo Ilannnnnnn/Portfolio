@@ -25,6 +25,8 @@
     "heroCtaDownload": "Download CV",
     "fitiaDesc": "AI-powered fitness coaching application",
     "llmDesc": "Network trace analysis using LLMs for Orange",
+    "jobagentDesc": "Autonomous agentic pipeline for collecting, scoring and tracking job listings with AI-powered CV tailoring",
+    "gwarmDesc": "Predicting enzyme thermostability by fine-tuning ESM-2 — AI-assisted engineering of hyperthermophilic enzymes.",
     "motowestTitle": "MotoWest",
     "motowestDesc": "Complete e-commerce platform for a Breton motorcycle parts dealer.",
     "skillsCatAI": "AI & ML",
