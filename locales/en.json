@@ -24,7 +24,6 @@
     "heroCtaProjects": "See my projects",
     "heroCtaDownload": "Download CV",
     "fitiaDesc": "AI-powered fitness coaching application",
-    "llmDesc": "Network trace analysis using LLMs for Orange",
     "jobagentDesc": "Autonomous agentic pipeline for collecting, scoring and tracking job listings with AI-powered CV tailoring",
     "gwarmDesc": "Predicting enzyme thermostability by fine-tuning ESM-2 — AI-assisted engineering of hyperthermophilic enzymes.",
     "motowestTitle": "MotoWest",
@@ -72,34 +71,6 @@
     "result1": "[Key result 1 — e.g.: RAG accuracy, programme quality…]",
     "result2": "[Key result 2 — e.g.: scalability, performance, user feedback…]",
     "result3": "[Key result 3 — e.g.: what you learned, challenges overcome…]"
-  },
-
-  "llm": {
-    "pageTitle": "LLM Network Analysis — Project details",
-    "subtitle": "Fine-tuning LLMs for automatic analysis of Wireshark network traces — project carried out during my apprenticeship at Orange.",
-    "context1": "During my apprenticeship at Orange (Lannion), I worked on leveraging language models to automatically analyse network captures. Wireshark traces represent massive volumes of data that are difficult to interpret manually — the goal was to automate this analysis using LLMs.",
-    "context2": "[Fill in here with the specific context — team, business stakes, any confidentiality constraints…]",
-    "techPython": "Backend / business logic",
-    "techHf": "Models & fine-tuning",
-    "techLora": "Efficient fine-tuning",
-    "techWireshark": "Capture & PCAP export",
-    "techPytorch": "Model training",
-    "techDocker": "Containerisation",
-    "approachIntro": "The approach was structured in several phases:",
-    "approach1": "Extraction and preprocessing of network traces from PCAP files (tshark → structured JSON).",
-    "approach2": "Building a training dataset from annotated traces.",
-    "approach3": "Fine-tuning a base LLM via LoRA/QLoRA to specialise the model for telecom network analysis.",
-    "approach4": "Evaluating the performance of the fine-tuned model vs. the base model on analysis tasks.",
-    "approach5": "[Fill in with your specific steps…]",
-    "metric1Val": "[XX]%",
-    "metric1Label": "Improvement vs. base model",
-    "metric2Val": "[XX]k",
-    "metric2Label": "Training samples",
-    "metric3Val": "[XX]B",
-    "metric3Label": "Model parameters",
-    "result1": "[Key result 1 — e.g.: benchmark score, accuracy gain…]",
-    "result2": "[Key result 2 — e.g.: reduced analysis time, validated use cases…]",
-    "result3": "[Key result 3 — e.g.: identified limitations, future directions…]"
   },
 
   "motowest": {

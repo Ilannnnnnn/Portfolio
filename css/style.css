@@ -746,6 +746,16 @@ ul, ol { list-style: none; }
   color: var(--color-text-muted);
   line-height: 1.5;
 }
+.phase-item__desc a,
+.phase-card__desc a {
+  color: var(--color-accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+.phase-item__desc a:hover,
+.phase-card__desc a:hover {
+  border-bottom-color: var(--color-accent);
+}
 
 /* Subsection title */
 .subsection-title {

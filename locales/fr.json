@@ -24,7 +24,6 @@
     "heroCtaProjects": "Voir mes projets",
     "heroCtaDownload": "Télécharger CV",
     "fitiaDesc": "Application de coaching fitness propulsée par IA",
-    "llmDesc": "Analyse de traces réseau avec des LLMs pour Orange",
     "jobagentDesc": "Pipeline agentique autonome de collecte, scoring et suivi d'offres d'emploi avec adaptation de CV par IA",
     "gwarmDesc": "Prédiction de thermostabilité enzymatique par fine-tuning d'ESM-2 — ingénierie d'enzymes hyperthermophiles assistée par IA.",
     "motowestTitle": "MotoWest",
@@ -72,34 +71,6 @@
     "result1": "[Résultat clé 1 — ex : précision du RAG, qualité des programmes…]",
     "result2": "[Résultat clé 2 — ex : scalabilité, performance, retours utilisateurs…]",
     "result3": "[Résultat clé 3 — ex : ce que tu as appris, challenges surmontés…]"
-  },
-
-  "llm": {
-    "pageTitle": "LLM Network Analysis — Détail du projet",
-    "subtitle": "Fine-tuning de LLMs pour l'analyse automatique de traces réseau Wireshark — projet réalisé en alternance chez Orange.",
-    "context1": "Dans le cadre de mon alternance chez Orange (Lannion), j'ai travaillé sur l'exploitation des modèles de langage pour analyser automatiquement des captures réseau. Les traces Wireshark représentent des volumes massifs de données difficiles à interpréter manuellement — l'objectif était d'automatiser cette analyse grâce aux LLMs.",
-    "context2": "[Complète ici avec le contexte spécifique — équipe, enjeux business, contraintes de confidentialité éventuelles…]",
-    "techPython": "Backend / logique métier",
-    "techHf": "Modèles & fine-tuning",
-    "techLora": "Fine-tuning efficace",
-    "techWireshark": "Capture & export PCAP",
-    "techPytorch": "Entraînement des modèles",
-    "techDocker": "Conteneurisation",
-    "approachIntro": "La démarche s'est articulée en plusieurs phases :",
-    "approach1": "Extraction et prétraitement des traces réseau depuis les fichiers PCAP (tshark → JSON structuré).",
-    "approach2": "Construction d'un dataset d'entraînement à partir des traces annotées.",
-    "approach3": "Fine-tuning d'un LLM de base via LoRA/QLoRA pour spécialiser le modèle sur l'analyse réseau télécom.",
-    "approach4": "Évaluation des performances du modèle affiné vs. modèle de base sur les tâches d'analyse.",
-    "approach5": "[Complète avec tes étapes spécifiques…]",
-    "metric1Val": "[XX]%",
-    "metric1Label": "Amélioration vs. base",
-    "metric2Val": "[XX]k",
-    "metric2Label": "Échantillons d'entraînement",
-    "metric3Val": "[XX]B",
-    "metric3Label": "Paramètres du modèle",
-    "result1": "[Résultat clé 1 — ex : score sur benchmark, gain de précision…]",
-    "result2": "[Résultat clé 2 — ex : réduction du temps d'analyse, cas d'usage validés…]",
-    "result3": "[Résultat clé 3 — ex : limites identifiées, perspectives…]"
   },
 
   "motowest": {
