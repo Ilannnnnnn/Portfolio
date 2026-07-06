@@ -4,12 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
   <title>CV — Ilan Jaffeux-Cheniout</title>
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+    :root {
+      --accent: #1a4f3a;
+      --accent-light: #eaf2ee;
+      --accent-mid: #2d6a4f;
+      --text: #1a1a1a;
+      --sub: #555;
+      --muted: #888;
+      --border: #d4d0c8;
+    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -18,7 +26,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
       font-family: 'DM Sans', sans-serif;
     }
 
@@ -28,143 +36,129 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-
-    .cv-nav a {
-      font-size: 12px;
-      color: #888;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.15s;
-    }
+    .cv-nav a { font-size: 12px; color: #888; text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
     .cv-nav a:hover { color: #1a1a1a; }
-
-    .cv-nav__lang {
-      display: flex;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-    }
-    .cv-nav__lang a       { color: #bbb; text-decoration: none; }
-    .cv-nav__lang a:hover  { color: #1a1a1a; }
-    .cv-nav__lang .active  { color: #1a1a1a; border-bottom: 1.5px solid #1a1a1a; }
-    .cv-nav__lang .sep     { color: #ccc; }
-
+    .cv-nav__lang { display: flex; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; }
+    .cv-nav__lang a { color: #bbb; text-decoration: none; }
+    .cv-nav__lang a:hover { color: #1a1a1a; }
+    .cv-nav__lang .active { color: #1a1a1a; border-bottom: 1.5px solid #1a1a1a; }
+    .cv-nav__lang .sep { color: #ccc; }
     .cv-nav__print {
-      font-size: 12px;
-      color: #888;
-      background: none;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      padding: 4px 12px;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      transition: border-color 0.15s, color 0.15s;
+      font-size: 12px; color: #888; background: none; border: 1px solid #ccc;
+      border-radius: 3px; padding: 4px 12px; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; transition: border-color 0.15s, color 0.15s;
     }
     .cv-nav__print:hover { border-color: #888; color: #1a1a1a; }
 
     .label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase; color: #888;
+      margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
     }
-
-    .label::before, .label::after {
-      content: '';
-      height: 1px;
-      width: 40px;
-      background: #bbb;
-    }
+    .label::before, .label::after { content: ''; height: 1px; width: 40px; background: #bbb; }
 
     .badge {
-      background: #2d6a4f;
-      color: white;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 24px;
+      background: var(--accent-mid); color: white; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em; padding: 3px 10px; border-radius: 20px; margin-bottom: 16px;
     }
 
     .cv-page {
       background: white;
       width: 680px;
-      padding: 52px 56px;
+      padding: 32px 42px;
       box-shadow: 0 4px 40px rgba(0,0,0,0.1);
     }
 
     .cv-header {
-      border-bottom: 2px solid #1a1a1a;
-      padding-bottom: 20px;
-      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 20px;
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      align-items: start;
     }
 
     .cv-name {
       font-family: 'EB Garamond', serif;
-      font-size: 34px;
+      font-size: 28px;
       font-weight: 600;
-      color: #1a1a1a;
-      letter-spacing: 0.01em;
+      color: var(--text);
       line-height: 1;
     }
 
     .cv-title {
-      font-size: 13px;
-      font-weight: 500;
-      color: #555;
-      margin-top: 6px;
-      letter-spacing: 0.06em;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-mid);
+      margin-top: 4px;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
 
-    .cv-contact {
-      display: flex;
-      gap: 24px;
-      margin-top: 12px;
-      flex-wrap: wrap;
+    .cv-accroche {
+      font-size: 11.5px;
+      color: #444;
+      margin-top: 6px;
+      line-height: 1.55;
+      max-width: 400px;
     }
 
-    .cv-contact span {
-      font-size: 12px;
-      color: #555;
-      display: inline-flex;
+    .cv-header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+      padding-top: 2px;
+    }
+
+    .cv-contact-item {
+      font-size: 11px;
+      color: var(--sub);
+      display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .cv-contact-dot {
-      width: 4px;
-      height: 4px;
-      background: #1a1a1a;
+      width: 3px; height: 3px;
+      background: var(--accent-mid);
       border-radius: 50%;
-      display: inline-block;
       flex-shrink: 0;
     }
 
-    .cv-section       { margin-bottom: 22px; }
+    .cv-qr {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+    .cv-qr-label {
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .cv-qr svg, .cv-qr img, .cv-qr canvas { width: 52px !important; height: 52px !important; }
+
+    .cv-section { margin-bottom: 13px; }
 
     .cv-section-title {
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 10.5px;
+      font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-      padding-bottom: 4px;
-      margin-bottom: 14px;
+      color: white;
+      background: var(--accent);
+      padding: 3px 8px;
+      margin-bottom: 10px;
+      display: block;
     }
 
-    .cv-entry         { margin-bottom: 14px; }
+    .cv-entry { margin-bottom: 9px; }
 
     .cv-entry-header {
       display: flex;
@@ -174,82 +168,92 @@
 
     .cv-entry-title {
       font-weight: 600;
-      font-size: 13px;
-      color: #1a1a1a;
+      font-size: 12.5px;
+      color: var(--text);
     }
 
     .cv-entry-date {
-      font-size: 11.5px;
-      color: #777;
+      font-size: 11px;
+      color: var(--muted);
       white-space: nowrap;
-      margin-left: 16px;
+      margin-left: 12px;
       flex-shrink: 0;
     }
 
     .cv-entry-sub {
-      font-size: 12px;
-      color: #555;
+      font-size: 11.5px;
+      color: var(--sub);
       margin-top: 1px;
       font-style: italic;
     }
 
     .cv-entry-bullets {
-      margin-top: 6px;
+      margin-top: 4px;
       list-style: none;
       padding: 0;
     }
 
     .cv-entry-bullets li {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #333;
-      padding-left: 14px;
+      padding-left: 12px;
       position: relative;
-      margin-bottom: 3px;
-      line-height: 1.5;
+      margin-bottom: 2px;
+      line-height: 1.45;
     }
 
     .cv-entry-bullets li::before {
-      content: '–';
+      content: '·';
       position: absolute;
       left: 0;
-      color: #888;
+      color: var(--accent-mid);
     }
 
-    .skills-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .skill-row {
-      display: flex;
-      gap: 8px;
-      align-items: baseline;
-    }
-
-    .skill-category {
-      font-size: 12px;
-      font-weight: 600;
-      color: #333;
-      min-width: 120px;
-      flex-shrink: 0;
-    }
-
-    .skill-list {
-      font-size: 12px;
-      color: #555;
-    }
+    .cv-formation-entry { margin-bottom: 7px; }
 
     @media print {
-      body     { background: white !important; padding: 0 !important; }
-      .cv-nav  { display: none !important; }
-      .label,
-      .badge   { display: none !important; }
-      .cv-page { box-shadow: none !important; width: 100% !important; padding: 20mm 15mm !important; }
+      @page { size: A4 portrait; margin: 0; }
+
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      body    { background: white !important; padding: 0 !important; margin: 0 !important; }
+      .cv-nav { display: none !important; }
+      .label, .badge { display: none !important; }
+
+      .cv-page {
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        padding: 32px 42px !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+      }
+
+      .cv-header {
+        display: table !important;
+        width: 100% !important;
+        border-bottom: 2px solid #1a1a1a !important;
+        padding-bottom: 14px !important;
+        margin-bottom: 14px !important;
+      }
+      .cv-header-left {
+        display: table-cell !important;
+        width: 65% !important;
+        vertical-align: top !important;
+      }
+      .cv-header-right {
+        display: table-cell !important;
+        width: 35% !important;
+        vertical-align: top !important;
+        text-align: right !important;
+      }
+      .cv-contact-item { justify-content: flex-end !important; }
     }
 
     @media (max-width: 720px) {
-      .cv-page { width: 100%; padding: 32px 24px; }
+      .cv-page { width: 100%; padding: 20px 16px; }
+      .cv-header { grid-template-columns: 1fr; }
+      .cv-header-right { align-items: flex-start; margin-top: 10px; }
     }
   </style>
 </head>
@@ -270,84 +274,80 @@
 
   <div class="cv-page">
 
+    <!-- HEADER -->
     <div class="cv-header">
-      <div class="cv-name">Ilan Jaffeux-Cheniout</div>
-      <div class="cv-title">AI Engineer — Master's in Artificial Intelligence</div>
-      <div class="cv-contact">
-        <span><div class="cv-contact-dot"></div> +33 7 83 49 65 30</span>
-        <span><div class="cv-contact-dot"></div> ilanjaffeuxcheniout@gmail.com</span>
-        <span><div class="cv-contact-dot"></div> linkedin.com/in/ilanjafchen</span>
-        <span><div class="cv-contact-dot"></div> github.com/Ilannnnnnn</span>
+      <div class="cv-header-left">
+        <div class="cv-name">Ilan Jaffeux-Cheniout</div>
+        <div class="cv-title">AI Engineer · LLMs &amp; Agentic Systems</div>
+        <div class="cv-accroche">
+          Final-year AI Engineering student (graduating 2026) with R&amp;D experience at <strong>Orange</strong> (agentic AI, LLM fine-tuning, NLP) and <strong>ULB Brussels</strong> (medical deep learning, AUC 0.96). Seeking a full-time role to build and ship impactful intelligent systems.
+        </div>
+      </div>
+
+      <div class="cv-header-right">
+        <div class="cv-contact-item"><div class="cv-contact-dot"></div>+33 7 83 49 65 30</div>
+        <div class="cv-contact-item"><div class="cv-contact-dot"></div>ilanjaffeuxcheniout@gmail.com</div>
+        <div class="cv-contact-item"><div class="cv-contact-dot"></div>linkedin.com/in/ilanjafchen</div>
+        <div class="cv-contact-item"><div class="cv-contact-dot"></div>github.com/Ilannnnnnn</div>
+        <div class="cv-qr">
+          <span class="cv-qr-label">LinkedIn</span>
+          <div id="qr-linkedin"></div>
+        </div>
       </div>
     </div>
 
+    <!-- EXPERIENCE -->
     <div class="cv-section">
-      <div class="cv-section-title">Work Experience</div>
+      <div class="cv-section-title">Experience</div>
 
       <div class="cv-entry">
         <div class="cv-entry-header">
-          <div class="cv-entry-title">AI Engineer Apprentice — Network Analysis</div>
-          <div class="cv-entry-date">Sept. 2025 – Sept. 2026</div>
+          <div class="cv-entry-title">R&amp;D AI Engineer — Network Analysis</div>
+          <div class="cv-entry-date">Sep 2025 – Sep 2026</div>
         </div>
-        <div class="cv-entry-sub">Orange, Lannion</div>
+        <div class="cv-entry-sub">Orange, Lannion, France · Apprenticeship (alternance)</div>
         <ul class="cv-entry-bullets">
-          <li><strong>Wireshark trace analysis:</strong> Development of <strong>models and agents</strong> for anomaly detection based on network packet behaviour.</li>
-          <li><strong>LLM fine-tuning:</strong> Model adaptation via <strong>LoRA/QLoRA</strong> (HuggingFace) to automate technical diagnostics.</li>
-          <li><strong>Pipeline creation:</strong> Prototyping and building a phone call transcription and summarisation pipeline via API.</li>
+          <li><strong>Network anomaly detection:</strong> Designed and evaluated AI models and agentic pipelines (<strong>LangGraph, LangChain</strong>) on 10K+ Wireshark packet traces for behavioural network analysis.</li>
+          <li><strong>LLM fine-tuning:</strong> Adapted Qwen2.5 via <strong>LoRA/QLoRA</strong> (HuggingFace PEFT) for automated fault diagnosis on Orange telecom network data.</li>
+          <li><strong>NLP pipeline:</strong> Built an end-to-end call transcription and summarisation system using a REST API stack, with LLM-assisted data labelling.</li>
         </ul>
       </div>
 
       <div class="cv-entry">
         <div class="cv-entry-header">
-          <div class="cv-entry-title">Research Intern — Sleep Apnoea Detection</div>
-          <div class="cv-entry-date">May – Sept. 2025</div>
+          <div class="cv-entry-title">Research Intern — Sleep Apnea Detection</div>
+          <div class="cv-entry-date">May – Sep 2025</div>
         </div>
-        <div class="cv-entry-sub">Cardiology Department, ULB (Université Libre de Bruxelles)</div>
+        <div class="cv-entry-sub">Hôpital Érasme · LPHYS Lab, Université Libre de Bruxelles (ULB), Belgium</div>
         <ul class="cv-entry-bullets">
-          <li><strong>CNN/RNN modelling:</strong> Architecture design via <strong>PyTorch</strong> &amp; <strong>GoogLeNet fine-tuning</strong> to identify sleep apnoea patterns.</li>
-          <li><strong>Signal processing:</strong> Feature extraction and EEG/ECG signal cleaning using <strong>Matlab</strong>.</li>
+          <li>Built a full ML pipeline (ECG → CWT scalograms → fine-tuned GoogLeNet, PyTorch) achieving <strong>accuracy 0.89 · F1 0.83 · AUC 0.96</strong> on 120K PhysioNet segments with strict fold cross-validation and no data leakage.</li>
+          <li>Transfer learning from PhysioNet to Érasme clinical data: <strong>+33% AUC gain</strong> through progressive layer unfreezing.</li>
         </ul>
       </div>
 
       <div class="cv-entry">
         <div class="cv-entry-header">
-          <div class="cv-entry-title">Freelance Developer — MotoWest</div>
-          <div class="cv-entry-date">Jan. – Nov. 2025</div>
+          <div class="cv-entry-title">Freelance Full-Stack Developer</div>
+          <div class="cv-entry-date">2025 – 2026</div>
         </div>
         <ul class="cv-entry-bullets">
-          <li><strong>E-commerce &amp; Ops:</strong> Full deployment of an e-commerce platform using <strong>Django</strong>, <strong>PostgreSQL</strong> and <strong>Docker</strong> containers.</li>
-          <li><strong>Autonomous design and deployment</strong>: full ownership of the product lifecycle.</li>
+          <li><strong>MotoWest</strong> — Solo end-to-end delivery: scoping, full-stack development (Django, PostgreSQL, Docker), and deployment of a production e-commerce platform with a <strong>9,475-product</strong> catalogue. <span style="color:#999;font-size:11px">Jan – Nov 2025</span></li>
+          <li><strong>FitIA</strong> — AI fitness coaching app: <strong>RAG</strong> architecture (Weaviate, sentence-transformers) with dynamic routing across multiple LLMs via API (Gemini, OpenRouter). <span style="color:#999;font-size:11px">2026</span></li>
         </ul>
       </div>
     </div>
 
-    <div class="cv-section">
-      <div class="cv-section-title">Education</div>
-      <div class="cv-entry">
-        <div class="cv-entry-header">
-          <div class="cv-entry-title">Engineering Degree — Master's in Artificial Intelligence</div>
-          <div class="cv-entry-date">2020 – 2026</div>
-        </div>
-        <div class="cv-entry-sub">ISEN Yncrea Ouest, Brest — AI specialisation, Apprenticeship track</div>
-      </div>
-      <div class="cv-entry">
-        <div class="cv-entry-header">
-          <div class="cv-entry-title">French Scientific Baccalaureate — With Honours</div>
-          <div class="cv-entry-date">2020</div>
-        </div>
-      </div>
-    </div>
-
+    <!-- PROJECTS -->
     <div class="cv-section">
       <div class="cv-section-title">Projects</div>
 
       <div class="cv-entry">
         <div class="cv-entry-header">
-          <div class="cv-entry-title">LinkedIn Agent — LangGraph Automation</div>
+          <div class="cv-entry-title">Autonomous Job Search Agent</div>
           <div class="cv-entry-date">2026</div>
         </div>
         <ul class="cv-entry-bullets">
-          <li>AI agent for LinkedIn monitoring and automation (LangGraph, LLM, Python).</li>
+          <li>Multi-step agentic system for job market monitoring: scrapes listings, scores CV–offer semantic fit, and dynamically tailors application materials (LangGraph · Python · LLM).</li>
         </ul>
       </div>
 
@@ -357,7 +357,7 @@
           <div class="cv-entry-date">2025</div>
         </div>
         <ul class="cv-entry-bullets">
-          <li>ML predictive strategy for enzymatic stability (Python, PyTorch, NumPy, Pandas).</li>
+          <li>ML-driven predictive strategy for enzyme thermostability under hyperthermophilic conditions (PyTorch · Pandas).</li>
         </ul>
       </div>
 
@@ -367,38 +367,93 @@
           <div class="cv-entry-date">2024</div>
         </div>
         <ul class="cv-entry-bullets">
-          <li>Visual recognition and real-time analysis with YOLOv8 (Python, Roboflow).</li>
+          <li>Real-time visual recognition pipeline with YOLOv8 fine-tuned on a custom Roboflow dataset (Python).</li>
         </ul>
       </div>
     </div>
 
+    <!-- EDUCATION -->
     <div class="cv-section">
+      <div class="cv-section-title">Education</div>
+
+      <div class="cv-formation-entry cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Agentic AI Training Programme · Orange</div>
+          <div class="cv-entry-date">2026</div>
+        </div>
+      </div>
+
+      <div class="cv-formation-entry cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">MEng Artificial Intelligence (equiv.) — Diplôme d'Ingénieur</div>
+          <div class="cv-entry-date">2023 – 2026</div>
+        </div>
+        <div class="cv-entry-sub">ISEN Yncréa Ouest, Brest, France · 5-year accredited Grande École engineering programme, final 3 years with industry placement</div>
+      </div>
+
+      <div class="cv-formation-entry cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">TOEIC · 895 / 990</div>
+          <div class="cv-entry-date">2021</div>
+        </div>
+      </div>
+
+      <div class="cv-formation-entry cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Classe Préparatoire aux Grandes Écoles (CPGE)</div>
+          <div class="cv-entry-date">2020 – 2023</div>
+        </div>
+        <div class="cv-entry-sub">ISEN Yncréa Ouest, Brest — Intensive 3-year pre-engineering programme (equiv. first years of BSc)</div>
+      </div>
+
+      <div class="cv-formation-entry cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">French Baccalauréat, Science stream · With Honours</div>
+          <div class="cv-entry-date">2020</div>
+        </div>
+        <div class="cv-entry-sub">Lycée Maupertuis, Saint-Malo</div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="cv-section" style="margin-top:4px">
       <div class="cv-section-title">Technical Skills</div>
-      <div class="skills-grid">
-        <div class="skill-row">
-          <span class="skill-category">AI / ML</span>
-          <span class="skill-list">PyTorch · TensorFlow · HuggingFace · Scikit-learn · YOLO &amp; Computer Vision · LangGraph · LoRA &amp; Fine-tuning · NumPy</span>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;gap:8px;align-items:baseline;">
+          <span style="font-size:11.5px;font-weight:700;color:#1a4f3a;min-width:120px;flex-shrink:0;letter-spacing:0.04em;">Agents / AI / ML</span>
+          <span style="font-size:11.5px;color:#333;">PyTorch · TensorFlow · HuggingFace · Scikit-learn · YOLO · LangGraph · LangChain · LoRA &amp; Fine-tuning · RAG · LLMs · SLMs</span>
         </div>
-        <div class="skill-row">
-          <span class="skill-category">Languages</span>
-          <span class="skill-list">Python · JavaScript · SQL · R · Matlab · C/C++</span>
+        <div style="display:flex;gap:8px;align-items:baseline;">
+          <span style="font-size:11.5px;font-weight:700;color:#1a4f3a;min-width:120px;flex-shrink:0;letter-spacing:0.04em;">Languages</span>
+          <span style="font-size:11.5px;color:#333;">Python · JavaScript · SQL · R · MATLAB · C/C++</span>
         </div>
-        <div class="skill-row">
-          <span class="skill-category">Infrastructure</span>
-          <span class="skill-list">Docker · Git · PostgreSQL · Django · Linux</span>
+        <div style="display:flex;gap:8px;align-items:baseline;">
+          <span style="font-size:11.5px;font-weight:700;color:#1a4f3a;min-width:120px;flex-shrink:0;letter-spacing:0.04em;">Infrastructure</span>
+          <span style="font-size:11.5px;color:#333;">Docker · Git · PostgreSQL · Django · Linux · AWS · Azure</span>
         </div>
-        <div class="skill-row">
-          <span class="skill-category">Cloud &amp; Network</span>
-          <span class="skill-list">AWS · Azure · Wireshark · Packet analysis · Telecommunications</span>
+        <div style="display:flex;gap:8px;align-items:baseline;">
+          <span style="font-size:11.5px;font-weight:700;color:#1a4f3a;min-width:120px;flex-shrink:0;letter-spacing:0.04em;">Networks</span>
+          <span style="font-size:11.5px;color:#333;">Wireshark · Packet Analysis · Telecommunications</span>
         </div>
-        <div class="skill-row">
-          <span class="skill-category">Languages</span>
-          <span class="skill-list">French (native) · English (fluent) · Spanish (intermediate)</span>
+        <div style="display:flex;gap:8px;align-items:baseline;">
+          <span style="font-size:11.5px;font-weight:700;color:#1a4f3a;min-width:120px;flex-shrink:0;letter-spacing:0.04em;">Human languages</span>
+          <span style="font-size:11.5px;color:#333;">French (native) · English (professional — TOEIC 895) · Spanish (basic)</span>
         </div>
       </div>
     </div>
 
   </div><!-- /.cv-page -->
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    new QRCode(document.getElementById("qr-linkedin"), {
+      text: "https://linkedin.com/in/ilanjafchen",
+      width: 52,
+      height: 52,
+      colorDark: "#1a4f3a",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  </script>
 </body>
 </html>
