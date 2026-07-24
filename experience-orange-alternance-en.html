@@ -132,7 +132,7 @@
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Assignment 3</div>
-          <div class="phase-item__desc"><strong>IPSEC gateway in Go (A-SBC/IPSECGW)</strong> — Development and maintenance of an IPSEC/SIP gateway in Go handling up to 250,000 simultaneous users. Two focus areas: (1) Cryptographic migration from MD5 to SHA-1-96 for ESP IPSEC, with a critical subtlety — the A-SBC server accepts SHA-1 for IPSEC but announces MD5 for SIP digest authentication in the same 401 response. (2) Implementation of a mass-DEREG anti-DDoS filter via a four-map architecture separating REGISTER and DEREG tracking. Tests using the raptor16 tool (multi-UE SIP simulator).</div>
+          <div class="phase-item__desc"><strong>IPSEC gateway in Go (A-SBC/IPSECGW)</strong> — Development and maintenance of an IPSEC/SIP gateway in the Go language handling up to 250,000 simultaneous users. Two focus areas: (1) Cryptographic migration from MD5 to SHA-1-96 for ESP IPSEC, with a critical subtlety — the A-SBC server accepts SHA-1 for IPSEC but announces MD5 for SIP digest authentication in the same 401 response. (2) Implementation of a mass-deregistration anti-DDoS filter via a four-map architecture separating registration and deregistration tracking. Tests using the internal tool (multi-user SIP simulator).</div>
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Assignment 4</div>
@@ -140,7 +140,7 @@
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Assignment 5</div>
-          <div class="phase-item__desc"><strong>Cross-cutting research &amp; technical watch</strong> — Inventory of annotated public PCAP datasets (NETRESEC, CIC/UNB, CAIDA, UNSW-NB15, Wireshark SampleCaptures, SIP/VoIP sources). Study of AI inter-agent protocols (MCP, Google A2A, IBM/BeeAI ACP) and their applicability to network infrastructure. Design of ML pipelines for TCP anomaly detection (slow start, congestion, bufferbloat). Training on transformer architectures (multi-head attention, scaling laws, nanochat/Karpathy).</div>
+          <div class="phase-item__desc"><strong>Cross-cutting research &amp; technical watch</strong> — Inventory of annotated public PCAP datasets (NETRESEC, CIC/UNB, CAIDA, UNSW-NB15, Wireshark SampleCaptures, SIP/VoIP sources). Study of AI agentics (MCP, Google A2A, IBM/BeeAI ACP) and their applicability to network infrastructure. Design of ML pipelines for TCP anomaly detection (slow start, congestion, bufferbloat). Training on <em>transformer</em> architectures (multi-head attention, scaling laws, nanochat/Karpathy).</div>
         </div>
       </div>
     </section>
@@ -159,7 +159,7 @@
         </div>
         <div class="metric-card">
           <div class="metric-card__value">4 maps</div>
-          <div class="metric-card__label">Anti-DEREG filter architecture</div>
+          <div class="metric-card__label">Anti-deregistration filter architecture</div>
         </div>
         <div class="metric-card">
           <div class="metric-card__value">5</div>
@@ -192,13 +192,13 @@
       <div class="challenge-block">
         <div class="challenge-block__label">Challenge 04 · Infrastructure</div>
         <div class="challenge-block__title">Restricted network access in a corporate environment</div>
-        <div class="challenge-block__text">Orange's corporate proxy blocks many external APIs (OpenRouter, direct HuggingFace). Adaptation: systematic use of Orange's internal LLM proxy (<code>management.llmproxy.ai.orange</code>) and proxy environment variable configuration for all outbound requests.</div>
+        <div class="challenge-block__text">Orange's corporate proxy blocks requests to AI APIs on many external platforms. Adaptation: systematic use of Orange's internal LLM proxy and proxy environment variable configuration for all outbound requests.</div>
       </div>
 
       <div class="challenge-block">
         <div class="challenge-block__label">Challenge 05 · LLM evaluation</div>
         <div class="challenge-block__title">Subjectivity and reproducibility of metrics</div>
-        <div class="challenge-block__text">Reproducibly evaluating LLM responses on telecom support questions is non-trivial. Developed a 5-criterion, 10-point rubric, with systematic scoring across 9 prompts × 17 models, enabling an objective ranking and actionable recommendations.</div>
+        <div class="challenge-block__text">Reproducibly evaluating LLM responses on telecom support questions is non-trivial. Developed a 5-criterion, 10-point metric, with systematic scoring across 9 prompts × 17 models, enabling an objective ranking and actionable recommendations.</div>
       </div>
     </section>
 
