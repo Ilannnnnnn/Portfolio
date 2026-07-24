@@ -576,8 +576,8 @@ ul, ol { list-style: none; }
 }
 
 .project-list li {
-  display: flex;
-  gap: var(--spacing-3);
+  position: relative;
+  padding-left: 1.25em;
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.7;
@@ -585,10 +585,10 @@ ul, ol { list-style: none; }
 
 .project-list li::before {
   content: '–';
+  position: absolute;
+  left: 0;
   color: var(--color-accent);
   font-family: var(--font-heading);
-  flex-shrink: 0;
-  margin-top: 1px;
 }
 
 /* Métriques / résultats */
