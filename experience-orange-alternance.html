@@ -130,7 +130,7 @@
       <div class="phase-list">
         <div class="phase-item">
           <div class="phase-item__month">Mission 1</div>
-          <div class="phase-item__desc"><strong>Assistant IA pour l'analyse de traces réseau (PCAP)</strong> — Réflexion et prototypage d'un assistant IA capable d'analyser automatiquement des captures réseau (PCAP/Wireshark), avec pour contrainte une chaîne logicielle exécutable localement (souveraineté des données réseau et clients). Une trace PCAP brute est un format binaire dense, proche de la limite théorique d'entropie : contrairement à du texte ou du code, elle n'a pas de structure narrative ni sémantique directement exploitable par un LLM. Deux difficultés s'ajoutent : le volume, qui dépasse largement la fenêtre de contexte des modèles de langage sur des captures réelles, et l'interprétabilité, très peu de modèles — même parmi les plus avancés — parvenant à en tirer un diagnostic réseau fiable sans étape de transformation intermédiaire. Travail mené : recherche et expérimentation autour de la <strong>préparation de données</strong> (transformation, structuration, enrichissement des traces), <strong>fine-tuning</strong> d'un modèle open-weight pour la tâche de diagnostic, et réflexion sur une <strong>architecture agentique de routage</strong> orientant dynamiquement chaque requête vers un SLM fine-tuné (cas standards) ou un LLM plus puissant (cas complexes) selon la difficulté détectée du prompt. Ce travail a fait l'objet d'un article scientifique en prépublication sur <a href="https://arxiv.org/abs/2606.05176" target="_blank" rel="noopener">arXiv</a>, ainsi que du dépôt de deux brevets en cours portant sur l'IA au service de réseaux télécom autonomes et résilients (principes de self-healing).</div>
+          <div class="phase-item__desc"><strong>Assistant IA pour l'analyse de traces réseau (PCAP)</strong> — Conception et prototypage d'un assistant IA capable d'analyser automatiquement des captures réseau (PCAP/Wireshark), avec pour contrainte une chaîne logicielle exécutable localement (souveraineté des données réseau et clients). Une trace PCAP brute est un format binaire dense, proche de la limite théorique d'entropie : contrairement à du texte ou du code, elle n'a pas de structure narrative ni sémantique directement exploitable par un LLM. Deux difficultés s'ajoutent : le volume, qui dépasse largement la fenêtre de contexte des modèles de langage sur des captures réelles, et l'interprétabilité, très peu de modèles — même parmi les plus avancés — parvenant à en tirer un diagnostic réseau fiable sans étape de transformation intermédiaire. Travail mené : recherche et expérimentation autour de la <strong>préparation de données</strong> (transformation, structuration, enrichissement des traces), <strong>fine-tuning</strong> d'un modèle open-weight pour la tâche de diagnostic, et réflexion sur une <strong>architecture agentique de routage</strong> orientant dynamiquement chaque requête vers un SLM fine-tuné (cas standards) ou un LLM plus puissant (cas complexes) selon la difficulté détectée du prompt. Ce travail a fait l'objet d'un article scientifique en prépublication sur <a href="https://arxiv.org/abs/2606.05176" target="_blank" rel="noopener">arXiv</a>, ainsi que du dépôt de deux brevets en cours portant sur l'IA au service de réseaux télécom autonomes et résilients (principes de self-healing).</div>
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Mission 2</div>
@@ -138,7 +138,7 @@
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Mission 3</div>
-          <div class="phase-item__desc"><strong>Passerelle IPSEC en Go (A-SBC/IPSECGW)</strong> — Développement et maintenance d'une passerelle IPSEC/SIP en Go gérant jusqu'à 250 000 utilisateurs simultanés. Deux axes : (1) Migration cryptographique de MD5 vers SHA-1-96 pour l'ESP IPSEC, avec gestion d'une subtilité critique — le serveur A-SBC accepte SHA-1 pour IPSEC mais annonce MD5 pour l'authentification SIP digest dans la même réponse 401. (2) Implémentation d'un filtre anti-DEREG massif (style DDoS) via une architecture à quatre maps séparant le tracking REGISTER et DEREG. Tests avec l'outil raptor16 (simulateur SIP multi-UE).</div>
+          <div class="phase-item__desc"><strong>Passerelle IPSEC en Go (A-SBC/IPSECGW)</strong> — Développement et maintenance d'une passerelle IPSEC/SIP en langage Go gérant jusqu'à 250 000 utilisateurs simultanés. Deux axes : (1) Migration cryptographique de MD5 vers SHA-1-96 pour l'ESP IPSEC, avec gestion d'une subtilité critique — le serveur A-SBC accepte SHA-1 pour IPSEC mais annonce MD5 pour l'authentification SIP digest dans la même réponse 401. (2) Implémentation d'un filtre anti-désenregistrement massif (style DDoS) via une architecture à quatre maps séparant le tracking des enregistrements et désenregistrements. Tests avec l'outil interne (simulateur multi-utilisateurs SIP).</div>
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Mission 4</div>
@@ -146,7 +146,7 @@
         </div>
         <div class="phase-item">
           <div class="phase-item__month">Mission 5</div>
-          <div class="phase-item__desc"><strong>Recherche &amp; veille technique transverse</strong> — Inventory de datasets PCAP publics annotés (NETRESEC, CIC/UNB, CAIDA, UNSW-NB15, Wireshark SampleCaptures, sources SIP/VoIP). Étude des protocoles inter-agents IA (MCP, A2A Google, ACP IBM/BeeAI) et de leur applicabilité aux infrastructures réseau. Conception de pipelines ML pour détection d'anomalies TCP (slow start, congestion, bufferbloat). Formation sur les architectures transformer (attention multi-têtes, scaling laws, nanochat/Karpathy).</div>
+          <div class="phase-item__desc"><strong>Recherche &amp; veille technique transverse</strong> — Inventaire de datasets PCAP publics annotés (NETRESEC, CIC/UNB, CAIDA, UNSW-NB15, Wireshark SampleCaptures, sources SIP/VoIP). Étude des agentiques IA (MCP, A2A Google, ACP IBM/BeeAI) et de leur applicabilité aux infrastructures réseau. Conception de pipelines ML pour détection d'anomalies TCP (slow start, congestion, bufferbloat). Formation sur les architectures <em>transformer</em> (attention multi-têtes, scaling laws, nanochat/Karpathy).</div>
         </div>
       </div>
     </section>
@@ -166,7 +166,7 @@
         </div>
         <div class="metric-card">
           <div class="metric-card__value">4 maps</div>
-          <div class="metric-card__label">Architecture filtre anti-DEREG</div>
+          <div class="metric-card__label">Architecture filtre anti-désenregistrement</div>
         </div>
         <div class="metric-card">
           <div class="metric-card__value">5</div>
@@ -200,13 +200,13 @@
       <div class="challenge-block">
         <div class="challenge-block__label">Défi 04 · Infrastructure</div>
         <div class="challenge-block__title">Accès réseau restreint en environnement corporate</div>
-        <div class="challenge-block__text">Le proxy corporate Orange bloque de nombreuses APIs externes (OpenRouter, HuggingFace direct). Adaptation : utilisation systématique du proxy LLM interne Orange (<code>management.llmproxy.ai.orange</code>) et configuration des variables d'environnement proxy pour toutes les requêtes sortantes.</div>
+        <div class="challenge-block__text">Le proxy corporate Orange bloque les requêtes à des APIs IA sur de nombreuses plateformes externes. Adaptation : utilisation systématique du proxy LLM interne Orange et configuration des variables d'environnement proxy pour toutes les requêtes sortantes.</div>
       </div>
 
       <div class="challenge-block">
         <div class="challenge-block__label">Défi 05 · Évaluation LLM</div>
         <div class="challenge-block__title">Subjectivité et reproductibilité des métriques</div>
-        <div class="challenge-block__text">Évaluer des réponses de LLMs de manière reproductible sur des questions de support télécom est non-trivial. Développement d'une rubrique à 5 critères, 10 points, avec scoring systématique sur 9 prompts × 17 modèles, permettant un ranking objectif et des recommandations actionnables.</div>
+        <div class="challenge-block__text">Évaluer des réponses de LLMs de manière reproductible sur des questions de support télécom est non-trivial. Développement d'une métrique à 5 critères, 10 points, avec scoring systématique sur 9 prompts × 17 modèles, permettant un ranking objectif et des recommandations actionnables.</div>
       </div>
     </section>
 
